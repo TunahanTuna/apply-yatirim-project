@@ -1,13 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import DashboardStatsGrid from './DashboardStatsGrid'
 
 export default function Dashboard() {
     return (
         <div className="flex flex-col">
-            Dashboard
-            <Link className="underline" to="/oranlar">
-                go to oranlar
-            </Link>
+            <DashboardStatsGrid />
         </div>
     )
 }
