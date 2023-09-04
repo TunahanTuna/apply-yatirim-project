@@ -79,7 +79,7 @@ export default function ExcelTable() {
             const workbook = XLSX.read(e.target.result, { type: 'binary' })
 
             // İlk çalışma sayfasının adını alın
-            const firstSheetName = workbook.SheetNames[0]
+            const firstSheetName = workbook.SheetNames[1]
 
             // İlk çalışma sayfasını alın
             const worksheet = workbook.Sheets[firstSheetName]
@@ -98,32 +98,23 @@ export default function ExcelTable() {
         <div className="bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 flex-1">
             <strong className="text-gray-700 font-medium">Recent Orders</strong>
             <div className="mt-3">
-                {' '}
                 {data.length == 0 ? (
                     <input type="file" onChange={handleFileUpload} />
                 ) : (
-                    <table className="w-full text-gray-700 ">
+                    <table className="w-full text-gray-700">
                         <thead>
                             <tr>
-                                <td>ID</td>
-                                <td>Product ID</td>
-                                <td>Customer Name</td>
-                                <td>Order Date</td>
-                                <td>Order Total</td>
-                                <td>Shipping Address</td>
-                                <td>Order Status</td>
+                                {data[0].slice(1).map((head, idx) => (
+                                    <td key={idx}>{head}</td>
+                                ))}
                             </tr>
                         </thead>
                         <tbody>
-                            {dummyData.map((dt, idx) => (
-                                <tr key={idx}>
-                                    <td>#{dt.id}</td>
-                                    <td>{dt.product_id}</td>
-                                    <td>{dt.customer_name}</td>
-                                    <td>{dt.order_date}</td>
-                                    <td>{dt.order_total}</td>
-                                    <td>{dt.shipment_address}</td>
-                                    <td>{dt.current_order_status}</td>
+                            {data.slice(1).map((dt, key) => (
+                                <tr key={key} className="hover:bg-neutral-50">
+                                    {dt.slice(1).map((row, idx) => (
+                                        <td key={idx}>{row}</td>
+                                    ))}
                                 </tr>
                             ))}
                         </tbody>
