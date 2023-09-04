@@ -13,6 +13,9 @@ export default function Sidebar() {
                 <FcBullish fontSize={32} />
                 <span className="text-neutral-100 text-lg">Apply Yatırım</span>
             </div>
+            <div className="flex justify-center items-center px-1 py-3 pb-0">
+                <span className="text-neutral-100 text-lg">Firma Kodu</span>
+            </div>
             <div className="flex-1 py-8 flex flex-col gap-0.5">
                 {DASHBOARD_SIDEBAR_LINKS.map((item) => (
                     <SidebarLink key={item.key} item={item} />
