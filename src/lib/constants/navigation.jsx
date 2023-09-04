@@ -49,43 +49,43 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     {
         key: 'rasyolar',
         label: 'Rasyolar',
-        path: '/c',
+        path: '/rasyolar',
         icon: <BiLineChart />
     },
     {
         key: 'likidite-oranları',
         label: 'Likidite Oranları',
-        path: '/c',
+        path: '/likidite-oranlari',
         icon: <BiBarChart />
     },
     {
         key: 'finansal-yapi-oranlari',
         label: 'Finansal Yapı Oranları',
-        path: '/c',
+        path: '/finansal-yapi-oranlari',
         icon: <BiBarChart />
     },
     {
         key: 'devir-hizlari',
         label: 'Devir Hızları',
-        path: '/c',
+        path: '/devir-hizlari',
         icon: <BiTachometer />
     },
     {
         key: 'karlilik-oranlari',
         label: 'Karlılık Oranları',
-        path: '/c',
+        path: '/karlilik-oranlari',
         icon: <BiBarChart />
     },
     {
         key: 'nakit-akim',
         label: 'Nakit Akım',
-        path: '/c',
+        path: '/nakit-akim',
         icon: <HiOutlineAnnotation />
     },
     {
-        key: 'messages',
+        key: 'sektor-verileri',
         label: 'Sektör Verileri',
-        path: '/c',
+        path: '/sektor-verileri',
         icon: <HiOutlineAnnotation />
     }
 ]
