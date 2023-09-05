@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import ExcelTable from '../components/ExcelTable'
+import LiquidTable from '../components/LiquidTable'
 import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
 import { motion } from 'framer-motion'
-export default function Balance() {
-    const { summary_balance_sheet } = useSelector((state) => state.dataReducer)
-    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == 'bilanco')?.label + ' ' + 'Analizi'
+
+export default function RevolutionSpeed() {
+    const { revolution_speeds } = useSelector((state) => state.dataReducer)
+    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == 'devir-hizlari')?.label
 
     return (
         <motion.div
@@ -14,7 +15,7 @@ export default function Balance() {
             className="flex gap-4 flex-col"
         >
             <div className="flex flex-row gap-4 w-full">
-                <ExcelTable table_sheet={summary_balance_sheet} title={title} />
+                <LiquidTable table_sheet={revolution_speeds} title={title} />
             </div>
         </motion.div>
     )

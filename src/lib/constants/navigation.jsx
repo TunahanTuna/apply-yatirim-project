@@ -48,12 +48,12 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     },
     {
         key: 'rasyolar',
-        label: 'Rasyolar',
+        label: 'Genel Rasyolar',
         path: '/rasyolar',
         icon: <BiLineChart />
     },
     {
-        key: 'likidite-oranları',
+        key: 'likidite-oranlari',
         label: 'Likidite Oranları',
         path: '/likidite-oranlari',
         icon: <BiBarChart />

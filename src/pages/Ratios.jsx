@@ -5,9 +5,7 @@ import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
 import { motion } from 'framer-motion'
 
 export default function Ratios() {
-    const { summary_balance_sheet, summary_ratios, summary_income_statement } = useSelector(
-        (state) => state.dataReducer
-    )
+    const { summary_ratios } = useSelector((state) => state.dataReducer)
     const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == 'rasyolar')?.label
     return (
         <motion.div
