@@ -21,7 +21,11 @@ export default function Sidebar() {
                     <SidebarLink key={item.key} item={item} />
                 ))}
             </div>
-            <div>bottom</div>
+            <div>
+                <a href="/" onClick={() => localStorage.removeItem('persist:root')}>
+                    Clear Data
+                </a>
+            </div>
         </div>
     )
 }
