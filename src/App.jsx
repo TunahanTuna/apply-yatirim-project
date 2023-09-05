@@ -4,6 +4,8 @@ import Layout from './components/shared/layout'
 import Dashboard from './pages/Dashboard'
 import Balance from './pages/Balance'
 import IncomeStatement from './pages/IncomeStatement'
+import Ratios from './pages/Ratios'
+
 function App() {
     return (
         <Routes>
@@ -11,6 +13,8 @@ function App() {
                 <Route index element={<Dashboard />} />
                 <Route path="bilanco" element={<Balance />} />
                 <Route path="gelir-tablosu" element={<IncomeStatement />} />
+                <Route path="rasyolar" element={<Ratios />} />
+
                 <Route path="*" element={<Dashboard />} />
             </Route>
         </Routes>
