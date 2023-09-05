@@ -14,9 +14,7 @@ export default function Dashboard() {
                 <TransactionChart />
                 <BuyerProfilePieChart />
             </div>
-            <div className="flex flex-row gap-4 w-full">
-                <ExcelTable />
-            </div>
+            <div className="flex flex-row gap-4 w-full">{/*  <ExcelTable /> */}</div>
         </div>
     )
 }

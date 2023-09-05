@@ -37,13 +37,13 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     {
         key: 'bilanco',
         label: 'Bilanço',
-        path: '/v',
+        path: '/bilanco',
         icon: <HiOutlineDocumentText />
     },
     {
         key: 'gelir-tablosu',
         label: 'Gelir Tablosu',
-        path: '/c',
+        path: '/gelir-tablosu',
         icon: <BiMoney />
     },
     {

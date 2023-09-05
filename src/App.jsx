@@ -2,13 +2,15 @@ import React from 'react'
 import { Route, Router, Routes } from 'react-router-dom'
 import Layout from './components/shared/layout'
 import Dashboard from './pages/Dashboard'
-import Oranlar from './pages/Oranlar'
+import Balance from './pages/Balance'
+import IncomeStatement from './pages/IncomeStatement'
 function App() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Dashboard />} />
-                <Route path="oranlar" element={<Oranlar />} />
+                <Route path="bilanco" element={<Balance />} />
+                <Route path="gelir-tablosu" element={<IncomeStatement />} />
                 <Route path="*" element={<Dashboard />} />
             </Route>
         </Routes>
