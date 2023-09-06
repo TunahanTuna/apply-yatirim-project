@@ -31,7 +31,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     {
         key: 'finansal-tablolar',
         label: 'Finansal Tablolar',
-        path: '/b',
+        path: '/finansal-tablolar',
         icon: <BiBarChartAlt2 />
     },
     {

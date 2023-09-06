@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import LiquidTable from '../components/LiquidTable'
 import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
+import { texts } from '../lib/constants/constants'
 import { motion } from 'framer-motion'
+import RatioChart from '../components/RatioChart'
 
 export default function LiquidRatios() {
     const { liquid_ratios } = useSelector((state) => state.dataReducer)
     const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == 'likidite-oranlari')?.label
-
     return (
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}
@@ -16,6 +17,29 @@ export default function LiquidRatios() {
         >
             <div className="flex flex-row gap-4 w-full">
                 <LiquidTable table_sheet={liquid_ratios} title={title} />
+            </div>
+            <div className="text-black text-xl w-full flex flex-col items-center justify-center gap-4">
+                <strong className="text-3xl">{texts.charts_main_title}</strong>
+                <div className="grid grid-cols-3 h-[43rem] w-full gap-5">
+                    <div>
+                        <RatioChart data={liquid_ratios[1]} />
+                    </div>
+                    <div>
+                        <RatioChart data={liquid_ratios[2]} />
+                    </div>
+                    <div>
+                        <RatioChart data={liquid_ratios[3]} />
+                    </div>
+                    <div>
+                        <RatioChart data={liquid_ratios[4]} />
+                    </div>
+                    <div>
+                        <RatioChart data={liquid_ratios[5]} />
+                    </div>
+                    <div>
+                        <RatioChart data={liquid_ratios[6]} />
+                    </div>
+                </div>
             </div>
         </motion.div>
     )

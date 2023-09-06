@@ -13,8 +13,8 @@ export default function Layout() {
             ) : (
                 <div className="flex flex-row bg-neutral-100 h-screen w-screen overflow-hidden">
                     <Sidebar />
-                    <div className="flex-1  overflow-y-scroll">
-                        <Header />
+                    <div className="flex-1 bg-neutral-100 overflow-y-scroll">
+                        {/* <Header /> */}
                         <div className="p-4">{<Outlet />}</div>
                     </div>
                 </div>
