@@ -7,7 +7,18 @@ const initialState = {
     liquid_ratios: [],
     financial_structure_ratios: [],
     revolution_speeds: [],
-    profitability_ratios: []
+    profitability_ratios: [],
+    cash_flow_revenue: [],
+    cash_flow_gross_profit: [],
+    cash_flow_gae: [],
+    cash_flow_marketing_expenses: [],
+    cash_flow_cos: [],
+    cash_flow_ebitda: [],
+    cash_flow_cf: [],
+    cash_flow_oc: [],
+    cash_flow_financial_liability: [],
+    cash_flow_s_revolution_speeds: [],
+    test: []
 }
 export const dataSlice = createSlice({
     name: 'data',
@@ -26,8 +37,19 @@ export const dataSlice = createSlice({
             state.financial_structure_ratios = dataParser(workbook, 'finansal_yapi_oranlari_yazilim')
             state.revolution_speeds = dataParser(workbook, 'devir_hizlari_yazilim')
             state.profitability_ratios = dataParser(workbook, 'karlilik_oranlari_yazilim')
+            state.cash_flow_revenue = dataParser(workbook, 'Nakit_Akim_Hasılat')
+            state.cash_flow_gross_profit = dataParser(workbook, 'Nakit_Akim_brutkar')
+            state.cash_flow_gae = dataParser(workbook, 'Nakit_Akim_Ozet_Gyg')
+            state.cash_flow_marketing_expenses = dataParser(workbook, 'Nakit_Akim_Ozet_Pg')
+            state.cash_flow_cos = dataParser(workbook, 'Nakit_Akim_Ozet_Smm')
+            state.cash_flow_ebitda = dataParser(workbook, 'Nakit_Akim_Ozet_Ebitda')
+            state.cash_flow_cf = dataParser(workbook, 'Nakit_Akim_Ozet_Nakitakıs')
+            state.cash_flow_oc = dataParser(workbook, 'Nakit_Akim_Ozet_isletmesermaye')
+            state.cash_flow_financial_liability = dataParser(workbook, 'Nakit_Akim_Ozet_finansalyukum')
+            state.cash_flow_s_revolution_speeds = dataParser(workbook, 'Nakit_Akim_Ozet_Devirhizlari')
+            state.test = dataParser(workbook, 'EK4')
 
-            console.log('state', state.revolution_speeds)
+            console.log('state', state.test)
         }
     }
 })

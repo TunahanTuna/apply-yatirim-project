@@ -10,6 +10,7 @@ import FinancialStructureRatios from './pages/FinancialStructureRatios'
 import RevolutionSpeed from './pages/RevolutionSpeed'
 import ProfitabilityRatio from './pages/ProfitabilityRatio'
 import FinancialTables from './pages/FinancialTables'
+import CashFlow from './pages/CashFlow'
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="devir-hizlari" element={<RevolutionSpeed />} />
                 <Route path="karlilik-oranlari" element={<ProfitabilityRatio />} />
                 <Route path="finansal-tablolar" element={<FinancialTables />} />
+                <Route path="nakit-akim" element={<CashFlow />} />
 
                 <Route path="*" element={<Dashboard />} />
             </Route>
