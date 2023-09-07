@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import LiquidTable from '../components/LiquidTable'
+import { LiquidTable } from '../components/index'
 import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
 import { motion } from 'framer-motion'
+import { profitability_ratios_key } from '../lib/helpers/helperText'
 
 export default function ProfitabilityRatio() {
     const { profitability_ratios } = useSelector((state) => state.dataReducer)
-    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == 'karlilik-oranlari')?.label
+    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == profitability_ratios_key)?.label
 
     return (
         <motion.div

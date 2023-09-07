@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import LiquidTable from '../components/LiquidTable'
+import { useSelector } from 'react-redux'
+import { LiquidTable, RatioChart } from '../components/index'
 import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
 import { motion } from 'framer-motion'
-import RatioChart from '../components/RatioChart'
+import { financial_structure_ratios_key } from '../lib/helpers/helperText'
 export default function FinancialStructureRatios() {
     const [selector, setSelector] = useState(1)
     const { financial_structure_ratios } = useSelector((state) => state.dataReducer)
-    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == 'finansal-yapi-oranlari')?.label
+    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == financial_structure_ratios_key)?.label
     useEffect(() => {
         console.log(selector)
     }, [selector])

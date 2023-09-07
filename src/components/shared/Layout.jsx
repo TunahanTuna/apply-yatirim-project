@@ -1,9 +1,8 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
-import Header from './Header'
 import { useSelector } from 'react-redux'
-import TableInput from '../TableInput'
+import { TableInput } from '../index'
 export default function Layout() {
     const { summary_balance_sheet, summary_ratios } = useSelector((state) => state.dataReducer)
     return (

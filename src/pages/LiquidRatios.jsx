@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import LiquidTable from '../components/LiquidTable'
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { LiquidTable, RatioChart } from '../components/index'
 import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
 import { texts } from '../lib/constants/constants'
 import { motion } from 'framer-motion'
-import RatioChart from '../components/RatioChart'
+import { liquid_ratios_key } from '../lib/helpers/helperText'
 
 export default function LiquidRatios() {
     const { liquid_ratios } = useSelector((state) => state.dataReducer)
-    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == 'likidite-oranlari')?.label
+    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == liquid_ratios_key)?.label
     return (
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}

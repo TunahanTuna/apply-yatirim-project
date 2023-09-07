@@ -8,7 +8,7 @@ export default function LiquidTable({ table_sheet, title, setSelector }) {
     }
     return (
         <div className="bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1">
-            <strong className="items-center justify-center flex text-black font-medium text-2xl w-full">
+            <strong className="items-center justify-center flex text-indigo-950 font-bold text-2xl w-full">
                 {title && title}
             </strong>
             {table_sheet && (

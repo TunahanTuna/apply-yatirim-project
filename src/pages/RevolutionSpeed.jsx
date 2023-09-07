@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import LiquidTable from '../components/LiquidTable'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { LiquidTable, Speedometer } from '../components/index'
 import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
 import { motion } from 'framer-motion'
-import RatioChart from '../components/RatioChart'
-import Speedometer from '../components/Speedometer'
+import { revolution_speeds_key } from '../lib/helpers/helperText'
 
 export default function RevolutionSpeed() {
     const [selector, setSelector] = useState(1)
 
     const { revolution_speeds } = useSelector((state) => state.dataReducer)
-    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == 'devir-hizlari')?.label
+    const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == revolution_speeds_key)?.label
 
     return (
         <motion.div

@@ -1,31 +1,31 @@
 import React from 'react'
 import { Route, Router, Routes } from 'react-router-dom'
 import Layout from './components/shared/layout'
-import Dashboard from './pages/Dashboard'
-import Balance from './pages/Balance'
-import IncomeStatement from './pages/IncomeStatement'
-import Ratios from './pages/Ratios'
-import LiquidRatios from './pages/LiquidRatios'
-import FinancialStructureRatios from './pages/FinancialStructureRatios'
-import RevolutionSpeed from './pages/RevolutionSpeed'
-import ProfitabilityRatio from './pages/ProfitabilityRatio'
-import FinancialTables from './pages/FinancialTables'
-import CashFlow from './pages/CashFlow'
+import {
+    Dashboard,
+    Balance,
+    IncomeStatement,
+    Ratios,
+    LiquidRatios,
+    FinancialStructureRatios,
+    RevolutionSpeed,
+    ProfitabilityRatio,
+    FinancialTables,
+    CashFlow
+} from './pages/index'
+import { DASHBOARD_SIDEBAR_LINKS } from './lib/constants/navigation'
 
 function App() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index element={<Dashboard />} />
-                <Route path="bilanco" element={<Balance />} />
-                <Route path="gelir-tablosu" element={<IncomeStatement />} />
-                <Route path="rasyolar" element={<Ratios />} />
-                <Route path="likidite-oranlari" element={<LiquidRatios />} />
-                <Route path="finansal-yapi-oranlari" element={<FinancialStructureRatios />} />
-                <Route path="devir-hizlari" element={<RevolutionSpeed />} />
-                <Route path="karlilik-oranlari" element={<ProfitabilityRatio />} />
-                <Route path="finansal-tablolar" element={<FinancialTables />} />
-                <Route path="nakit-akim" element={<CashFlow />} />
+                {DASHBOARD_SIDEBAR_LINKS.map((routes, key) =>
+                    routes.key == 'bilanco' ? (
+                        <Route index key={key} path={routes.path} element={routes.component} />
+                    ) : (
+                        <Route key={key} path={routes.path} element={routes.component} />
+                    )
+                )}
 
                 <Route path="*" element={<Dashboard />} />
             </Route>

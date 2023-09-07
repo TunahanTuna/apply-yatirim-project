@@ -1,10 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import DashboardStatsGrid from '../components/DashboardStatsGrid'
-import TransactionChart from '../components/TransactionChart'
-import BuyerProfilePieChart from '../components/BuyerProfileChart'
-import ExcelTable from '../components/ExcelTable'
-import SideCharts from '../components/SideCharts'
 import { motion } from 'framer-motion'
 
 export default function Dashboard() {

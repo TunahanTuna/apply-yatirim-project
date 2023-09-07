@@ -1,6 +1,7 @@
 import React from 'react'
 import { FcBullish } from 'react-icons/fc'
 import { DASHBOARD_SIDEBAR_LINKS } from '../../lib/constants/navigation'
+import { texts } from '../../lib/constants/constants'
 import { Link, useLocation } from 'react-router-dom'
 import classNames from 'classnames'
 
@@ -23,7 +24,7 @@ export default function Sidebar() {
             </div>
             <div>
                 <a href="/" onClick={() => localStorage.removeItem('persist:root')}>
-                    Clear Data
+                    {texts.clear_data_text}
                 </a>
             </div>
         </div>
