@@ -7,6 +7,7 @@ import SpeedometerDashboard from '../components/dashboards/SpeedometerDashboard'
 import DonutChart from '../components/dashboards/DonutChart'
 
 export default function Dashboard() {
+    // Değişken isimlendirmeleri düzeltilecek
     const { ek } = useSelector((state) => state.dataReducer)
     const table_title = ek && ek?.find((data) => data[0] == 200000)
     const totalAssets = ek && ek.find((data) => data[0] == 200001)
@@ -18,7 +19,9 @@ export default function Dashboard() {
     const totalReveneu = ek && ek?.find((data) => data[0] == 200004)
     const asitTest = ek && ek?.find((data) => data[0] == 200020)
     const brutKar = ek && ek?.find((data) => data[0] == 200023)
-    const test = ek && ek?.find((data) => data[0] == 200012)
+    const toplamVarliklar = ek && ek?.find((data) => data[0] == 200012)
+    const netFinansalBorç = ek && ek?.find((data) => data[0] == 200015)
+    const FAVOKMarji = ek && ek?.find((data) => data[0] == 200022)
 
     const aktifDevir = ek && ek?.find((data) => data[0] == 30007)
     const maddiDuran = ek && ek?.find((data) => data[0] == 30005)
@@ -33,14 +36,14 @@ export default function Dashboard() {
                         <MiniBox data={totalAssets} />
                         <MiniBox data={equiityAmount} />
                     </div>
-                    <div className="flex w-1/4 ">
+                    <div className="flex flex-1">
                         <RatioChart type="dashboard" data={cariOran} />
                     </div>
                     <div className="flex flex-1 ">
                         <BarCharts data={NetIsletmeSermayesi} table_title={table_title} />
                     </div>
-                    <div className="flex ">
-                        <SpeedometerDashboard data={aktifDevir} type="dashboard" />
+                    <div className="flex flex-1 h-[20rem]">
+                        <BarCharts data={netFinansalBorç} type="dashboard" chartStyle="negative" />
                     </div>
                 </div>
                 <div className="w-full flex gap-2">
@@ -51,11 +54,11 @@ export default function Dashboard() {
                     <div className="flex flex-1  bg-blue-300">
                         <BarCharts data={totalReveneu} color="#3b82f6" />
                     </div>
-                    <div className="flex ">
+                    <div className="flex flex-1 h-[20rem]">
                         <BarCharts data={NetIsletmeSermayesi} table_title={table_title} />
                     </div>
-                    <div className="flex">
-                        <DonutChart data={test} table_title={table_title} />
+                    <div className="flex flex-1">
+                        <DonutChart data={toplamVarliklar} table_title={table_title} />
                     </div>
                 </div>
                 <div className="w-full flex gap-2">

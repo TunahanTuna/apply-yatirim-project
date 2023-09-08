@@ -4,7 +4,7 @@ export default function MiniBox({ data }) {
     const temp = data && data?.[5] && `%${parseFloat(data?.[5]) * 100}`
     const title = data && data?.[1]
     return (
-        <div className="rounded-md flex h-[10rem] flex-col gap-3 justify-center items-center w-full bg-white min-w-[20rem]">
+        <div className="rounded-md flex h-full flex-col gap-3 justify-center items-center w-full bg-white min-w-[20rem]">
             <div className="border-b-2 flex justify-center items-center border-neutral-300 w-full text-center text-xl font-bold">
                 <span>{title && title}</span>
             </div>

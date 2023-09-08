@@ -32,7 +32,7 @@ const DonutChart = ({ data }) => {
                         ))}
                     </Pie>
 
-                    <Legend verticalAlign="bottom" align="center" />
+                    <Legend verticalAlign="bottom" align="center" animationDuration={2000} />
                 </PieChart>
             </ResponsiveContainer>
         </div>

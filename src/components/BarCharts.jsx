@@ -12,7 +12,7 @@ import {
     ResponsiveContainer
 } from 'recharts'
 
-export default function BarCharts({ data, color }) {
+export default function BarCharts({ data, color, chartStyle }) {
     const temp = data && [
         {
             name: '2019',
@@ -30,6 +30,9 @@ export default function BarCharts({ data, color }) {
             color: '#4f46e5'
         }
     ]
+    const maxValue = Math.max(...temp.map((item) => item.data)) * 1.5
+    const minValue = chartStyle == 'negative' ? Math.min(...temp.map((item) => item.data)) * 1.2 : null
+
     return (
         <div className="flex flex-col h-full w-full bg-white rounded-sm border  border-gray-200">
             <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>
@@ -43,13 +46,14 @@ export default function BarCharts({ data, color }) {
                             left: 20,
                             bottom: 5
                         }}
+                        syncId="barId"
                     >
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
-                        <YAxis angle={-45} textAnchor="end" />
+                        <YAxis angle={-45} textAnchor="end" domain={[minValue ? minValue : 0, maxValue]} />
                         <Tooltip />
                         <ReferenceLine y={0} stroke="#000" />
-                        <Bar dataKey="data" fill={color ? color : '#0ea5e9'} barSize={40} />
+                        <Bar dataKey="data" fill={color ? color : '#0ea5e9'} barSize={40} animationDuration={2000} />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
