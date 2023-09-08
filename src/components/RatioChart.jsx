@@ -57,22 +57,38 @@ const dummydata = [
     }
 ]
 
-export default function FinancialTables({ data }) {
+export default function FinancialTables({ data, type }) {
     console.log('data', data)
-    const temp = data && [
-        {
-            name: '2019',
-            data: data?.[2]
-        },
-        {
-            name: '2020',
-            data: data[3]
-        },
-        {
-            name: '2021',
-            data: data[4]
-        }
-    ]
+    const temp =
+        data && type != 'dashboard'
+            ? [
+                  {
+                      name: '2019',
+                      data: data?.[2]
+                  },
+                  {
+                      name: '2020',
+                      data: data[3]
+                  },
+                  {
+                      name: '2021',
+                      data: data[4]
+                  }
+              ]
+            : [
+                  {
+                      name: '2019',
+                      data: data?.[2]
+                  },
+                  {
+                      name: '2020',
+                      data: data[4]
+                  },
+                  {
+                      name: '2021',
+                      data: data[6]
+                  }
+              ]
     return (
         <div className="gap-2 flex flex-col h-full w-full bg-white p-4 rounded-sm border border-gray-200">
             <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>

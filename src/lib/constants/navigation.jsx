@@ -31,7 +31,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     },
     {
         key: 'ozet-rapor',
-        label: 'Özet Rapor',
+        label: 'Kokpit: 2',
         path: '/ozet-rapor',
         icon: <HiOutlinePresentationChartLine />,
         component: <Dashboard />
