@@ -1,19 +1,43 @@
 import React, { PureComponent } from 'react'
-import {
-    BarChart,
-    Bar,
-    Cell,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend,
-    ReferenceLine,
-    ResponsiveContainer
-} from 'recharts'
+// import {
+//     BarChart,
+//     Bar,
+//     Cell,
+//     XAxis,
+//     YAxis,
+//     CartesianGrid,
+//     Tooltip,
+//     Legend,
+//     ReferenceLine,
+//     ResponsiveContainer
+// } from 'recharts'
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
+import { Bar } from 'react-chartjs-2'
 
-export default function BarCharts({ data, color, chartStyle }) {
-    const temp = data && [
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip)
+const options = {
+    scales: {
+        y: {
+            type: 'linear', // Doğru ölçek türünü kullanın
+            beginAtZero: true
+        }
+    }
+}
+export default function BarCharts({ data, color, chartStyle, table_title }) {
+    const temp = data && [data[2], data[4], data[6]]
+
+    const chartData = {
+        labels: table_title ? [table_title[2], table_title[4], table_title[6]] : [2019, 2020, 2021],
+        datasets: [
+            {
+                label: 'Veri',
+                data: temp,
+                backgroundColor: ['#60a5fa', '#2563eb', '#1e40af'],
+                barThickness: 50
+            }
+        ]
+    }
+    const temp1 = data && [
         {
             name: '2019',
             data: data?.[2],
@@ -34,28 +58,10 @@ export default function BarCharts({ data, color, chartStyle }) {
     const minValue = chartStyle == 'negative' ? Math.min(...temp.map((item) => item.data)) * 1.2 : null
 
     return (
-        <div className="flex flex-col h-full w-full bg-white rounded-sm border  border-gray-200">
+        <div className="flex flex-col h-full w-full bg-sky-50 rounded-sm border  border-gray-200">
             <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>
             <div className="flex justify-center items-center w-full h-full">
-                <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                        data={temp}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5
-                        }}
-                        syncId="barId"
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis angle={-45} textAnchor="end" domain={[minValue ? minValue : 0, maxValue]} />
-                        <Tooltip />
-                        <ReferenceLine y={0} stroke="#000" />
-                        <Bar dataKey="data" fill={color ? color : '#0ea5e9'} barSize={40} animationDuration={2000} />
-                    </BarChart>
-                </ResponsiveContainer>
+                <Bar data={chartData} options={options} />
             </div>
         </div>
     )

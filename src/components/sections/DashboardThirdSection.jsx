@@ -2,6 +2,7 @@ import React from 'react'
 import { RatioChart } from '..'
 import SpeedometerDashboard from '../dashboards/SpeedometerDashboard'
 import DonutChart from '../dashboards/DonutChart'
+import DashboardRatioChart from '../dashboards/DashboardRatioChart'
 
 export default function DashboardThirdSection({ data }) {
     const { brutKar, asitTest, maddiDuran, aktifDevir } = data
@@ -11,12 +12,12 @@ export default function DashboardThirdSection({ data }) {
                 <DonutChart data={brutKar && brutKar} />
             </div>
             <div className="flex flex-1 flex-col gap-1">
-                <RatioChart data={asitTest && asitTest} type="dashboard" />
+                <DashboardRatioChart data={asitTest && asitTest} type="dashboard" />
             </div>
             <div className="flex flex-1  bg-blue-300">
                 <SpeedometerDashboard data={maddiDuran && maddiDuran} type="dashboard" />
             </div>
-            <div className="flex ">
+            <div className="flex flex-1">
                 <SpeedometerDashboard data={aktifDevir && aktifDevir} type="dashboard" />
             </div>
         </div>

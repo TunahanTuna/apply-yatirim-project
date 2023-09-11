@@ -20,11 +20,20 @@ export default function Dashboard() {
     const toplamVarliklar = ek && ek?.find((data) => data[0] == 200012)
     const netFinansalBorç = ek && ek?.find((data) => data[0] == 200015)
     const FAVOKMarji = ek && ek?.find((data) => data[0] == 200022)
+    const FAVOK = ek && ek?.find((data) => data[0] == 200008)
 
     const aktifDevir = ek && ek?.find((data) => data[0] == 30007)
     const maddiDuran = ek && ek?.find((data) => data[0] == 30005)
 
-    const firstSection = { table_title, totalAssets, equiityAmount, cariOran, NetIsletmeSermayesi, netFinansalBorç }
+    const firstSection = {
+        table_title,
+        totalAssets,
+        equiityAmount,
+        cariOran,
+        NetIsletmeSermayesi,
+        netFinansalBorç,
+        FAVOK
+    }
     const secondSection = {
         totalRevenue,
         TLRevenue,
@@ -44,7 +53,11 @@ export default function Dashboard() {
 
     return (
         ek && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-4 flex-col">
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex gap-4 flex-col w-full h-full items-center justify-center"
+            >
                 <div className="w-full flex">
                     <DashboardSimpleSection data={firstSection} />
                 </div>

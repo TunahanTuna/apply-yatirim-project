@@ -65,8 +65,22 @@ export default function FinancialTables({ data, type }) {
                         }}
                     >
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis angle={-40} textAnchor="end" domain={[minValue < 0 ? minValue : 0, maxValue]} />
+                        <XAxis
+                            dataKey="name"
+                            tick={{
+                                fontSize: 12 // Font büyüklüğünü ayarlayın
+                                // Sayıların rengini ayarlayın
+                            }}
+                        />
+                        <YAxis
+                            tickFormatter={(value) => value.toFixed(2)}
+                            tick={{
+                                fontSize: 12 // Font büyüklüğünü ayarlayın
+                                // Sayıların rengini ayarlayın
+                            }}
+                            textAnchor="end"
+                            domain={[minValue < 0 ? minValue : 0, maxValue]}
+                        />
                         <Tooltip />
                         <Line
                             type="monotone"

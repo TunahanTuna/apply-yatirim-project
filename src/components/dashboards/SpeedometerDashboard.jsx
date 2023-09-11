@@ -3,11 +3,12 @@ import ReactSpeedometer from 'react-d3-speedometer'
 
 export default function SpeedometerDashboard({ data }) {
     return (
-        <div className="gap-2 flex flex-col h-full w-full bg-white p-2 rounded-sm border border-gray-200">
+        <div className="gap-2 flex flex-col h-full w-full bg-sky-50 p-2 rounded-sm border border-gray-200">
             <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
-            <div>
+            <div className="h-full w-full flex items-center justify-center">
                 <ReactSpeedometer
-                    width={500}
+                    width={350}
+                    height={200}
                     maxValue={10}
                     value={parseFloat(data[6])}
                     needleColor="#172554"
