@@ -66,7 +66,7 @@ export default function FinancialTables({ data, type }) {
                     >
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
-                        <YAxis angle={-40} textAnchor="end" domain={[0, maxValue]} />
+                        <YAxis angle={-40} textAnchor="end" domain={[minValue < 0 ? minValue : 0, maxValue]} />
                         <Tooltip />
                         <Line
                             type="monotone"

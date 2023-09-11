@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux'
-import MiniBox from '../components/dashboards/MiniBox'
-import { BarCharts, RatioChart, Speedometer } from '../components'
-import SpeedometerDashboard from '../components/dashboards/SpeedometerDashboard'
-import DonutChart from '../components/dashboards/DonutChart'
+
+import { DashboardSimpleSection, DashboardSecondSection, DashboardThirdSection } from '../components/sections'
 
 export default function Dashboard() {
     // Değişken isimlendirmeleri düzeltilecek
@@ -26,54 +24,35 @@ export default function Dashboard() {
     const aktifDevir = ek && ek?.find((data) => data[0] == 30007)
     const maddiDuran = ek && ek?.find((data) => data[0] == 30005)
 
+    const firstSection = { table_title, totalAssets, equiityAmount, cariOran, NetIsletmeSermayesi, netFinansalBorç }
+    const secondSection = {
+        totalRevenue,
+        TLRevenue,
+        totalReveneu,
+        cariOran,
+        NetIsletmeSermayesi,
+        table_title,
+        toplamVarliklar
+    }
+    const thirdSection = {
+        brutKar,
+        asitTest,
+        maddiDuran,
+        aktifDevir
+    }
     useEffect(() => {}, [ek])
 
     return (
         ek && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-4 flex-col">
-                <div className="w-full flex gap-2">
-                    <div className="flex flex-col gap-1">
-                        <MiniBox data={totalAssets} />
-                        <MiniBox data={equiityAmount} />
-                    </div>
-                    <div className="flex flex-1">
-                        <RatioChart type="dashboard" data={cariOran} />
-                    </div>
-                    <div className="flex flex-1 ">
-                        <BarCharts data={NetIsletmeSermayesi} table_title={table_title} />
-                    </div>
-                    <div className="flex flex-1 h-[20rem]">
-                        <BarCharts data={netFinansalBorç} type="dashboard" chartStyle="negative" />
-                    </div>
+                <div className="w-full flex">
+                    <DashboardSimpleSection data={firstSection} />
                 </div>
                 <div className="w-full flex gap-2">
-                    <div className="flex flex-col gap-1">
-                        <MiniBox data={totalRevenue} />
-                        <MiniBox data={TLRevenue} />
-                    </div>
-                    <div className="flex flex-1  bg-blue-300">
-                        <BarCharts data={totalReveneu} color="#3b82f6" />
-                    </div>
-                    <div className="flex flex-1 h-[20rem]">
-                        <BarCharts data={NetIsletmeSermayesi} table_title={table_title} />
-                    </div>
-                    <div className="flex flex-1">
-                        <DonutChart data={toplamVarliklar} table_title={table_title} />
-                    </div>
+                    <DashboardSecondSection data={secondSection} />
                 </div>
                 <div className="w-full flex gap-2">
-                    <div className="flex flex-1 flex-col gap-1">
-                        <DonutChart data={brutKar} />
-                    </div>
-                    <div className="flex flex-1 flex-col gap-1">
-                        <RatioChart data={asitTest} type="dashboard" />
-                    </div>
-                    <div className="flex flex-1  bg-blue-300">
-                        <SpeedometerDashboard data={maddiDuran} type="dashboard" />
-                    </div>
-                    <div className="flex ">
-                        <SpeedometerDashboard data={aktifDevir} type="dashboard" />
-                    </div>
+                    <DashboardThirdSection data={thirdSection} />
                 </div>
             </motion.div>
         )
