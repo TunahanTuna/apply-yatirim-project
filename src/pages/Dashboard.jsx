@@ -26,13 +26,12 @@ export default function Dashboard() {
     const maddiDuran = ek && ek?.find((data) => data[0] == 30005)
 
     const firstSection = {
-        table_title,
-        totalAssets,
-        equiityAmount,
-        cariOran,
-        NetIsletmeSermayesi,
-        netFinansalBorç,
-        FAVOK
+        title: table_title,
+        miniBoxFirst: totalAssets,
+        miniBoxSecond: equiityAmount,
+        ratioChart: cariOran,
+        barChartFirst: FAVOK,
+        barChartSecond: netFinansalBorç
     }
     const secondSection = {
         totalRevenue,

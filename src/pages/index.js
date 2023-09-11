@@ -8,6 +8,8 @@ import LiquidRatios from './LiquidRatios'
 import ProfitabilityRatio from './ProfitabilityRatio'
 import Ratios from './Ratios'
 import RevolutionSpeed from './RevolutionSpeed'
+import SecondDashboard from './SecondDashboard'
+import ThirdDashboard from './ThirdDashboard'
 
 export {
     Balance,
@@ -19,5 +21,7 @@ export {
     LiquidRatios,
     ProfitabilityRatio,
     Ratios,
-    RevolutionSpeed
+    RevolutionSpeed,
+    SecondDashboard,
+    ThirdDashboard
 }

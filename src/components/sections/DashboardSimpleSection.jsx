@@ -5,22 +5,22 @@ import { BarCharts, RatioChart } from '../index'
 import DashboardRatioChart from '../dashboards/DashboardRatioChart'
 
 export default function DashboardSimpleSection({ data }) {
-    const { table_title, totalAssets, equiityAmount, cariOran, NetIsletmeSermayesi, netFinansalBorç, FAVOK } = data
+    const { title, miniBoxFirst, miniBoxSecond, ratioChart, barChartFirst, barChartSecond } = data && data
 
     return (
         <div className="w-full flex gap-2">
             <div className="flex flex-1 flex-col gap-1">
-                <MiniBox data={totalAssets && totalAssets} />
-                <MiniBox data={equiityAmount && equiityAmount} />
+                <MiniBox data={miniBoxFirst && miniBoxFirst} />
+                <MiniBox data={miniBoxSecond && miniBoxSecond} />
             </div>
             <div className="flex flex-1 ">
-                <DashboardRatioChart type="dashboard" data={cariOran && cariOran} />
+                <DashboardRatioChart type="dashboard" data={ratioChart && ratioChart} />
             </div>
             <div className="flex flex-1">
-                <BarCharts data={FAVOK && FAVOK} table_title={table_title && table_title} />
+                <BarCharts data={barChartFirst && barChartFirst} table_title={title && title} />
             </div>
             <div className="flex flex-1">
-                <BarCharts data={netFinansalBorç && netFinansalBorç} type="dashboard" chartStyle="negative" />
+                <BarCharts data={barChartSecond && barChartSecond} type="dashboard" chartStyle="negative" />
             </div>
         </div>
     )

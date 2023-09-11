@@ -25,7 +25,7 @@ const options = {
 }
 export default function BarCharts({ data, color, chartStyle, table_title }) {
     const temp = data && [data[2], data[4], data[6]]
-
+    console.log('temp', temp)
     const chartData = {
         labels: table_title ? [table_title[2], table_title[4], table_title[6]] : [2019, 2020, 2021],
         datasets: [
@@ -54,8 +54,8 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
             color: '#4f46e5'
         }
     ]
-    const maxValue = Math.max(...temp.map((item) => item.data)) * 1.5
-    const minValue = chartStyle == 'negative' ? Math.min(...temp.map((item) => item.data)) * 1.2 : null
+    // const maxValue = Math.max(...temp.map((item) => item.data)) * 1.5
+    // const minValue = chartStyle == 'negative' ? Math.min(...temp.map((item) => item.data)) * 1.2 : null
 
     return (
         <div className="flex flex-col h-full w-full bg-sky-50 rounded-sm border  border-gray-200">

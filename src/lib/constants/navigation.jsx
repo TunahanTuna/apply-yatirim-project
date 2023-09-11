@@ -18,7 +18,9 @@ import {
     RevolutionSpeed,
     ProfitabilityRatio,
     FinancialTables,
-    CashFlow
+    CashFlow,
+    SecondDashboard,
+    ThirdDashboard
 } from '../../pages'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
@@ -30,11 +32,18 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         component: <Dashboard />
     },
     {
-        key: 'ozet-rapor',
+        key: 'kokpit-2',
         label: 'Kokpit: 2',
-        path: '/ozet-rapor',
+        path: '/kokpit-2',
         icon: <HiOutlinePresentationChartLine />,
-        component: <Dashboard />
+        component: <SecondDashboard />
+    },
+    {
+        key: 'kokpit-uc',
+        label: 'Kokpit: 3',
+        path: '/kokpit-uc',
+        icon: <BiCandles />,
+        component: <ThirdDashboard />
     },
     {
         key: 'sirket-bilgileri',

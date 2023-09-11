@@ -10,7 +10,7 @@ const DonutChart = ({ data }) => {
     console.log('veri', sonIndexVeri)
     return (
         <div className=" justify-center items-center flex flex-col h-full w-full bg-sky-50  rounded-sm border border-gray-200">
-            <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
+            <strong className="w-full flex items-center justify-center text-center">{data && data?.[1]}</strong>
             <ResponsiveContainer width="100%" height="80%">
                 <PieChart>
                     <Pie
