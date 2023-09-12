@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux'
 import { ExcelTable } from '../../components'
 export default function CashFlowCos() {
     const { cash_flow_cos } = useSelector((state) => state.dataReducer)
+    const temp = cash_flow_cos.map((dt) => dt.map((data) => (!isNaN(parseFloat(data)) ? parseFloat(data) : data)))
+
     return (
         <div>
             <motion.div
@@ -13,7 +15,7 @@ export default function CashFlowCos() {
                 className="flex gap-4 flex-col"
             >
                 <div className="flex flex-row gap-4 w-full">
-                    <ExcelTable table_sheet={cash_flow_cos} />
+                    <ExcelTable table_sheet={temp} />
                 </div>
             </motion.div>
         </div>

@@ -19,7 +19,13 @@ export default function DashboardSimpleSection({ data }) {
                         setOpen(true)
                     }}
                 />
-                <MiniBox data={miniBoxSecond && miniBoxSecond} />
+                <MiniBox
+                    data={miniBoxSecond && miniBoxSecond}
+                    onClick={() => {
+                        setModal(miniBoxSecond)
+                        setOpen(true)
+                    }}
+                />
             </div>
             <div className="flex flex-1 ">
                 <DashboardRatioChart type="dashboard" data={ratioChart && ratioChart} table_title={title && title} />
@@ -30,7 +36,7 @@ export default function DashboardSimpleSection({ data }) {
             <div className="flex flex-1">
                 <BarCharts data={barChartSecond && barChartSecond} type="dashboard" chartStyle="negative" />
             </div>
-            <MiniboxPopup visible={open} modal={modal} />
+            <MiniboxPopup visible={open} modal={modal} onClick={() => setOpen(false)} />
         </div>
     )
 }

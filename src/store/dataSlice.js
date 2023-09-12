@@ -65,3 +65,12 @@ function dataParser(workbook, sheetName) {
         })
     })
 }
+function cashFlowParser(workbook, sheetName) {
+    const worksheet = workbook.Sheets[sheetName]
+
+    return XLSX.utils.sheet_to_json(worksheet, { header: 1 }).map((dt) => {
+        return dt.map((d) => {
+            return typeof d != 'string' && Number.isInteger(d) != true ? d.toFixed(2) : d
+        })
+    })
+}
