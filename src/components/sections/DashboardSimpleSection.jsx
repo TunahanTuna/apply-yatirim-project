@@ -14,7 +14,7 @@ export default function DashboardSimpleSection({ data }) {
                 <MiniBox data={miniBoxSecond && miniBoxSecond} />
             </div>
             <div className="flex flex-1 ">
-                <DashboardRatioChart type="dashboard" data={ratioChart && ratioChart} />
+                <DashboardRatioChart type="dashboard" data={ratioChart && ratioChart} table_title={title && title} />
             </div>
             <div className="flex flex-1">
                 <BarCharts data={barChartFirst && barChartFirst} table_title={title && title} />

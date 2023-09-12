@@ -14,7 +14,7 @@ export default function Layout() {
                     <Sidebar />
                     <div className="flex-1 bg-neutral-100 overflow-y-scroll">
                         {/* <Header /> */}
-                        <div className="p-4">{<Outlet />}</div>
+                        <div className="p-4 ">{<Outlet />}</div>
                     </div>
                 </div>
             )}

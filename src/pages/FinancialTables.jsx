@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { VictoryPie, VictoryLabel } from 'victory'
+import MiniboxPopup from '../components/popups/MiniboxPopup'
 
 const data = [
     { x: 'A', y: 30 },
@@ -8,9 +9,12 @@ const data = [
 ]
 
 const DoughnutChart = () => {
+    const [showMyModal, setShowMyModal] = useState(false)
+
+    const handleOnClose = (param) => setShowMyModal(param)
     return (
         <div>
-            <h2>Doughnut Chart</h2>
+            <h2 onClick={() => setShowMyModal(true)}> Doughnut Chart</h2>
             <VictoryPie
                 data={data}
                 innerRadius={75}
@@ -26,6 +30,7 @@ const DoughnutChart = () => {
                 text="Doughnut Chart" // Başlık ekleyin
                 style={{ fontSize: 20 }}
             />
+            <MiniboxPopup onClose={() => handleOnClose(false)} visible={showMyModal} />
         </div>
     )
 }

@@ -115,6 +115,14 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         icon: <HiOutlineAnnotation />,
         component: <CashFlow />
     },
+
+    {
+        key: 'faaliyet-raporlari',
+        label: 'Faaliyet Raporları',
+        path: '/faaliyet-raporlari',
+        icon: <HiOutlineAnnotation />,
+        component: <Dashboard />
+    },
     {
         key: 'sektor-verileri',
         label: 'Sektör Verileri',

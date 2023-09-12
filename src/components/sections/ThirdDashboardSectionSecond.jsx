@@ -15,7 +15,7 @@ export default function ThirdDashboardSectionSecond({ data }) {
                 <DonutChart data={donutChartSecond && donutChartSecond} color="#3b82f6" />
             </div>
             <div className="flex flex-1  bg-blue-300">
-                <DashboardBarChart data={ratioChartFirst && ratioChartFirst} color="#3b82f6" />
+                <DashboardBarChart data={ratioChartFirst && ratioChartFirst} table_title={title} color="#3b82f6" />
             </div>
             <div className="flex flex-1  bg-blue-300">
                 <SpeedometerDashboard data={speedometerFirst && speedometerFirst} color="#3b82f6" />

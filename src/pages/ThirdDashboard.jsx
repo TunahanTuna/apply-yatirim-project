@@ -22,7 +22,7 @@ export default function Dashboard() {
     const VergiOncesiKarZarar = ek && ek.find((data) => data[0] == 200027)
     const NetCalismaSermayesi = ek && ek.find((data) => data[0] == 30004)
 
-    const UzunVadeliFinansalBorclar = ek && ek.find((data) => data[0] == 200018)
+    const NakitDongusu = ek && ek.find((data) => data[0] == 200033)
     const AlacakDevir = ek && ek.find((data) => data[0] == 200030)
     const StokDevir = ek && ek.find((data) => data[0] == 200031)
     const BorcDevir = ek && ek.find((data) => data[0] == 200032)
@@ -43,7 +43,7 @@ export default function Dashboard() {
 
     const thirdSection = {
         title: table_title,
-        donutChartFirst: UzunVadeliFinansalBorclar,
+        donutChartFirst: NakitDongusu,
         BarChartFirst: AlacakDevir,
         BarChartSecond: StokDevir,
         BarChartThird: BorcDevir

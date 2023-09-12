@@ -7,7 +7,7 @@ export default function SecondDashboardThirdSection({ data }) {
     return (
         <div className="w-full flex gap-2">
             <div className="flex flex-1  bg-blue-300">
-                <BarCharts data={barChartFirst && barChartFirst} color="#3b82f6" />
+                <BarCharts data={barChartFirst && barChartFirst} table_title={title} color="#3b82f6" />
             </div>
             <div className="flex flex-1  bg-blue-300">
                 <SpeedometerDashboard data={speedometerFirst && speedometerFirst} color="#3b82f6" />
