@@ -6,8 +6,7 @@ const colors = ['#3b82f6', '#bfdbfe'] // Renkleri özelleştirin (istediğiniz k
 const DonutChart = ({ data }) => {
     const sonIndex = data[6]
     const sonIndexVeri = parseFloat(sonIndex) * 100
-    console.log('son index', sonIndex)
-    console.log('veri', sonIndexVeri)
+
     return (
         <div className=" justify-center items-center flex flex-col h-full w-full bg-sky-50  rounded-sm border border-gray-200">
             <strong className="w-full flex items-center justify-center text-center">{data && data?.[1]}</strong>

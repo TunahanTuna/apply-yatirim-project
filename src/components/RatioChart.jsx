@@ -14,7 +14,6 @@ import {
 } from 'recharts'
 
 export default function FinancialTables({ data, type }) {
-    console.log('data', data)
     const temp =
         data && type != 'dashboard'
             ? [

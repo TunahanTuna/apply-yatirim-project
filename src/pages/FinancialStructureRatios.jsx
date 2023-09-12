@@ -8,9 +8,7 @@ export default function FinancialStructureRatios() {
     const [selector, setSelector] = useState(1)
     const { financial_structure_ratios } = useSelector((state) => state.dataReducer)
     const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == financial_structure_ratios_key)?.label
-    useEffect(() => {
-        console.log(selector)
-    }, [selector])
+
     return (
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}

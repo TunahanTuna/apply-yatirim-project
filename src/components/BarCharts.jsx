@@ -25,7 +25,6 @@ const options = {
 }
 export default function BarCharts({ data, color, chartStyle, table_title }) {
     const temp = data && [data[2], data[4], data[6]]
-    console.log('temp', temp)
     const chartData = {
         labels: table_title ? [table_title[2], table_title[4], table_title[6]] : [2019, 2020, 2021],
         datasets: [

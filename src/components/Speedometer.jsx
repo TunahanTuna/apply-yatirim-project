@@ -2,7 +2,6 @@ import React from 'react'
 import ReactSpeedometer from 'react-d3-speedometer'
 
 export default function Speedometer({ data }) {
-    console.log(data)
     return (
         <div className="w-full flex items-center justify-center flex-wrap gap-10 pt-10">
             <div>

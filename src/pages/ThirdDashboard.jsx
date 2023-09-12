@@ -48,7 +48,6 @@ export default function Dashboard() {
         BarChartSecond: StokDevir,
         BarChartThird: BorcDevir
     }
-    console.log('Borc', BorcDevir)
 
     useEffect(() => {}, [ek])
 
