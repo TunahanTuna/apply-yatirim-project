@@ -5,7 +5,7 @@ import classNames from 'classnames'
 export default function CashFlowTable({ table_sheet, title, setChartData, setOpen }) {
     const handleClick = (key) => {
         setChartData && setChartData(key + 1)
-        setOpen(true)
+        setOpen && setOpen(true)
     }
     return (
         <div className="bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1">

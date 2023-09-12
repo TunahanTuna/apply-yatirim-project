@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import TabPanel from '@mui/lab/TabPanel'
 import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import { BarCharts, CashFlowTable, ExcelTable } from '../../components'
@@ -11,7 +10,6 @@ export default function CashFlowRevenue() {
         cash_flow_revenue.map((dt) => dt.map((data) => (!isNaN(parseFloat(data)) ? parseFloat(data) : data)))
     const title = temp && temp?.[0] && temp[0]
     const [chartData, setChartData] = useState(1)
-    const [modal, setModal] = useState([])
     const [open, setOpen] = useState(false)
     return (
         <div>

@@ -1,18 +1,11 @@
 import React, { useState } from 'react'
-import { VictoryPie, VictoryLabel } from 'victory'
-import MiniboxPopup from '../components/popups/MiniboxPopup'
+import { useSelector } from 'react-redux'
+import { json } from 'react-router-dom'
 
-const data = [
-    { x: 'A', y: 30 },
-    { x: 'B', y: 40 },
-    { x: 'C', y: 30 }
-]
-
-const DoughnutChart = () => {
-    const [showMyModal, setShowMyModal] = useState(false)
-
-    const handleOnClose = (param) => setShowMyModal(param)
-    return <div>test</div>
+const FinancialTables = () => {
+    const { base_financial_dashboard } = useSelector((state) => state.dataReducer)
+    console.log(base_financial_dashboard)
+    return <div>{JSON.stringify(base_financial_dashboard)}</div>
 }
 
-export default DoughnutChart
+export default FinancialTables

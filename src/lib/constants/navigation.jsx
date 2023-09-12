@@ -54,8 +54,8 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     },
     {
         key: 'finansal-tablolar',
-        label: 'Finansal Tablolar',
-        path: '/finansal-tablolar',
+        label: 'Temel Finansal Göstergeler',
+        path: '/temel-finansal-gostergeler',
         icon: <BiBarChartAlt2 />,
         component: <FinancialTables />
     },

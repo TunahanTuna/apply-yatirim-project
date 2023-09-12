@@ -18,7 +18,8 @@ const initialState = {
     cash_flow_oc: [],
     cash_flow_financial_liability: [],
     cash_flow_s_revolution_speeds: [],
-    ek: []
+    ek: [],
+    base_financial_dashboard: []
 }
 export const dataSlice = createSlice({
     name: 'data',
@@ -47,6 +48,8 @@ export const dataSlice = createSlice({
             state.cash_flow_oc = dataParser(workbook, 'Nakit_Akim_Ozet_isletmesermaye')
             state.cash_flow_financial_liability = dataParser(workbook, 'Nakit_Akim_Ozet_finansalyukum')
             state.cash_flow_s_revolution_speeds = dataParser(workbook, 'Nakit_Akim_Ozet_Devirhizlari')
+            state.base_financial_dashboard = dataParser(workbook, 'Temel_Finansal_Gostergeler')
+
             state.ek = dataParser(workbook, 'EK4')
 
             console.log('state', state.test)

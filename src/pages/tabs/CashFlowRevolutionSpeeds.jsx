@@ -8,7 +8,6 @@ export default function CashFlowRevolutionSpeeds() {
     const temp = cash_flow_s_revolution_speeds.map((dt) =>
         dt.map((data) => (!isNaN(parseFloat(data)) ? parseFloat(data) : data))
     )
-
     return (
         <div>
             <motion.div
