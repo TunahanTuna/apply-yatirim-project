@@ -24,9 +24,11 @@ const options = {
     }
 }
 export default function BarCharts({ data, color, chartStyle, table_title }) {
-    const temp = data && [data[2], data[4], data[6]]
+    const temp = data && [data[2], data[4], data[6], ...data.slice(8)]
     const chartData = {
-        labels: table_title ? [table_title[2], table_title[4], table_title[6]] : [2019, 2020, 2021],
+        labels: table_title
+            ? [table_title[2], table_title[4], table_title[6], ...table_title.slice(8)]
+            : [2019, 2020, 2021],
         datasets: [
             {
                 label: 'Veri',
@@ -57,7 +59,7 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
     // const minValue = chartStyle == 'negative' ? Math.min(...temp.map((item) => item.data)) * 1.2 : null
 
     return (
-        <div className="flex flex-col h-full w-full bg-sky-50 rounded-sm border  border-gray-200">
+        <div className="flex flex-col h-full w-full bg-sky-50 rounded-sm border border-gray-200">
             <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>
             <div className="flex justify-center items-center w-full h-full">
                 <Bar data={chartData} options={options} />

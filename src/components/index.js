@@ -5,5 +5,6 @@ import RatioChart from './RatioChart'
 import TableInput from './TableInput'
 import TransactionChart from './TransactionChart'
 import BarCharts from './BarCharts'
+import CashFlowTable from './CashFlowTable'
 
-export { ExcelTable, LiquidTable, Speedometer, RatioChart, TableInput, TransactionChart, BarCharts }
+export { ExcelTable, LiquidTable, Speedometer, RatioChart, TableInput, TransactionChart, BarCharts, CashFlowTable }

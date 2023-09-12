@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react'
 
 import classNames from 'classnames'
 
-export default function ExcelTable({ table_sheet, title, setChartData }) {
+export default function CashFlowTable({ table_sheet, title, setChartData, setOpen }) {
+    const handleClick = (key) => {
+        setChartData && setChartData(key + 1)
+        setOpen(true)
+    }
     return (
         <div className="bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1">
             <strong className="items-center justify-center flex text-indigo-950 font-bold text-xl w-full">
@@ -31,7 +35,7 @@ export default function ExcelTable({ table_sheet, title, setChartData }) {
                                 <tr
                                     key={key}
                                     className="hover:bg-indigo-100 bg-neutral-50 text-indigo-950 font-semibold"
-                                    onClick={setChartData && setChartData(dt[key])}
+                                    onClick={() => handleClick(key)}
                                 >
                                     {dt.slice(1).map((row, idx) => (
                                         <td
