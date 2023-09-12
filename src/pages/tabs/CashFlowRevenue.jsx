@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import { BarCharts, CashFlowTable, ExcelTable } from '../../components'
-import CashFlowReveneuPopup from '../../components/popups/CashFlowReveneuPopup'
+import CashFlowBarChartPopup from '../../components/popups/CashFlowBarChartPopup'
 export default function CashFlowRevenue() {
     const { cash_flow_revenue } = useSelector((state) => state.dataReducer)
     const temp =
@@ -22,7 +22,12 @@ export default function CashFlowRevenue() {
                     <CashFlowTable table_sheet={temp && temp} setChartData={setChartData} setOpen={setOpen} />
                 </div>
             </motion.div>
-            <CashFlowReveneuPopup visible={open} modal={temp[chartData]} onClick={() => setOpen(false)} title={title} />
+            <CashFlowBarChartPopup
+                visible={open}
+                modal={temp[chartData]}
+                onClick={() => setOpen(false)}
+                title={title}
+            />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import { CashFlowTable, ExcelTable } from '../../components'
-import CashFlowReveneuPopup from '../../components/popups/CashFlowReveneuPopup'
+import CashFlowBarChartPopup from '../../components/popups/CashFlowBarChartPopup'
 export default function CashFlowGrossProfit() {
     const { cash_flow_gross_profit } = useSelector((state) => state.dataReducer)
     const temp = cash_flow_gross_profit.map((dt) =>
@@ -23,7 +23,12 @@ export default function CashFlowGrossProfit() {
                     <CashFlowTable table_sheet={temp} setChartData={setChartData} setOpen={setOpen} />
                 </div>
             </motion.div>
-            <CashFlowReveneuPopup visible={open} modal={temp[chartData]} onClick={() => setOpen(false)} title={title} />
+            <CashFlowBarChartPopup
+                visible={open}
+                modal={temp[chartData]}
+                onClick={() => setOpen(false)}
+                title={title}
+            />
         </div>
     )
 }
