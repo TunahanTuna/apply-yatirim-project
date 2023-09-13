@@ -17,9 +17,15 @@ import { Bar } from 'react-chartjs-2'
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip)
 const options = {
     scales: {
+        x: {
+            grid: {
+                display: false // Yatay eksendeki arka plan çizgilerini gizle
+            }
+        },
         y: {
-            type: 'linear', // Doğru ölçek türünü kullanın
-            beginAtZero: true
+            grid: {
+                display: false // Dikey eksendeki arka plan çizgilerini gizle
+            }
         }
     }
 }

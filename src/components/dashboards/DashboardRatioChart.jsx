@@ -13,8 +13,17 @@ import { Line } from 'react-chartjs-2'
 export const options = {
     responsive: true,
     scales: {
+        x: {
+            grid: {
+                display: false // Yatay eksendeki arka plan çizgilerini gizle
+            }
+        },
         y: {
-            beginAtZero: true // Minimum değeri 0 olarak ayarlar
+            beginAtZero: true,
+            grid: {
+                display: false
+                // Dikey eksendeki arka plan çizgilerini gizle
+            }
         }
     }
 }
