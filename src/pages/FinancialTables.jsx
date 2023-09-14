@@ -15,7 +15,7 @@ const FinancialTables = () => {
     console.log(title)
     return (
         <div className="w-full h-screen flex p-2 ">
-            <div className="w-full flex flex-col flex-1  ">
+            <div className="w-screen flex flex-col flex-1  ">
                 <div className="w-full text-3xl text-red-800 flex items-center justify-center">
                     <strong>Temel Finansal Göstergeler</strong>
                 </div>
@@ -34,7 +34,7 @@ const FinancialTables = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-1 flex-col w-full  ">
+            <div className="flex flex-1 flex-col w-screen  ">
                 <div className="w-full text-3xl text-red-800 flex items-center justify-center">
                     <strong>Özet Faaliyet Sonuçları</strong>
                 </div>

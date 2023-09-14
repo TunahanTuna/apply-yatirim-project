@@ -4,8 +4,8 @@ import { PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer, Label } from
 const colors = ['#3b82f6', '#bfdbfe'] // Renkleri özelleştirin (istediğiniz kadar renk ekleyebilirsiniz)
 
 const DonutChart = ({ data }) => {
-    const sonIndex = data[6]
-    const sonIndexVeri = parseFloat(sonIndex) * 100
+    const sonIndex = data && data[6]
+    const sonIndexVeri = sonIndex && parseFloat(sonIndex) * 100
 
     return (
         <div className=" justify-center items-center flex flex-col h-full w-full bg-sky-50  rounded-sm border border-gray-200">

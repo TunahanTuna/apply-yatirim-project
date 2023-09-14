@@ -10,6 +10,7 @@ import Ratios from './Ratios'
 import RevolutionSpeed from './RevolutionSpeed'
 import SecondDashboard from './SecondDashboard'
 import ThirdDashboard from './ThirdDashboard'
+import CorpInfo from './CorpInfo'
 
 export {
     Balance,
@@ -23,5 +24,6 @@ export {
     Ratios,
     RevolutionSpeed,
     SecondDashboard,
-    ThirdDashboard
+    ThirdDashboard,
+    CorpInfo
 }

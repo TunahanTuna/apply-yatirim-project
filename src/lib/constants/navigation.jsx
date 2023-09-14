@@ -20,7 +20,8 @@ import {
     FinancialTables,
     CashFlow,
     SecondDashboard,
-    ThirdDashboard
+    ThirdDashboard,
+    CorpInfo
 } from '../../pages'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
@@ -50,7 +51,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         label: 'Şirket Bilgileri',
         path: '/sirket-bilgileri',
         icon: <BiCandles />,
-        component: <Dashboard />
+        component: <CorpInfo />
     },
     {
         key: 'finansal-tablolar',
@@ -120,6 +121,13 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         key: 'faaliyet-raporlari',
         label: 'Faaliyet Raporları',
         path: '/faaliyet-raporlari',
+        icon: <HiOutlineAnnotation />,
+        component: <Dashboard />
+    },
+    {
+        key: 'ulke-bazli-satis',
+        label: 'Ülke Bazlı Satış',
+        path: '/ulke-bazli-satis',
         icon: <HiOutlineAnnotation />,
         component: <Dashboard />
     },
