@@ -10,7 +10,7 @@ import {
     FinancialStructureRatios,
     RevolutionSpeed,
     ProfitabilityRatio,
-    FinancialTables,
+    FinancialIndicators,
     CashFlow
 } from './pages/index'
 import { DASHBOARD_SIDEBAR_LINKS } from './lib/constants/navigation'
@@ -23,7 +23,13 @@ function App() {
                     routes.key == 'bilanco' ? (
                         <Route index key={key} path={routes.path} element={routes.component} />
                     ) : (
-                        <Route key={key} path={routes.path} element={routes.component} />
+                        <Route key={key} path={routes.path} element={routes?.component}>
+                            {routes &&
+                                routes?.subMenus &&
+                                routes.subMenus.map((dt) => (
+                                    <Route key={dt.key} path={dt.path} element={dt.component} />
+                                ))}
+                        </Route>
                     )
                 )}
 

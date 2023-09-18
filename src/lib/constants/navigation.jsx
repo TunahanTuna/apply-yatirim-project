@@ -17,12 +17,15 @@ import {
     FinancialStructureRatios,
     RevolutionSpeed,
     ProfitabilityRatio,
-    FinancialTables,
+    FinancialIndicators,
     CashFlow,
     SecondDashboard,
     ThirdDashboard,
-    CorpInfo
+    CorpInfo,
+    FinancialTables,
+    RatioAnalysis
 } from '../../pages'
+import SalesVolumeRealized from '../../pages/activity_report/SalesVolumeRealized'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -54,61 +57,80 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         component: <CorpInfo />
     },
     {
-        key: 'finansal-tablolar',
+        key: 'temel-finansal-gostergeler',
         label: 'Temel Finansal Göstergeler',
         path: '/temel-finansal-gostergeler',
         icon: <BiBarChartAlt2 />,
-        component: <FinancialTables />
+        component: <FinancialIndicators />
     },
     {
-        key: 'bilanco',
-        label: 'Bilanço',
-        path: '/bilanco',
+        key: 'finansal-tablolar',
+        label: 'Finansal Tablolar',
+        path: '/finansal-tablolar',
         icon: <HiOutlineDocumentText />,
-        component: <Balance />
+        component: <FinancialTables />,
+        subMenus: [
+            {
+                key: 'bilanco',
+                label: 'Bilanço',
+                path: '/finansal-tablolar/bilanco',
+                icon: <HiOutlineDocumentText />,
+                component: <Balance />
+            },
+            {
+                key: 'gelir-tablosu',
+                label: 'Gelir Tablosu',
+                path: '/finansal-tablolar/gelir-tablosu',
+                icon: <BiMoney />,
+                component: <IncomeStatement />
+            },
+            {
+                key: 'rasyolar',
+                label: 'Genel Rasyolar',
+                path: '/finansal-tablolar/rasyolar',
+                icon: <BiLineChart />,
+                component: <Ratios />
+            }
+        ]
     },
     {
-        key: 'gelir-tablosu',
-        label: 'Gelir Tablosu',
-        path: '/gelir-tablosu',
-        icon: <BiMoney />,
-        component: <IncomeStatement />
-    },
-    {
-        key: 'rasyolar',
-        label: 'Genel Rasyolar',
-        path: '/rasyolar',
-        icon: <BiLineChart />,
-        component: <Ratios />
-    },
-    {
-        key: 'likidite-oranlari',
-        label: 'Likidite Oranları',
-        path: '/likidite-oranlari',
+        key: 'oran-analizi',
+        label: 'Oran Analizi',
+        path: '/oran-analizi',
         icon: <BiBarChart />,
-        component: <LiquidRatios />
+        component: <RatioAnalysis />,
+        subMenus: [
+            {
+                key: 'likidite-oranlari',
+                label: 'Likidite Oranları',
+                path: '/oran-analizi/likidite-oranlari',
+                icon: <BiBarChart />,
+                component: <LiquidRatios />
+            },
+            {
+                key: 'finansal-yapi-oranlari',
+                label: 'Finansal Yapı Oranları',
+                path: '/oran-analizi/finansal-yapi-oranlari',
+                icon: <BiBarChart />,
+                component: <FinancialStructureRatios />
+            },
+            {
+                key: 'devir-hizlari',
+                label: 'Devir Hızları',
+                path: '/oran-analizi/devir-hizlari',
+                icon: <BiTachometer />,
+                component: <RevolutionSpeed />
+            },
+            {
+                key: 'karlilik-oranlari',
+                label: 'Karlılık Oranları',
+                path: '/oran-analizi/karlilik-oranlari',
+                icon: <BiBarChart />,
+                component: <ProfitabilityRatio />
+            }
+        ]
     },
-    {
-        key: 'finansal-yapi-oranlari',
-        label: 'Finansal Yapı Oranları',
-        path: '/finansal-yapi-oranlari',
-        icon: <BiBarChart />,
-        component: <FinancialStructureRatios />
-    },
-    {
-        key: 'devir-hizlari',
-        label: 'Devir Hızları',
-        path: '/devir-hizlari',
-        icon: <BiTachometer />,
-        component: <RevolutionSpeed />
-    },
-    {
-        key: 'karlilik-oranlari',
-        label: 'Karlılık Oranları',
-        path: '/karlilik-oranlari',
-        icon: <BiBarChart />,
-        component: <ProfitabilityRatio />
-    },
+
     {
         key: 'nakit-akim',
         label: 'Nakit Akım',
@@ -130,6 +152,14 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         path: '/ulke-bazli-satis',
         icon: <HiOutlineAnnotation />,
         component: <Dashboard />
+    },
+
+    {
+        key: 'satis-adetleri-gerceklesen',
+        label: 'Gerçekleşen Satış Adetleri',
+        path: '/satis-adetleri-gerceklesen',
+        icon: <HiOutlineAnnotation />,
+        component: <SalesVolumeRealized />
     },
     {
         key: 'sektor-verileri',

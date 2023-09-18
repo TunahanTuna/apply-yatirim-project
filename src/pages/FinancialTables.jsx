@@ -1,54 +1,57 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import IncomeStatementSummaryTable from '../components/financial_tables_components/IncomeStatementSummaryTable'
-import IncomeStatementSummaryHeader from '../components/financial_tables_components/IncomeStatementSummaryHeader'
-import BalanceSummaryTable from '../components/financial_tables_components/BalanceSummaryTable'
-import BaseIndicatorSummaryTable from '../components/financial_tables_components/BaseIndicatorSummaryTable'
-import FinancialTablesChart from '../components/financial_tables_components/FinancialTableChart'
+import React from 'react'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 
-const FinancialTables = () => {
-    const { base_financial_dashboard } = useSelector((state) => state.dataReducer)
-    const title = base_financial_dashboard.find((dt) => dt[0] == 10100)
-    const NetSatislar = base_financial_dashboard.find((dt) => dt[0] == 619)
-    const BrutKar = base_financial_dashboard.find((dt) => dt[0] == 629)
+export default function FinancialTables() {
+    const { pathname } = useLocation()
 
-    console.log(title)
     return (
-        <div className="w-full h-screen flex p-2 ">
-            <div className="w-screen flex flex-col flex-1  ">
-                <div className="w-full text-3xl text-red-800 flex items-center justify-center">
-                    <strong>Temel Finansal Göstergeler</strong>
-                </div>
-                <div className="w-full p-10 justify-center items-center flex flex-col">
-                    <div className="w-full">
-                        <IncomeStatementSummaryHeader />
+        <div className="w-full ">
+            {pathname && pathname == '/finansal-tablolar' ? (
+                <div className="w-full h-1/2 text-white grid grid-cols-2  ">
+                    <div className="w-full h-64 hover:bg-sky-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900 ">
+                        <Link
+                            to={'/finansal-tablolar/bilanco'}
+                            className="w-full text-left flex flex-col items-center justify-center h-full m-4 hover:no-underline text-sky-100"
+                        >
+                            <h1 className="text-4xl text-left w-full p-2">Bilanço</h1>
+                            <p className="text-left p-2">
+                                Bilanço şirketin finansal yapısını analiz etmenizi sağlar. Firma bilançosu şirketin
+                                sahip olduğu varlıkları ve bu varlıkların elde edilmesinde kullanılan kaynakları
+                                gösterir
+                            </p>
+                        </Link>
                     </div>
-                    <div className="w-full">
-                        <IncomeStatementSummaryTable />
+                    <div className="w-full h-64 hover:bg-sky-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900">
+                        <Link
+                            to={'/finansal-tablolar/gelir-tablosu'}
+                            className="w-full text-left flex flex-col items-center justify-center h-full m-4 hover:no-underline text-sky-100"
+                        >
+                            <h1 className="text-4xl text-left w-full p-2">Gelir Tablosu</h1>
+                            <p className="text-left p-2">
+                                Bilanço şirketin finansal yapısını analiz etmenizi sağlar. Firma bilançosu şirketin
+                                sahip olduğu varlıkları ve bu varlıkların elde edilmesinde kullanılan kaynakları
+                                gösterir
+                            </p>
+                        </Link>
                     </div>
-                    <div className="pt-4 w-full">
-                        <BalanceSummaryTable />
-                    </div>
-                    <div className="pt-4 w-full">
-                        <BaseIndicatorSummaryTable />
+
+                    <div className="w-full h-64 hover:bg-sky-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900">
+                        <Link
+                            to={'/finansal-tablolar/rasyolar'}
+                            className="w-full text-left flex flex-col items-center justify-center h-full  hover:no-underline text-sky-100"
+                        >
+                            <h1 className="text-4xl text-left w-full p-2">Genel Rasyolar</h1>
+                            <p className="text-left p-2">
+                                Bilanço şirketin finansal yapısını analiz etmenizi sağlar. Firma bilançosu şirketin
+                                sahip olduğu varlıkları ve bu varlıkların elde edilmesinde kullanılan kaynakları
+                                gösterir
+                            </p>
+                        </Link>
                     </div>
                 </div>
-            </div>
-            <div className="flex flex-1 flex-col w-screen  ">
-                <div className="w-full text-3xl text-red-800 flex items-center justify-center">
-                    <strong>Özet Faaliyet Sonuçları</strong>
-                </div>
-                <div className=" grid grid-cols-2  w-full h-1/2 pt-7">
-                    <FinancialTablesChart data={NetSatislar} table_title={title} />
-                    <FinancialTablesChart data={BrutKar} table_title={title} />
-                    <FinancialTablesChart data={NetSatislar} table_title={title} />
-                    <FinancialTablesChart data={NetSatislar} table_title={title} />
-                    <FinancialTablesChart data={BrutKar} table_title={title} />
-                    <FinancialTablesChart data={NetSatislar} table_title={title} />
-                </div>
-            </div>
+            ) : null}
+
+            {<Outlet />}
         </div>
     )
 }
-
-export default FinancialTables

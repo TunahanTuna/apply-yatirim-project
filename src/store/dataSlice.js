@@ -20,7 +20,8 @@ const initialState = {
     cash_flow_s_revolution_speeds: [],
     ek: [],
     base_financial_dashboard: [],
-    corp_info: []
+    corp_info: [],
+    sales_volume_realized: []
 }
 export const dataSlice = createSlice({
     name: 'data',
@@ -33,13 +34,13 @@ export const dataSlice = createSlice({
             const excelData = XLSX.utils.sheet_to_json(worksheet, { header: 1 })
             state.summary_balance_sheet = dataParser(workbook, 'Ozet_Bilanco')
             state.summary_income_statement = dataParser(workbook, 'Ozet_Gelir_Tablosu')
-
+            // RASYOLAR
             state.summary_ratios = dataParser(workbook, 'Ozet_Oranlar')
             state.liquid_ratios = dataParser(workbook, 'likidite_oranlari_yazilim')
             state.financial_structure_ratios = dataParser(workbook, 'finansal_yapi_oranlari_yazilim')
             state.revolution_speeds = dataParser(workbook, 'devir_hizlari_yazilim')
             state.profitability_ratios = dataParser(workbook, 'karlilik_oranlari_yazilim')
-
+            // NAKİT AKIM
             state.cash_flow_revenue = dataParser(workbook, 'Nakit_Akim_Hasılat')
             state.cash_flow_gross_profit = dataParser(workbook, 'Nakit_Akim_brutkar')
             state.cash_flow_gae = dataParser(workbook, 'Nakit_Akim_Ozet_Gyg')
@@ -50,10 +51,13 @@ export const dataSlice = createSlice({
             state.cash_flow_oc = dataParser(workbook, 'Nakit_Akim_Ozet_isletmesermaye')
             state.cash_flow_financial_liability = dataParser(workbook, 'Nakit_Akim_Ozet_finansalyukum')
             state.cash_flow_s_revolution_speeds = dataParser(workbook, 'Nakit_Akim_Ozet_Devirhizlari')
-
-            state.corp_info = dataParser(workbook, 'Sirket_Tanitim_Bilgileri')
-
+            // ŞİRKET BİLGİLERİ
+            state.corp_info = dataParser(workbook, 'Sirket_tanitim_Bilgileri')
+            // TEMEL GÖSTERGELER
             state.base_financial_dashboard = dataParser(workbook, 'Temel_Finansal_Gostergeler')
+
+            // SATIŞ ADETLERİ
+            state.sales_volume_realized = dataParser(workbook, 'Satıs_adetleri_gerceklesen')
 
             state.ek = dataParser(workbook, 'EK4')
         }

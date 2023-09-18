@@ -2,7 +2,7 @@ import Balance from './Balance'
 import CashFlow from './CashFlow'
 import Dashboard from './Dashboard'
 import FinancialStructureRatios from './FinancialStructureRatios'
-import FinancialTables from './FinancialTables'
+import FinancialIndicators from './FinancialIndicators'
 import IncomeStatement from './IncomeStatement'
 import LiquidRatios from './LiquidRatios'
 import ProfitabilityRatio from './ProfitabilityRatio'
@@ -11,13 +11,15 @@ import RevolutionSpeed from './RevolutionSpeed'
 import SecondDashboard from './SecondDashboard'
 import ThirdDashboard from './ThirdDashboard'
 import CorpInfo from './CorpInfo'
+import FinancialTables from './FinancialTables'
+import RatioAnalysis from './RatioAnalysis'
 
 export {
     Balance,
     CashFlow,
     Dashboard,
     FinancialStructureRatios,
-    FinancialTables,
+    FinancialIndicators,
     IncomeStatement,
     LiquidRatios,
     ProfitabilityRatio,
@@ -25,5 +27,7 @@ export {
     RevolutionSpeed,
     SecondDashboard,
     ThirdDashboard,
-    CorpInfo
+    CorpInfo,
+    FinancialTables,
+    RatioAnalysis
 }

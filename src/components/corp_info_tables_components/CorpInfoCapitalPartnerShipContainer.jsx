@@ -17,8 +17,8 @@ export default function CorpInfoCapitalPartnerShipContainer({ corp }) {
                     <strong>{corpInfoTitle && corpInfoTitle[1]}</strong>
                 </div>
                 <div className="m-2 gap-2 flex flex-col w-full ">
-                    <span className="text-md font-semibold text-justify">{BalanceText[1]}</span>
-                    <span className="text-sm  text-justify">{BalanceText2[1]}</span>
+                    <span className="text-md font-semibold text-justify">{BalanceText && BalanceText[1]}</span>
+                    <span className="text-sm  text-justify">{BalanceText2 && BalanceText2[1]}</span>
                 </div>
 
                 <div className="w-full">
