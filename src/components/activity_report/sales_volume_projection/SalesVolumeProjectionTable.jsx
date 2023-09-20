@@ -10,7 +10,7 @@ export default function SalesVolumeProjectionTable({ main_title, sub_title, body
                 <table className="min-w-full ">
                     <thead className="w-full">
                         <tr className="text-center w-full bg-red-600 text-white">
-                            <th></th>
+                            <th colSpan={1}></th>
                             {main_title.slice(1).map((title, key) => {
                                 if (title != null)
                                     return (
@@ -22,7 +22,7 @@ export default function SalesVolumeProjectionTable({ main_title, sub_title, body
                         </tr>
                         <tr className="bg-red-300 text-red-900">
                             {sub_title.slice(1).map((title, key) => (
-                                <th className="text-center text-xs p-2" key={key}>
+                                <th className="text-center w-16 text-xs p-2" key={key}>
                                     {title}
                                 </th>
                             ))}

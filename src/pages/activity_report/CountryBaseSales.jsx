@@ -26,8 +26,8 @@ export default function CountryBaseSales() {
                 <div className="w-full text-center font-bold text-xl">
                     <h1>Ülke Bazlı Satış Grafiği</h1>
                 </div>
-                <div className="w-4/6">
-                    <CountryBaseSalesChart header={tableHeader} body={tableBody[selected]} />
+                <div className="w-5/6">
+                    <CountryBaseSalesChart header={tableHeader} body={tableBody} />
                 </div>
             </div>
         </div>

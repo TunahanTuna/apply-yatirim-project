@@ -51,7 +51,7 @@ export default function SalesVolumeProjectionBarChart({ main_title, sub_title, b
     }
 
     return (
-        <div className="w-full h-full flex items-end pt-5">
+        <div className="w-full h-full flex items-end ">
             <Bar options={options && options} data={data && data} />
         </div>
     )
