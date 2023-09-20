@@ -13,7 +13,7 @@ import {
     ResponsiveContainer
 } from 'recharts'
 
-export default function FinancialTables({ data, type }) {
+export default function FinancialTables({ data, type, setOpen, setChartData, setDescription }) {
     const temp =
         data && type != 'dashboard'
             ? [
@@ -46,8 +46,17 @@ export default function FinancialTables({ data, type }) {
               ]
     const maxValue = Math.max(...temp.map((item) => item.data)) * 1.2
     const minValue = Math.min(...temp.map((item) => item.data)) * 1.2
+
+    const HandleClick = () => {
+        setOpen && setOpen(true)
+        setChartData && setChartData()
+        setDescription && setDescription()
+    }
     return (
-        <div className="gap-2 flex flex-col h-full w-full bg-white p-4 rounded-sm border border-gray-200">
+        <div
+            className="gap-2 flex flex-col h-full w-full bg-white p-4 rounded-lg border border-gray-200"
+            onClick={HandleClick}
+        >
             <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
             <div className="w-full h-full">
                 <ResponsiveContainer width="100%" height="99%">

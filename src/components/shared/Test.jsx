@@ -8,7 +8,11 @@ export default function Test() {
     const { pathname } = useLocation()
 
     const [open, setOpen] = useState(true)
-    const [subMenuOpen, setSubMenuOpen] = useState({ 'finansal-tablolar': true, 'oran-analizi': true }) // Ayrı alt menü durumlarını saklar
+    const [subMenuOpen, setSubMenuOpen] = useState({
+        'finansal-tablolar': true,
+        'oran-analizi': true,
+        'faaliyet-raporlari': true
+    }) // Ayrı alt menü durumlarını saklar
     const toggleSubMenu = (menuKey) => {
         setSubMenuOpen({
             ...subMenuOpen,
@@ -33,10 +37,10 @@ export default function Test() {
                 </div>
                 <ul className="pt-6">
                     {DASHBOARD_SIDEBAR_LINKS.map((Menu, index) => (
-                        <>
+                        <div key={index}>
                             <Link
                                 to={Menu?.path}
-                                key={`sidebar-${Menu.key}`}
+                                key={`sidebar-${index}`}
                                 className={`${
                                     pathname === Menu.path ? 'text-white bg-sky-500' : 'text-neutral-400 '
                                 } hover:no-underline flex rounded-md p-2 cursor-pointer hover:bg-sky-400 text-white text-sm items-center gap-x-4 active:bg-sky-600 ${
@@ -52,7 +56,7 @@ export default function Test() {
                                     {Menu.subMenus.map((subMenuItem, idx) => (
                                         <Link
                                             to={subMenuItem.path}
-                                            key={`sub-${subMenuItem.key}`}
+                                            key={`sub-${idx}`}
                                             className={`${
                                                 pathname === subMenuItem.path ? 'text-white bg-sky-500' : 'text-white '
                                             } hover:no-underline flex px-5 cursor-pointer items-center rounded-md text-left p-2 text-sm text-gray-200 py-1`}
@@ -63,7 +67,7 @@ export default function Test() {
                                     ))}
                                 </ul>
                             )}
-                        </>
+                        </div>
                     ))}
                 </ul>
             </div>

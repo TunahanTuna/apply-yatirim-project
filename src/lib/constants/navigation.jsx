@@ -26,6 +26,7 @@ import {
     RatioAnalysis
 } from '../../pages'
 import SalesVolumeRealized from '../../pages/activity_report/SalesVolumeRealized'
+import SalesVolumeProjection from '../../pages/activity_report/SalesVolumeProjection'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -49,13 +50,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         icon: <BiCandles />,
         component: <ThirdDashboard />
     },
-    {
-        key: 'sirket-bilgileri',
-        label: 'Şirket Bilgileri',
-        path: '/sirket-bilgileri',
-        icon: <BiCandles />,
-        component: <CorpInfo />
-    },
+
     {
         key: 'temel-finansal-gostergeler',
         label: 'Temel Finansal Göstergeler',
@@ -90,6 +85,13 @@ export const DASHBOARD_SIDEBAR_LINKS = [
                 path: '/finansal-tablolar/rasyolar',
                 icon: <BiLineChart />,
                 component: <Ratios />
+            },
+            {
+                key: 'nakit-akim',
+                label: 'Nakit Akım',
+                path: '/finansal-tablolar/nakit-akim',
+                icon: <HiOutlineAnnotation />,
+                component: <CashFlow />
             }
         ]
     },
@@ -132,41 +134,64 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     },
 
     {
-        key: 'nakit-akim',
-        label: 'Nakit Akım',
-        path: '/nakit-akim',
-        icon: <HiOutlineAnnotation />,
-        component: <CashFlow />
-    },
-
-    {
         key: 'faaliyet-raporlari',
         label: 'Faaliyet Raporları',
         path: '/faaliyet-raporlari',
         icon: <HiOutlineAnnotation />,
-        component: <Dashboard />
-    },
-    {
-        key: 'ulke-bazli-satis',
-        label: 'Ülke Bazlı Satış',
-        path: '/ulke-bazli-satis',
-        icon: <HiOutlineAnnotation />,
-        component: <Dashboard />
-    },
+        component: null,
+        subMenus: [
+            {
+                key: 'sektor-verileri',
+                label: 'Sektör Verileri',
+                path: '/faaliyet-raporlari/sektor-verileri',
+                icon: <HiOutlineAnnotation />,
+                component: <Dashboard />
+            },
+            {
+                key: 'sirket-bilgileri',
+                label: 'Şirket Bilgileri',
+                path: '/faaliyet-raporlari/sirket-bilgileri',
+                icon: <BiCandles />,
+                component: <CorpInfo />
+            },
+            {
+                key: 'ulke-bazli-satis',
+                label: 'Ülke Bazlı Satış',
+                path: '/faaliyet-raporlari/ulke-bazli-satis',
+                icon: <HiOutlineAnnotation />,
+                component: <Dashboard />
+            },
 
-    {
-        key: 'satis-adetleri-gerceklesen',
-        label: 'Gerçekleşen Satış Adetleri',
-        path: '/satis-adetleri-gerceklesen',
-        icon: <HiOutlineAnnotation />,
-        component: <SalesVolumeRealized />
-    },
-    {
-        key: 'sektor-verileri',
-        label: 'Sektör Verileri',
-        path: '/sektor-verileri',
-        icon: <HiOutlineAnnotation />,
-        component: <Dashboard />
+            {
+                key: 'satis-adetleri-gerceklesen',
+                label: 'Gerçekleşen Satış Adetleri',
+                path: '/faaliyet-raporlari/satis-adetleri-gerceklesen',
+                icon: <HiOutlineAnnotation />,
+                component: <SalesVolumeRealized />
+            },
+            {
+                key: 'satis-adetleri-projeksiyon',
+                label: 'Satış Adetleri Projeksiyon',
+                path: '/faaliyet-raporlari/satis-adetleri-projeksiyon',
+                icon: <HiOutlineAnnotation />,
+                component: <SalesVolumeProjection />
+            },
+
+            {
+                key: 'amortisman-ve-grupici-satis',
+                label: 'Amortisman ve Grupiçi Satış',
+                path: '/faaliyet-raporlari/amortisman-ve-grupici-satis',
+                icon: <HiOutlineAnnotation />,
+                component: <Dashboard />
+            },
+            {
+                key: 'mali-analiz-raporu',
+                label: 'Mali Analiz Raporu',
+                path: '/faaliyet-raporlari/mali-analiz-raporu',
+                icon: <HiOutlineAnnotation />,
+                component: <Dashboard />
+            }
+        ]
     }
 ]
 

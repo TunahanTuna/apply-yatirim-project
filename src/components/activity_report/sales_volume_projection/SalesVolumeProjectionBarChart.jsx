@@ -27,8 +27,8 @@ const options = {
         }
     }
 }
-export default function SalesVolumeBarChart({ main_title, sub_title, body }) {
-    const labels = [...main_title?.filter((dt) => dt != 70000 && dt != null)]
+export default function SalesVolumeProjectionBarChart({ main_title, sub_title, body }) {
+    const labels = [...main_title?.filter((dt) => dt != 80000 && dt != null)]
     const first_data = body && body?.slice(2).filter((data, index) => index % 2 == 0)
     const second_data = body && body?.slice(2).filter((data, index) => index % 2 == 1)
 
@@ -51,7 +51,7 @@ export default function SalesVolumeBarChart({ main_title, sub_title, body }) {
     }
 
     return (
-        <div className="w-full h-[29rem] flex items-center pt-5">
+        <div className="w-full h-full flex items-end pt-5">
             <Bar options={options && options} data={data && data} />
         </div>
     )
