@@ -8,7 +8,7 @@ export default function CashFlowTable({ table_sheet, title, setChartData, setOpe
         setOpen && setOpen(true)
     }
     return (
-        <div className="bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1">
+        <div className="bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1 overflow-x-auto">
             <strong className="items-center justify-center flex text-indigo-950 font-bold text-xl w-full">
                 {title && title}
             </strong>
