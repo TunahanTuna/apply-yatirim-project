@@ -20,56 +20,66 @@ export default function ProfitabilityRatio() {
         {
             label: profitability_ratios[2][1],
             data: temp[2].slice(2),
-            backgroundColor: '#93c5fd'
+            backgroundColor: '#93c5fd',
+            barThickness: 30
         },
         {
             label: profitability_ratios[3][1],
             data: temp[3].slice(2),
-            backgroundColor: '#f87171'
+            backgroundColor: '#f87171',
+            barThickness: 30
         },
         {
             label: profitability_ratios[4][1],
             data: temp[4].slice(2),
-            backgroundColor: '#d8b4fe'
+            backgroundColor: '#d8b4fe',
+            barThickness: 30
         }
     ]
     const secondChartData = [
         {
             label: profitability_ratios[6][1],
             data: temp[6].slice(2),
-            backgroundColor: '#93c5fd'
+            backgroundColor: '#93c5fd',
+            barThickness: 25
         },
         {
             label: profitability_ratios[7][1],
             data: temp[7].slice(2),
-            backgroundColor: '#f87171'
+            backgroundColor: '#f87171',
+            barThickness: 25
         },
         {
             label: profitability_ratios[8][1],
             data: temp[8].slice(2),
-            backgroundColor: '#d8b4fe'
+            backgroundColor: '#d8b4fe',
+            barThickness: 25
         },
         {
             label: profitability_ratios[9][1],
             data: temp[9].slice(2),
-            backgroundColor: '#f87171'
+            backgroundColor: '#f87171',
+            barThickness: 25
         },
         {
             label: profitability_ratios[10][1],
             data: temp[10].slice(2),
-            backgroundColor: '#5eead4'
+            backgroundColor: '#5eead4',
+            barThickness: 25
         }
     ]
     const thirdChartData = [
         {
             label: profitability_ratios[13][1],
             data: temp[13].slice(2),
-            backgroundColor: '#f87171'
+            backgroundColor: '#f87171',
+            barThickness: 30
         },
         {
             label: profitability_ratios[14][1],
             data: temp[14].slice(2),
-            backgroundColor: '#d8b4fe'
+            backgroundColor: '#d8b4fe',
+            barThickness: 30
         }
     ]
     return (

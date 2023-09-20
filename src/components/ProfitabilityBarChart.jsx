@@ -14,7 +14,7 @@ const options = {
 }
 export default function ProfitabilityBarChart({ body, title }) {
     const data = {
-        labels: [2019, 2020, 2021],
+        labels: [2019, 2020, 2021], // Dİnamikleştir
         datasets: body
     }
 
