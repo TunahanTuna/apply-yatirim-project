@@ -39,13 +39,13 @@ export default function SalesVolumeProjectionBarChart({ main_title, sub_title, b
                 yAxisID: 'left',
                 label: sub_title[2],
                 data: first_data,
-                backgroundColor: '#93c5fd'
+                backgroundColor: '#2563eb'
             },
             {
                 yAxisID: 'right',
                 label: sub_title[3],
                 data: second_data,
-                backgroundColor: '#fca5a5'
+                backgroundColor: '#dc2626'
             }
         ]
     }
