@@ -27,6 +27,7 @@ import {
 } from '../../pages'
 import SalesVolumeRealized from '../../pages/activity_report/SalesVolumeRealized'
 import SalesVolumeProjection from '../../pages/activity_report/SalesVolumeProjection'
+import CountryBaseSales from '../../pages/activity_report/CountryBaseSales'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -159,7 +160,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
                 label: 'Ülke Bazlı Satış',
                 path: '/faaliyet-raporlari/ulke-bazli-satis',
                 icon: <HiOutlineAnnotation />,
-                component: <Dashboard />
+                component: <CountryBaseSales />
             },
 
             {
