@@ -12,7 +12,6 @@ export default function SalesVolumeProjection() {
         sales_volume_projection.filter((dt) => dt[0] != 80000 && dt[0] != 80001 && dt[0] != 80012 && dt[0] != 80013)
 
     const [selected, setSelected] = useState(0)
-    console.log(sales_volume_projection)
     return (
         <div className="w-full flex flex-row justify-center items-start">
             <div className="w-full flex flex-col ">

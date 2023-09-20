@@ -16,11 +16,10 @@ export default function CountryBaseSales() {
     ]
     const tableHeader = country_base_sales && country_base_sales?.find((data) => data[0] == '60000')
 
-    const [selected, setSelected] = useState(0)
     return (
         <div className="w-full justify-center flex flex-col p-2">
             <div>
-                <CountryBaseSalesTable header={tableHeader} body={tableBody} setSelected={setSelected} />
+                <CountryBaseSalesTable header={tableHeader} body={tableBody} />
             </div>
             <div className="w-full flex flex-col justify-center items-center pt-4">
                 <div className="w-full text-center font-bold text-xl">

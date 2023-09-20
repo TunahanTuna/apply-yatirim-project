@@ -28,6 +28,7 @@ import {
 import SalesVolumeRealized from '../../pages/activity_report/SalesVolumeRealized'
 import SalesVolumeProjection from '../../pages/activity_report/SalesVolumeProjection'
 import CountryBaseSales from '../../pages/activity_report/CountryBaseSales'
+import DepreciationGroupSales from '../../pages/activity_report/DepreciationGroupSales'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -183,7 +184,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
                 label: 'Amortisman ve Grupiçi Satış',
                 path: '/faaliyet-raporlari/amortisman-ve-grupici-satis',
                 icon: <HiOutlineAnnotation />,
-                component: <Dashboard />
+                component: <DepreciationGroupSales />
             },
             {
                 key: 'mali-analiz-raporu',

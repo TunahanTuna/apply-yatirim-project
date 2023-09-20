@@ -24,7 +24,8 @@ const initialState = {
     sales_volume_realized: [],
     sales_volume_projection: [],
     ratio_desc: [],
-    country_base_sales: []
+    country_base_sales: [],
+    depreciation_group_sales: []
 }
 export const dataSlice = createSlice({
     name: 'data',
@@ -63,6 +64,7 @@ export const dataSlice = createSlice({
             state.sales_volume_realized = dataParser(workbook, 'Satıs_adetleri_gerceklesen')
             state.sales_volume_projection = dataParser(workbook, 'Satıs_adetleri_projeksiyon')
             state.country_base_sales = dataParser(workbook, 'Ulke_bazlı_satıs')
+            state.depreciation_group_sales = dataParser(workbook, 'amortismanlar_grupici_satis')
 
             state.ek = dataParser(workbook, 'EK4')
 

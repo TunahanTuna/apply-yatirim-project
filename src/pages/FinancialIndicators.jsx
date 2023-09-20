@@ -12,7 +12,6 @@ const FinancialIndicators = () => {
     const NetSatislar = base_financial_dashboard.find((dt) => dt[0] == 619)
     const BrutKar = base_financial_dashboard.find((dt) => dt[0] == 629)
 
-    console.log(title)
     return (
         <div className="w-full h-screen flex flex-col lg:flex-row p-2 ">
             <div className="w-screen flex flex-col flex-1  ">

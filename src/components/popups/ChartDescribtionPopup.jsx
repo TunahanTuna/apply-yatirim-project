@@ -3,7 +3,6 @@ import CashFlowLineChart from '../CashFlowLineChart'
 import { RatioChart } from '..'
 
 export default function ChartDescribtionPopup({ visible, modal, title, onClick, description }) {
-    console.log(description)
     if (!visible) return null
     return (
         <div

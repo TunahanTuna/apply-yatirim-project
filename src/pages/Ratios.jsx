@@ -7,7 +7,6 @@ import { ratios_key } from '../lib/helpers/helperText'
 
 export default function Ratios() {
     const { summary_ratios, ratio_desc } = useSelector((state) => state.dataReducer)
-    console.log(ratio_desc)
     const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == ratios_key)?.label
     return (
         <motion.div

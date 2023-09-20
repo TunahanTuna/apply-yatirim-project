@@ -17,7 +17,6 @@ export default function CountryBaseSalesChart({ header, body }) {
     const second_data = body && body?.map((data) => data[3])
     const third_data = body && body?.map((data) => data[4])
 
-    console.log(first_data)
     const data1 = {
         labels,
         datasets: [
