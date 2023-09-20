@@ -25,7 +25,11 @@ export default function CountryBaseSalesTable({ header, main_title, sub_title, b
                     </thead>
                     <tbody className=" w-full">
                         {body?.map((data, index) => (
-                            <tr key={`key${index} w-full`} onClick={() => handleClick(index)}>
+                            <tr
+                                key={`key${index} w-full`}
+                                onClick={() => handleClick(index)}
+                                className="hover:bg-red-50"
+                            >
                                 {data.slice(1).map((dt, index) => (
                                     <td
                                         className={`${index != 0 ? 'text-right' : 'font-bold'} text-xs p-2`}
