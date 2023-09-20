@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import SalesVolumeTable from '../../components/activity_report/sales_volume_realized/SalesVolumeTable'
 import SalesVolumeBarChart from '../../components/activity_report/sales_volume_realized/SalesVolumeBarChart'
 import SalesVolumeDonutChart from '../../components/activity_report/sales_volume_realized/SalesVolumeDonutChart'
+import { motion } from 'framer-motion'
+
 export default function SalesVolumeRealized() {
     const { sales_volume_realized } = useSelector((state) => state.dataReducer)
     const main_title = sales_volume_realized && sales_volume_realized.find((dt) => dt[0] == 70000)
@@ -14,7 +16,11 @@ export default function SalesVolumeRealized() {
     const [selected, setSelected] = useState(0)
 
     return (
-        <div className="w-full flex flex-row justify-center items-start">
+        <motion.div
+            initial={{ opacity: 0, translateY: 100 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            className="w-full flex flex-row justify-center items-start"
+        >
             <div className="flex w-full  flex-col ">
                 <div className="w-full ">
                     <SalesVolumeTable
@@ -34,6 +40,6 @@ export default function SalesVolumeRealized() {
                 <SalesVolumeDonutChart year={main_title[6]} body={body && body} />
                 <SalesVolumeDonutChart year={main_title[8]} body={body && body} />
             </div>
-        </div>
+        </motion.div>
     )
 }

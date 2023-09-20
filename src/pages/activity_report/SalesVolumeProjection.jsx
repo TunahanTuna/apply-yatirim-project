@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { motion } from 'framer-motion'
 
 import SalesVolumeProjectionTable from '../../components/activity_report/sales_volume_projection/SalesVolumeProjectionTable'
 import SalesVolumeProjectionBarChart from '../../components/activity_report/sales_volume_projection/SalesVolumeProjectionBarChart'
@@ -13,7 +14,11 @@ export default function SalesVolumeProjection() {
 
     const [selected, setSelected] = useState(0)
     return (
-        <div className="w-full flex flex-row justify-center items-start">
+        <motion.div
+            initial={{ opacity: 0, translateY: 100 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            className="w-full flex flex-row justify-center items-start"
+        >
             <div className="w-full flex flex-col ">
                 <div className="w-full items-center justify-center max-h-[80%] overflow-x-auto">
                     <SalesVolumeProjectionTable
@@ -36,6 +41,6 @@ export default function SalesVolumeProjection() {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

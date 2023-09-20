@@ -39,8 +39,8 @@ export default function DashboardBarChart({ data, table_title }) {
             {
                 label: 'Dataset 2',
                 data: temp,
-                borderColor: '#3b82f6',
-                backgroundColor: '#3b82f6'
+                borderColor: '#dc2626',
+                backgroundColor: '#dc2626'
             }
         ]
     }

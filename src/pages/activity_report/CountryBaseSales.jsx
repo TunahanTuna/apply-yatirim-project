@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import CountryBaseSalesTable from '../../components/activity_report/country_base_sales/CountryBaseSalesTable'
-import { useState } from 'react'
 import CountryBaseSalesChart from '../../components/activity_report/country_base_sales/CountryBaseSalesChart'
+import { motion } from 'framer-motion'
 
 export default function CountryBaseSales() {
     const { country_base_sales } = useSelector((state) => state.dataReducer)
@@ -17,7 +17,11 @@ export default function CountryBaseSales() {
     const tableHeader = country_base_sales && country_base_sales?.find((data) => data[0] == '60000')
 
     return (
-        <div className="w-full justify-center flex flex-col p-2">
+        <motion.div
+            initial={{ opacity: 0, translateY: 100 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            className="w-full justify-center flex flex-col p-2"
+        >
             <div>
                 <CountryBaseSalesTable header={tableHeader} body={tableBody} />
             </div>
@@ -29,6 +33,6 @@ export default function CountryBaseSales() {
                     <CountryBaseSalesChart header={tableHeader} body={tableBody} />
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
