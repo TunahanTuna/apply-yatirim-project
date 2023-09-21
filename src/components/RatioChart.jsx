@@ -54,10 +54,10 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
     }
     return (
         <div
-            className="gap-2 flex flex-col h-full w-full bg-white p-4 rounded-lg border border-gray-200"
+            className="gap-2 flex flex-col h-full w-full bg-orange-50 p-4 rounded-lg border border-gray-200"
             onClick={HandleClick}
         >
-            <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
+            <strong className="w-full flex items-center text-orange-950 justify-center">{data && data?.[1]}</strong>
             <div className="w-full h-full">
                 <ResponsiveContainer width="100%" height="99%">
                     <LineChart
@@ -92,9 +92,9 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
                         <Line
                             type="monotone"
                             dataKey="data"
-                            stroke="#0ea5e9"
+                            stroke="#ea580c"
                             strokeWidth={5}
-                            dot={{ stroke: '#38bdf8', strokeWidth: 2, fill: '#38bdf8' }}
+                            dot={{ stroke: '#ea580c', strokeWidth: 2, fill: '#ea580c' }}
                             animationDuration={2000}
                         />
                     </LineChart>

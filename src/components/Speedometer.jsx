@@ -20,7 +20,7 @@ export default function Speedometer({ data }) {
                     maxValue={10}
                     value={parseFloat(data[3])}
                     needleColor="#3730a3"
-                    segmentColors={['#bf616a', '#d08770', '#ebcb8b', '#a3be8c', '#b48ead']}
+                    segmentColors={['#b91c1c', '#ea580c', '#facc15', '#a3be8c', '#4d7c0f']}
                     segments={5}
                 />
             </div>
@@ -31,7 +31,7 @@ export default function Speedometer({ data }) {
                     value={parseFloat(data[4])}
                     needleColor="#3730a3"
                     segments={5}
-                    segmentColors={['#bf616a', '#d08770', '#ebcb8b', '#a3be8c', '#b48ead']}
+                    segmentColors={['#b91c1c', '#ea580c', '#facc15', '#a3be8c', '#4d7c0f']}
                 />
             </div>
         </div>
