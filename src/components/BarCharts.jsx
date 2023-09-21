@@ -39,7 +39,7 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
             {
                 label: 'Veri',
                 data: temp,
-                backgroundColor: ['#60a5fa', '#2563eb', '#1e40af'],
+                backgroundColor: ['#65a30d', '#eab308', '#dc2626'],
                 barThickness: 50
             }
         ]
@@ -65,7 +65,7 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
     // const minValue = chartStyle == 'negative' ? Math.min(...temp.map((item) => item.data)) * 1.2 : null
 
     return (
-        <div className="flex flex-col h-full w-full bg-sky-50 rounded-sm border border-gray-200">
+        <div className="flex flex-col h-full w-full bg-orange-50 rounded-sm border border-gray-200">
             <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>
             <div className="flex justify-center items-center w-full h-full">
                 <Bar data={chartData} options={options} />
