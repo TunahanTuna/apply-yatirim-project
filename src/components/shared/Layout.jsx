@@ -11,7 +11,7 @@ export default function Layout() {
             {summary_balance_sheet.length == 0 ? (
                 <TableInput />
             ) : (
-                <div className="flex flex-row bg-neutral-100 h-screen w-screen overflow-hidden">
+                <div className="flex flex-row bg-neutral-100 h-screen w-screen ">
                     <Test />
                     <div className="flex-1 bg-neutral-100 overflow-y-scroll">
                         {/* <Header /> */}

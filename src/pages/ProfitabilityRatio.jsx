@@ -93,13 +93,13 @@ export default function ProfitabilityRatio() {
             </div>
             <div className="text-black text-xl w-full flex flex-col items-center justify-center ">
                 <div className="grid grid-cols-3 h-[43rem] w-full gap-5">
-                    <div>
+                    <div className="h-1/2">
                         <ProfitabilityBarChart body={firstChartData} title={profitability_ratios[1][1]} />
                     </div>
-                    <div>
+                    <div className="h-1/2">
                         <ProfitabilityBarChart body={secondChartData} title={profitability_ratios[5][1]} />
                     </div>
-                    <div>
+                    <div className="h-1/2">
                         <ProfitabilityBarChart body={thirdChartData} title={profitability_ratios[11][1]} />
                     </div>
                 </div>

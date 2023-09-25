@@ -30,6 +30,7 @@ import SalesVolumeProjection from '../../pages/activity_report/SalesVolumeProjec
 import CountryBaseSales from '../../pages/activity_report/CountryBaseSales'
 import DepreciationGroupSales from '../../pages/activity_report/DepreciationGroupSales'
 import BasicFigures from '../../pages/activity_report/BasicFigures'
+import FinancialAnalysisReport from '../../pages/activity_report/FinancialAnalysisReport'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -199,7 +200,79 @@ export const DASHBOARD_SIDEBAR_LINKS = [
                 label: 'Mali Analiz Raporu',
                 path: '/faaliyet-raporlari/mali-analiz-raporu',
                 icon: <HiOutlineAnnotation />,
-                component: <Dashboard />
+                component: null,
+                subMenus: [
+                    {
+                        key: 'donen-varliklar',
+                        label: 'Dönen Varlıklar',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/donen-varliklar',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'duran-varliklar',
+                        label: 'Duran Varlıklar',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/duran-varliklar',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'kisa-vadeli-yukumlulukler',
+                        label: 'Kısa Vadeli Yükümlülükler',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/kisa-vadeli-yukumlulukler',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'uzun-vadeli-yukumlulukler',
+                        label: 'Uzun Vadeli Yükümlülükler',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/uzun-vadeli-yukumlulukler',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'ozkaynaklar',
+                        label: 'Özkaynaklar',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/ozkaynaklar',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'gelir-hesaplari',
+                        label: 'Gelir Hesapları',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/gelir-hesaplari',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'maaliyet-hesaplari',
+                        label: 'Maaliyet Hesapları',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/maaliyet-hesaplari',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'diger-gelir-ve-gider-hesaplari',
+                        label: 'Diğer Gelir ve Gider Hesapları',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/diger-gelir-ve-gider-hesaplari',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'olagan-disi-gelir-gider-hesaplari',
+                        label: 'Olağan Dışı Gelir Gider Hesapları',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/olagan-disi-gelir-gider-hesaplari',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    },
+                    {
+                        key: 'donem-kari-hesaplari',
+                        label: 'Dönem Karı Hesapları',
+                        path: '/faaliyet-raporlari/mali-analiz-raporlari/donem-kari-hesaplari',
+                        icon: <HiOutlineAnnotation />,
+                        component: <BasicFigures />
+                    }
+                ]
             }
         ]
     }

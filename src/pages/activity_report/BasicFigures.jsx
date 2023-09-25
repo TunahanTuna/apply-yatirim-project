@@ -22,7 +22,6 @@ export default function BasicFigures() {
                     <div className="w-full text-right  bg-pink-400 p-10 rounded-3xl">
                         <h1 className="w-full text-md whitespace-nowrap p-2">{basic_figures[2][1]}</h1>
                         <span>{basic_figures[2][2].toLocaleString()}</span>
-                        http://localhost:5173/finansal-tablolar/nakit-akim
                     </div>
                 </div>
                 <div className="flex items-center w-full justify-center">

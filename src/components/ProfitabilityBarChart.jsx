@@ -19,7 +19,7 @@ export default function ProfitabilityBarChart({ body, title }) {
     }
 
     return (
-        <div className="bg-white rounded-lg w-full  flex flex-col gap-2 items-center pt-5">
+        <div className="bg-white rounded-lg w-full flex flex-col gap-2 items-center pt-5">
             <strong className="text-center text-sm">{title && title}</strong>
             <Bar options={options} data={data} />
         </div>

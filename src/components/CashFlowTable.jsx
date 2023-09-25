@@ -21,7 +21,7 @@ export default function CashFlowTable({ table_sheet, title, setChartData, setOpe
                                     <th
                                         className={classNames(
                                             idx != 0 ? 'text-right' : 'text-left',
-                                            'bg-indigo-950 border-b border-neutral-500   text-indigo-50 font-bold'
+                                            'bg-indigo-950 border-b border-neutral-500 text-xs text-indigo-50 font-bold'
                                         )}
                                         key={idx}
                                     >
@@ -54,7 +54,7 @@ export default function CashFlowTable({ table_sheet, title, setChartData, setOpe
                                                     ? 'bg-indigo-900 text-indigo-50 font-bold'
                                                     : null,
                                                 dt[0] == 3000 ? 'bg-indigo-800 text-indigo-50 font-bold' : null,
-                                                'border-b border-neutral-500 '
+                                                'border-b text-xs whitespace-nowrap border-neutral-500 '
                                             )}
                                             key={idx}
                                         >

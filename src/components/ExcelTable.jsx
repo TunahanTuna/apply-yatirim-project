@@ -10,14 +10,14 @@ export default function ExcelTable({ table_sheet, title, setChartData }) {
             </strong>
             {table_sheet && (
                 <div className="mt-3">
-                    <table className="w-full text-gray-700 rounded-3xl">
+                    <table className="w-full text-gray-700 ">
                         <thead>
                             <tr>
                                 {table_sheet?.[0]?.slice(1).map((head, idx) => (
                                     <th
                                         className={classNames(
                                             idx != 0 ? 'text-right' : 'text-left',
-                                            'bg-indigo-950 border-b border-neutral-500   text-indigo-50 font-bold'
+                                            'bg-indigo-950 border-b border-neutral-500 text-xs  text-indigo-50 font-bold'
                                         )}
                                         key={idx}
                                     >
@@ -50,7 +50,7 @@ export default function ExcelTable({ table_sheet, title, setChartData }) {
                                                     ? 'bg-indigo-900 text-indigo-50 font-bold'
                                                     : null,
                                                 dt[0] == 3000 ? 'bg-indigo-800 text-indigo-50 font-bold' : null,
-                                                'border-b border-neutral-500 '
+                                                'border-none p-2 text-xs'
                                             )}
                                             key={idx}
                                         >

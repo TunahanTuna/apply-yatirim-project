@@ -36,7 +36,7 @@ export default function SalesVolumeProjectionTable({ main_title, sub_title, body
                                         className={`${index != 0 ? 'text-center' : 'font-bold'} text-xs p-2`}
                                         key={`index${index}`}
                                     >
-                                        <span className="w-full text-right  text-xs">
+                                        <span className="w-full text-right whitespace-nowrap text-xs">
                                             {parseFloat(dt) ? parseFloat(dt).toLocaleString() : dt}
                                         </span>
                                     </td>
