@@ -7,7 +7,6 @@ const colors = ['#22c55e', '#ea580c'] // Renkleri özelleştirin (istediğiniz k
 const DonutChart = ({ data, color }) => {
     const sonIndex = data && data[6] && parseFloat(data[6])
     const sonIndexVeri = sonIndex && parseFloat(sonIndex)
-    console.log(sonIndex)
     return (
         <div
             className={classNames(

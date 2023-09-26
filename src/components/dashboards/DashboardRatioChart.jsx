@@ -41,7 +41,6 @@ export default function DashboardBarChart({ data, table_title, type, color }) {
             }
         ]
     }
-    console.log('type', type)
     return (
         <div
             className={classNames(
