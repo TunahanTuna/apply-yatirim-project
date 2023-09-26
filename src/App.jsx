@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Router, Routes } from 'react-router-dom'
-import Layout from './components/shared/layout'
+import Layout from './components/shared/Layout.jsx'
 import {
     Dashboard,
     Balance,
