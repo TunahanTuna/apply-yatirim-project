@@ -2,22 +2,46 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import FinancialAnalysisTable from '../../../components/activity_report/financial_analysis_report/FinancialAnalysisTable'
 import FinancialAnalysisChart from '../../../components/activity_report/financial_analysis_report/FinancialAnalysisChart'
+import DashboardBarChart from '../../../components/dashboards/DashboardRatioChart'
+import { BarCharts } from '../../../components'
 
 export default function DonemKarHesaplari() {
-    const { financial_analysis_report } = useSelector((state) => state.dataReducer)
+    const { financial_analysis_report, ek } = useSelector((state) => state.dataReducer)
     const donem_kar_hesaplari = financial_analysis_report && financial_analysis_report?.donem_kar_hesaplari
     const chartLabels = donem_kar_hesaplari && donem_kar_hesaplari[0]
     const [selectedData, setSelectedData] = useState(donem_kar_hesaplari[1])
+
+    const vergiOncesiKar = ek && ek.find((data) => data[0] == 200024)
+    const aktifKarlilik = ek && ek.find((data) => data[0] == 200026)
+    const OzkaynakKarlilik = ek && ek.find((data) => data[0] == 200025)
     return (
-        <div className="w-full items-center justify-center flex gap-2">
-            <div className="w-full flex flex-col gap-5">
-                <div className="w-full  p-2 flex h-full">
-                    <FinancialAnalysisTable data={donem_kar_hesaplari} setSelectedData={setSelectedData} />
+        <div className="w-full flex flex-col gap-2">
+            <div className="w-full flex">
+                <div className="w-full flex flex-col gap-5">
+                    <div className="w-full  p-2 flex h-full">
+                        <FinancialAnalysisTable data={donem_kar_hesaplari} setSelectedData={setSelectedData} />
+                    </div>
+                </div>
+
+                <div className="w-full flex items-end justify-end h-full bg-red-50">
+                    <FinancialAnalysisChart
+                        data={selectedData}
+                        labels={chartLabels}
+                        setSelectedData={setSelectedData}
+                    />
                 </div>
             </div>
 
-            <div className="w-full flex items-end justify-end h-full">
-                <FinancialAnalysisChart data={selectedData} labels={chartLabels} setSelectedData={setSelectedData} />
+            <div className="w-full grid grid-cols-3 gap-2 pt-2">
+                <div className="w-full flex items-end justify-end h-full">
+                    <BarCharts data={vergiOncesiKar && vergiOncesiKar} color="bg-red-50" />
+                </div>
+                <div className="w-full flex items-end justify-end h-full">
+                    <DashboardBarChart data={OzkaynakKarlilik && OzkaynakKarlilik} color="bg-red-50" />
+                </div>
+                <div className="w-full flex items-end justify-end h-full">
+                    <DashboardBarChart data={aktifKarlilik && aktifKarlilik} color="bg-red-50" />
+                </div>
             </div>
         </div>
     )
