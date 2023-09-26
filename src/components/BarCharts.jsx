@@ -13,6 +13,7 @@ import React, { PureComponent } from 'react'
 // } from 'recharts'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
+import classNames from 'classnames'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip)
 const options = {
@@ -65,7 +66,12 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
     // const minValue = chartStyle == 'negative' ? Math.min(...temp.map((item) => item.data)) * 1.2 : null
 
     return (
-        <div className="flex flex-col h-full w-full bg-orange-50 rounded-sm border border-gray-200">
+        <div
+            className={classNames(
+                'flex flex-col h-full w-full rounded-sm border border-gray-200',
+                color && color ? color : 'bg-orange-50 '
+            )}
+        >
             <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>
             <div className="flex justify-center items-center w-full h-full">
                 <Bar data={chartData} options={options} />

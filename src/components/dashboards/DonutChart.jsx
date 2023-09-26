@@ -1,14 +1,20 @@
+import classNames from 'classnames'
 import React from 'react'
 import { PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer, Label } from 'recharts'
 
 const colors = ['#22c55e', '#ea580c'] // Renkleri özelleştirin (istediğiniz kadar renk ekleyebilirsiniz)
 
-const DonutChart = ({ data }) => {
+const DonutChart = ({ data, color }) => {
     const sonIndex = data && data[6]
     const sonIndexVeri = sonIndex && parseFloat(sonIndex) * 100
-
+    console.log(color)
     return (
-        <div className=" justify-center items-center flex flex-col h-full w-full bg-orange-50  rounded-sm border border-gray-200">
+        <div
+            className={classNames(
+                ' justify-center items-center flex flex-col h-full w-full  rounded-sm border border-gray-200',
+                color ? color : 'bg-orange-50 '
+            )}
+        >
             <strong className="w-full flex items-center justify-center text-center">{data && data?.[1]}</strong>
             <ResponsiveContainer width="100%" height="80%">
                 <PieChart>

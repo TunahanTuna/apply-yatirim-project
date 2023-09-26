@@ -1,9 +1,15 @@
+import classNames from 'classnames'
 import React from 'react'
 import ReactSpeedometer from 'react-d3-speedometer'
 
-export default function SpeedometerDashboard({ data }) {
+export default function SpeedometerDashboard({ data, color }) {
     return (
-        <div className="gap-2 flex flex-col h-full w-full bg-orange-50 p-2 rounded-sm border border-gray-200">
+        <div
+            className={classNames(
+                'gap-2 flex flex-col h-full w-full p-2 rounded-sm border border-gray-200',
+                color && color ? color : 'bg-orange-50 '
+            )}
+        >
             <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
             <div className="h-full w-full flex items-center justify-center">
                 <ReactSpeedometer

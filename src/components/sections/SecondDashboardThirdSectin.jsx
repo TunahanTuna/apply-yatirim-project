@@ -7,16 +7,16 @@ export default function SecondDashboardThirdSection({ data }) {
     return (
         <div className="w-full flex gap-2">
             <div className="flex flex-1  bg-blue-300">
-                <BarCharts data={barChartFirst && barChartFirst} table_title={title} color="#3b82f6" />
+                <BarCharts data={barChartFirst && barChartFirst} table_title={title} />
             </div>
             <div className="flex flex-1  bg-blue-300">
-                <SpeedometerDashboard data={speedometerFirst && speedometerFirst} color="#3b82f6" />
+                <SpeedometerDashboard data={speedometerFirst && speedometerFirst} />
             </div>
             <div className="flex flex-1  bg-blue-300">
-                <SpeedometerDashboard data={speedometerSecond && speedometerSecond} color="#3b82f6" />
+                <SpeedometerDashboard data={speedometerSecond && speedometerSecond} />
             </div>
             <div className="flex flex-1  bg-blue-300">
-                <SpeedometerDashboard data={speedometerThird && speedometerThird} color="#3b82f6" />
+                <SpeedometerDashboard data={speedometerThird && speedometerThird} />
             </div>
         </div>
     )
