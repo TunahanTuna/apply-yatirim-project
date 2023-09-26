@@ -17,6 +17,11 @@ import classNames from 'classnames'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip)
 const options = {
+    plugins: {
+        legend: {
+            position: 'bottom'
+        }
+    },
     scales: {
         x: {
             grid: {
@@ -38,7 +43,7 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
             : [2019, 2020, 2021],
         datasets: [
             {
-                label: 'Veri',
+                label: data && data[1],
                 data: temp,
                 backgroundColor: ['#65a30d', '#eab308', '#dc2626'],
                 barThickness: 50

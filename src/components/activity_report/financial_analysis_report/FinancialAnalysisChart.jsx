@@ -31,7 +31,7 @@ export default function FinancialAnalysisChart({ data, labels, color }) {
         ]
     }
     return (
-        <div className="w-full h-full flex items-end p-10">
+        <div className="w-full h-full flex items-end p-2">
             <Bar options={options && options} data={chartData && chartData} />
         </div>
     )

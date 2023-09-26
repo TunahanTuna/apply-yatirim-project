@@ -3,6 +3,11 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 import { Line } from 'react-chartjs-2'
 import classNames from 'classnames'
 export const options = {
+    plugins: {
+        legend: {
+            position: 'bottom'
+        }
+    },
     responsive: true,
     scales: {
         x: {
@@ -29,7 +34,7 @@ export default function DashboardBarChart({ data, table_title, type, color }) {
         labels,
         datasets: [
             {
-                label: 'Dataset 2',
+                label: data && data[1],
                 data: temp,
                 borderColor: '#dc2626',
                 backgroundColor: '#dc2626'
