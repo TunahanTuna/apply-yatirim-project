@@ -1,8 +1,6 @@
 import React from 'react'
 
 export default function DepreciationGroupSalesTable({ data }) {
-    console.log(data)
-
     return (
         <div className="w-full">
             {data && (

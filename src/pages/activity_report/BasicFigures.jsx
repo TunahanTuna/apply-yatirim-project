@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 
 export default function BasicFigures() {
     const { basic_figures } = useSelector((state) => state.dataReducer)
-    console.log(basic_figures)
     return (
         <div className="w-full flex flex-col">
             <div className="w-full text-center justify-center items-center font-bold text-4xl pt-10">

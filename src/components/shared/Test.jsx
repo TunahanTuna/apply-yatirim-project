@@ -46,7 +46,8 @@ const MenuItem = ({ menu, index }) => {
     const [subMenuOpen, setSubMenuOpen] = useState({
         'finansal-tablolar': true,
         'oran-analizi': true,
-        'faaliyet-raporlari': true
+        'faaliyet-raporlari': true,
+        'mali-analiz-raporu': true
     }) // Ayrı alt menü durumlarını saklar
     const toggleSubMenu = (menuKey) => {
         setSubMenuOpen({
@@ -71,7 +72,7 @@ const MenuItem = ({ menu, index }) => {
             >
                 {menu?.icon}
                 <span className="flex-1"> {menu.label}</span>
-                {menu?.subMenus && <BiDownArrow onClick={() => toggleSubMenu(Menu.key)} />}
+                {menu?.subMenus && <BiDownArrow onClick={() => toggleSubMenu(menu.key)} />}
             </Link>
             {menu?.subMenus && subMenuOpen[menu.key] && open && (
                 <ul>
@@ -85,9 +86,12 @@ const MenuItem = ({ menu, index }) => {
                                 } hover:no-underline hover:bg-sky-400 flex px-5 cursor-pointer items-center rounded-md text-left p-2 text-sm text-gray-200 py-1`}
                             >
                                 {subMenuItem?.icon}
-                                <span className=" px-2"> {subMenuItem.label}</span>
+                                <span className="flex-1 px-2"> {subMenuItem.label}</span>
+                                {subMenuItem?.subMenus && (
+                                    <BiDownArrow onClick={() => toggleSubMenu(subMenuItem.key)} />
+                                )}
                             </Link>
-                            {subMenuItem?.subMenus && (
+                            {subMenuItem?.subMenus && subMenuOpen[subMenuItem.key] && open && (
                                 <ul>
                                     {subMenuItem.subMenus.map((subMenu, index) => (
                                         <Link

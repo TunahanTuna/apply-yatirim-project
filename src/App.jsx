@@ -27,7 +27,13 @@ function App() {
                             {routes &&
                                 routes?.subMenus &&
                                 routes.subMenus.map((dt) => (
-                                    <Route key={dt.key} path={dt.path} element={dt.component} />
+                                    <Route key={dt.key} path={dt.path} element={dt.component}>
+                                        {dt &&
+                                            dt.subMenus &&
+                                            dt.subMenus.map((data) => (
+                                                <Route key={data?.key} path={data?.path} element={data?.component} />
+                                            ))}
+                                    </Route>
                                 ))}
                         </Route>
                     )
