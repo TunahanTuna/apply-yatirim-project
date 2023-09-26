@@ -25,7 +25,7 @@ export default function Ozkaynaklar() {
                     </div>
                 </div>
 
-                <div className="w-full flex items-end justify-end h-full">
+                <div className="w-full flex items-end justify-end h-full bg-red-50">
                     <FinancialAnalysisChart
                         data={selectedData}
                         labels={chartLabels}

@@ -12,11 +12,7 @@ export default function DashboardSecondSection({ data }) {
                 <MiniBox data={TLRevenue && TLRevenue} />
             </div>
             <div className="flex flex-1  bg-blue-300">
-                <BarCharts
-                    data={totalReveneu && totalReveneu}
-                    table_title={table_title && table_title}
-                    color="#3b82f6"
-                />
+                <BarCharts data={totalReveneu && totalReveneu} table_title={table_title && table_title} />
             </div>
             <div className="flex flex-1 ">
                 <BarCharts data={NetIsletmeSermayesi && NetIsletmeSermayesi} table_title={table_title && table_title} />
