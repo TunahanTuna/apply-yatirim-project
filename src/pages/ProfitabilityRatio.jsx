@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { BarCharts, LiquidTable, ProfitabilityBarChart, RatioChart } from '../components/index'
 import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
 import { motion } from 'framer-motion'
 import { profitability_ratios_key } from '../lib/helpers/helperText'
+import ProfitabilityRatioPopup from '../components/popups/ProfitabilityRatioPopup'
 
 export default function ProfitabilityRatio() {
-    const { profitability_ratios } = useSelector((state) => state.dataReducer)
+    const { profitability_ratios, ratio_desc } = useSelector((state) => state.dataReducer)
     const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == profitability_ratios_key)?.label
     const temp = [
         profitability_ratios[0],
@@ -16,6 +17,27 @@ export default function ProfitabilityRatio() {
                 data.map((dt) => (isNaN(parseFloat(dt)) || typeof dt == 'number' ? dt : parseFloat(dt) * 100))
             )
     ]
+
+    const ratio_descriptions = ratio_desc.filter(
+        (data) =>
+            data[0] == 'A33' ||
+            data[0] == 'A34' ||
+            data[0] == 'A35' ||
+            data[0] == 'A36' ||
+            data[0] == 'A37' ||
+            data[0] == 'A38' ||
+            data[0] == 'A39' ||
+            data[0] == 'A40' ||
+            data[0] == 'A41' ||
+            data[0] == 'A42' ||
+            data[0] == 'A43' ||
+            data[0] == 'A44' ||
+            data[0] == 'A45' ||
+            data[0] == 'A46'
+    )
+    const [chartData, setChartData] = useState(null)
+    const [open, setOpen] = useState(false)
+    const [description, setDescription] = useState(null)
     const firstChartData = [
         {
             label: profitability_ratios[2][1],
@@ -89,7 +111,13 @@ export default function ProfitabilityRatio() {
             className="flex gap-4 flex-col"
         >
             <div className="flex flex-row gap-4 w-full">
-                <LiquidTable table_sheet={temp} title={title} />
+                <LiquidTable
+                    table_sheet={temp}
+                    title={title}
+                    setChartData={setChartData}
+                    setOpen={setOpen}
+                    setDescription={setDescription}
+                />
             </div>
             <div className="text-black text-xl w-full flex flex-col items-center justify-center ">
                 <div className="grid grid-cols-1 xl:grid-cols-3  h-[43rem] w-full gap-5">
@@ -103,6 +131,12 @@ export default function ProfitabilityRatio() {
                         <ProfitabilityBarChart body={thirdChartData} title={profitability_ratios[11][1]} />
                     </div>
                 </div>
+                <ProfitabilityRatioPopup
+                    onClick={() => setOpen(false)}
+                    visible={open}
+                    modal={chartData}
+                    description={ratio_descriptions[description]}
+                />
             </div>
         </motion.div>
     )

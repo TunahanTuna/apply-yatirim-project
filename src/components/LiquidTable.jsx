@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react'
 
 import classNames from 'classnames'
 
-export default function LiquidTable({ table_sheet, title, setSelector }) {
+export default function LiquidTable({ table_sheet, title, setSelector, setChartData, setOpen, setDescription }) {
     const handleClick = (key) => {
+        setChartData && setChartData(table_sheet[key + 1])
         setSelector && setSelector(key + 1)
+        setDescription && setDescription(key)
+        setOpen && setOpen(true)
     }
     return (
         <div className="bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1">
