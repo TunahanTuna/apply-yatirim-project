@@ -12,7 +12,7 @@ export default function FinancialAnalysisTable({ data, setSelectedData }) {
     const excLocaleString = (data) => (typeof data == 'number' ? data.toLocaleString() : data)
     return (
         <div className="w-full flex flex-col">
-            <table>
+            <table className="w-full">
                 <thead>
                     <tr className="bg-red-600 text-white">
                         {tableHeader &&

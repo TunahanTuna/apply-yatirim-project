@@ -16,7 +16,7 @@ export default function DonemKarHesaplari() {
     const OzkaynakKarlilik = ek && ek.find((data) => data[0] == 200025)
     return (
         <div className="w-full flex flex-col gap-2">
-            <div className="w-full flex">
+            <div className="w-full flex 2xl:flex-row flex-col">
                 <div className="w-full flex flex-col gap-5">
                     <div className="w-full  p-2 flex h-full">
                         <FinancialAnalysisTable data={donem_kar_hesaplari} setSelectedData={setSelectedData} />
@@ -32,7 +32,7 @@ export default function DonemKarHesaplari() {
                 </div>
             </div>
 
-            <div className="w-full grid grid-cols-3 gap-2 pt-2">
+            <div className="w-full grid 2xl:grid-cols-3 grid-cols-1  gap-2 pt-2">
                 <div className="w-full flex items-end justify-end h-full">
                     <BarCharts data={vergiOncesiKar && vergiOncesiKar} color="bg-red-50" />
                 </div>

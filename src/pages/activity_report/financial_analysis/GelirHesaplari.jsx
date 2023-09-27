@@ -16,7 +16,7 @@ export default function GelirHesaplari() {
 
     return (
         <div className="w-full items-center justify-center flex flex-col gap-2">
-            <div className="flex w-full">
+            <div className="flex 2xl:flex-row flex-col w-full">
                 <div className="w-full flex flex-col gap-5">
                     <div className="w-full  p-2 flex h-full">
                         <FinancialAnalysisTable data={gelir_hesaplari} setSelectedData={setSelectedData} />
@@ -31,7 +31,7 @@ export default function GelirHesaplari() {
                     />
                 </div>
             </div>
-            <div className="w-full grid grid-cols-3 gap-2 pt-2">
+            <div className="w-full grid 2xl:grid-cols-3 grid-cols-1 gap-2 pt-2">
                 <div className="w-full flex items-end justify-end h-full">
                     <BarCharts data={toplamHasilat && toplamHasilat} color="bg-red-50" />
                 </div>

@@ -16,7 +16,7 @@ export default function OlagandisiGelirKar() {
 
     return (
         <div className="w-full flex-col flex gap-2">
-            <div className="w-full flex ">
+            <div className="w-full flex 2xl:flex-row flex-col ">
                 <div className="w-full flex flex-col gap-5">
                     <div className="w-full  p-2 flex h-full">
                         <FinancialAnalysisTable data={olagandisi_gelir_kar} setSelectedData={setSelectedData} />

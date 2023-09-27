@@ -73,7 +73,7 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
     return (
         <div
             className={classNames(
-                'flex flex-col h-full w-full rounded-sm border border-gray-200',
+                'flex flex-col h-full w-full rounded-xl border border-gray-300',
                 color && color ? color : 'bg-orange-50 '
             )}
         >

@@ -10,7 +10,7 @@ const DonutChart = ({ data, color }) => {
     return (
         <div
             className={classNames(
-                ' justify-center items-center flex flex-col h-full w-full  rounded-sm',
+                ' justify-center items-center flex flex-col h-full w-full  rounded-xl border border-gray-300',
                 color ? color : 'bg-orange-50 '
             )}
         >

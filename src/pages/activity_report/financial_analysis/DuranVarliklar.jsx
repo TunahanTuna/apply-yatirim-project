@@ -14,7 +14,7 @@ export default function DuranVarliklar() {
 
     const [selectedData, setSelectedData] = useState(maddi_duran_varliklar[1])
     return (
-        <div className="w-full items-center justify-center flex gap-2">
+        <div className="w-full items-center justify-center 2xl:flex grid grid-cols-1 gap-2">
             <div className="w-full flex flex-col gap-5 h-full">
                 <div className="w-full  p-2 flex h-full">
                     <FinancialAnalysisTable data={ticari_alacaklar} setSelectedData={setSelectedData} />
