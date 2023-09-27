@@ -19,9 +19,9 @@ export default function SalesVolumeRealized() {
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}
             animate={{ opacity: 1, translateY: 0 }}
-            className="w-full flex flex-row justify-center items-start"
+            className="w-full flex xl:flex-row flex-col justify-center items-start"
         >
-            <div className="flex w-full  flex-col ">
+            <div className="flex xl:w-5/6 w-full  flex-col ">
                 <div className="w-full ">
                     <SalesVolumeTable
                         main_title={main_title}
@@ -30,11 +30,11 @@ export default function SalesVolumeRealized() {
                         setSelected={setSelected}
                     />
                 </div>
-                <div className="w-full  flex justify-center">
+                <div className="w-full flex justify-center">
                     <SalesVolumeBarChart body={body[selected]} main_title={main_title} sub_title={sub_title} />
                 </div>
             </div>
-            <div className="w-4/5  justify-center">
+            <div className="w-full xl:w-4/5 xl:flex xl:flex-col grid grid-cols-2 justify-center">
                 <SalesVolumeDonutChart year={main_title[2]} body={body && body} />
                 <SalesVolumeDonutChart year={main_title[4]} body={body && body} />
                 <SalesVolumeDonutChart year={main_title[6]} body={body && body} />

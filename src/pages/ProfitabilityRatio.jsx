@@ -92,7 +92,7 @@ export default function ProfitabilityRatio() {
                 <LiquidTable table_sheet={temp} title={title} />
             </div>
             <div className="text-black text-xl w-full flex flex-col items-center justify-center ">
-                <div className="grid grid-cols-3 h-[43rem] w-full gap-5">
+                <div className="grid grid-cols-1 xl:grid-cols-3  h-[43rem] w-full gap-5">
                     <div className="h-1/2">
                         <ProfitabilityBarChart body={firstChartData} title={profitability_ratios[1][1]} />
                     </div>

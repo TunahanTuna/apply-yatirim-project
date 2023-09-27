@@ -54,7 +54,7 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
     }
     return (
         <div
-            className="gap-2 flex flex-col h-full w-full bg-orange-50 p-4 rounded-lg border border-gray-200"
+            className="gap-2 flex flex-col h-[22rem] w-11/12 xl:w-full bg-orange-50 p-4 rounded-lg border border-gray-200"
             onClick={HandleClick}
         >
             <strong className="w-full flex items-center text-orange-950 justify-center">{data && data?.[1]}</strong>

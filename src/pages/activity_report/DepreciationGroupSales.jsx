@@ -18,13 +18,13 @@ export default function DepreciationGroupSales() {
             animate={{ opacity: 1, translateY: 0 }}
             className="w-full flex flex-col"
         >
-            <div className="w-full grid grid-cols-2 pt-5 p-2">
+            <div className="w-full grid xl:grid-cols-2 grid-cols-1 pt-5 p-2">
                 <div className="w-full">{depreciation && <DepreciationGroupSalesTable data={depreciation} />}</div>
                 <div className="w-full flex items-center justify-center">
                     <DepreciationGroupSalesChart data={depreciation && depreciation} />
                 </div>
             </div>
-            <div className="w-full grid grid-cols-2">
+            <div className="w-full grid xl:grid-cols-2 grid-cols-1 ">
                 <div className="w-full">{group_sales && <DepreciationGroupSalesTable data={group_sales} />}</div>
                 <div className="w-full flex items-center justify-center">
                     <DepreciationGroupSalesChart data={group_sales && group_sales} color="#eab308" />

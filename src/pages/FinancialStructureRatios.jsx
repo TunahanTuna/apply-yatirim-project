@@ -39,8 +39,8 @@ export default function FinancialStructureRatios() {
             </div>
             <div className=" text-xl w-full flex flex-col items-center justify-center gap-4">
                 <strong className="text-3xl text-black">Grafikler</strong>
-                <div className="grid grid-cols-3 h-[24rem] w-full gap-5">
-                    <div>
+                <div className="grid xl:grid-cols-3 grid-cols-1 h-[24rem] w-full gap-5">
+                    <div className="flex w-full items-center justify-center">
                         <RatioChart
                             data={financial_structure_ratios[selector]}
                             setOpen={setOpen}
@@ -48,7 +48,7 @@ export default function FinancialStructureRatios() {
                             setDescription={() => setDescription(selector - 1)}
                         />
                     </div>
-                    <div>
+                    <div className="flex w-full items-center justify-center">
                         <RatioChart
                             data={financial_structure_ratios[(selector + 1) % 12]}
                             setOpen={setOpen}
@@ -56,7 +56,7 @@ export default function FinancialStructureRatios() {
                             setDescription={() => setDescription(selector % 12)}
                         />
                     </div>
-                    <div>
+                    <div className="flex w-full items-center justify-center">
                         <RatioChart
                             data={financial_structure_ratios[(selector + 2) % 12]}
                             setOpen={setOpen}

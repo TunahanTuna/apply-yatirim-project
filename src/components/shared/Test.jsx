@@ -14,7 +14,7 @@ export default function Test() {
             <div
                 className={`${
                     open ? 'w-48' : 'w-0'
-                } lg:w-72  bg-sky-800 h-screen overflow-y-scroll relative duration-500`}
+                } xl:w-72 w-42 bg-sky-800 h-screen overflow-y-scroll relative duration-500`}
             >
                 <div className="justify-center">
                     <h1

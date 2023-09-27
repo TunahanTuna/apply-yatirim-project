@@ -5,7 +5,7 @@ export default function SalesVolumeTable({ main_title, sub_title, body, setSelec
         setSelected && setSelected(key)
     }
     return (
-        <div>
+        <div className="w-full">
             {main_title && sub_title && body && (
                 <table className="w-full ">
                     <thead className="w-full">

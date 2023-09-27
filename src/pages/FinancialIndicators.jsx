@@ -13,7 +13,7 @@ const FinancialIndicators = () => {
     const BrutKar = base_financial_dashboard.find((dt) => dt[0] == 629)
 
     return (
-        <div className="w-full h-screen flex flex-col lg:flex-row p-2 ">
+        <div className="w-full h-screen flex flex-col xl:flex-row p-2 ">
             <div className="w-screen flex flex-col flex-1  ">
                 <div className="w-full text-3xl text-red-800 flex items-center justify-center">
                     <strong>Temel Finansal Göstergeler</strong>
@@ -34,10 +34,10 @@ const FinancialIndicators = () => {
                 </div>
             </div>
             <div className="flex flex-1 flex-col w-screen  ">
-                <div className="w-full text-3xl text-red-800 flex items-center justify-center">
+                <div className="w-full text-3xl text-red-800 flex items-center text-center justify-center">
                     <strong>Özet Faaliyet Sonuçları</strong>
                 </div>
-                <div className=" grid grid-cols-2  w-full h-1/2 pt-7">
+                <div className=" grid grid-cols-2 w-full h-1/2 pt-7">
                     <FinancialTablesChart data={NetSatislar} table_title={title} />
                     <FinancialTablesChart data={BrutKar} table_title={title} />
                     <FinancialTablesChart data={NetSatislar} table_title={title} />
