@@ -13,7 +13,7 @@ const FinancialIndicators = () => {
     const BrutKar = base_financial_dashboard.find((dt) => dt[0] == 629)
 
     return (
-        <div className="w-full h-screen flex flex-col xl:flex-row p-2 ">
+        <div className="w-full h-screen flex flex-col 2xl:flex-row p-2 ">
             <div className="w-full flex flex-col flex-1  ">
                 <div className="w-full text-3xl text-red-800 flex items-center justify-center">
                     <strong>Temel Finansal Göstergeler</strong>
