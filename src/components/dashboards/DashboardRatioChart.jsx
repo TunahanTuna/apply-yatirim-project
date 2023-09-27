@@ -44,7 +44,7 @@ export default function DashboardBarChart({ data, table_title, type, color }) {
     return (
         <div
             className={classNames(
-                'gap-2 flex flex-col h-full w-full p-4 rounded-sm border border-gray-300 rounded-xl',
+                'gap-2 flex flex-col h-full w-full p-4 border border-gray-300 rounded-xl',
                 color && color ? color : 'bg-orange-50'
             )}
         >
