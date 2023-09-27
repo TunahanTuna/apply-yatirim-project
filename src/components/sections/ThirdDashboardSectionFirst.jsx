@@ -8,16 +8,16 @@ export default function ThirdDashboardSectionFirst({ data }) {
     const { title, ratioChartFirst, donutChartFirst, ratioChartSecond, speedometerFirst } = data
     return (
         <div className="w-full 2xl:flex grid grid-cols-2 gap-2">
-            <div className="flex flex-1  bg-blue-300">
+            <div className="flex flex-1">
                 <DashboardBarChart type={'dashboard'} data={ratioChartFirst && ratioChartFirst} table_title={title} />
             </div>
-            <div className="flex flex-1  bg-blue-300">
+            <div className="flex flex-1">
                 <DonutChart data={donutChartFirst && donutChartFirst} />
             </div>
-            <div className="flex flex-1  bg-blue-300">
+            <div className="flex flex-1">
                 <DashboardBarChart type={'dashboard'} data={ratioChartSecond && ratioChartSecond} table_title={title} />
             </div>
-            <div className="flex flex-1  bg-blue-300">
+            <div className="flex flex-1">
                 <SpeedometerDashboard data={speedometerFirst && speedometerFirst} />
             </div>
         </div>

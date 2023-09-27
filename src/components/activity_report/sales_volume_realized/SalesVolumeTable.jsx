@@ -33,7 +33,9 @@ export default function SalesVolumeTable({ main_title, sub_title, body, setSelec
                             <tr key={`key${index} w-full`} onClick={() => handleClick(index)}>
                                 {data.slice(1).map((dt, index) => (
                                     <td
-                                        className={`${index != 0 ? 'text-center' : 'font-bold'} text-xs p-2`}
+                                        className={`${
+                                            index != 0 ? 'text-center ' : 'font-bold whitespace-nowrap'
+                                        } text-xs p-2`}
                                         key={`index${index}`}
                                     >
                                         <span className="w-full text-right text-xs">

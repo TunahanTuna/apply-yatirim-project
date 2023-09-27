@@ -14,7 +14,7 @@ export default function DashboardThirdSection({ data }) {
             <div className="flex flex-1 flex-col gap-1">
                 <DashboardRatioChart data={asitTest && asitTest} type="dashboard" />
             </div>
-            <div className="flex flex-1  bg-blue-300">
+            <div className="flex flex-1 ">
                 <SpeedometerDashboard data={maddiDuran && maddiDuran} type="dashboard" />
             </div>
             <div className="flex flex-1">
