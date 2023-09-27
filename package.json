@@ -1,6 +1,5 @@
 {
     "name": "apply-yatirim-project",
-    "homepage": "http://test.applyyatirim.com",
     "private": true,
     "version": "0.0.0",
     "type": "module",
