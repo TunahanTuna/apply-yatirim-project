@@ -54,7 +54,9 @@ export default function ExcelTable({ table_sheet, title, setChartData }) {
                                             )}
                                             key={idx}
                                         >
-                                            {row?.toLocaleString()}
+                                            {dt[0] != 3000 && dt[0] != 2000 && dt[0] != 1000 && dt[0] != 5000
+                                                ? row?.toLocaleString()
+                                                : row}
                                         </td>
                                     ))}
                                 </tr>
