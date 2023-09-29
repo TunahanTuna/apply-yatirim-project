@@ -62,6 +62,7 @@ export default function BasicFigures() {
                             icon={<WorldWide width="8rem" />}
                             position="mid"
                             side="right"
+                            percentage="%"
                         />
                     </div>
                     <div>
@@ -79,7 +80,7 @@ export default function BasicFigures() {
     )
 }
 
-function BasicFiguresContainer({ figureTitle, figureNumber, icon, position, side }) {
+function BasicFiguresContainer({ figureTitle, figureNumber, icon, position, side, percentage = '' }) {
     return (
         <div
             className={classNames(
@@ -92,7 +93,7 @@ function BasicFiguresContainer({ figureTitle, figureNumber, icon, position, side
         >
             <div className={classNames(side == 'right' ? 'text-left' : 'text-right')}>
                 <h1 className="font-bold w-full text-3xl whitespace-nowrap p-2">{figureTitle}</h1>
-                <span>{figureNumber.toLocaleString()}</span>
+                <span>{figureNumber.toLocaleString() + (percentage && percentage)}</span>
             </div>
             <div
                 className={classNames(
