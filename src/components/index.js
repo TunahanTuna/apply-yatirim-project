@@ -7,7 +7,7 @@ import TransactionChart from './TransactionChart'
 import BarCharts from './BarCharts'
 import CashFlowTable from './CashFlowTable'
 import ProfitabilityBarChart from './ProfitabilityBarChart'
-
+import GeneralRatiosTable from './GeneralRatiosTable'
 export {
     ExcelTable,
     LiquidTable,
@@ -17,5 +17,6 @@ export {
     TransactionChart,
     BarCharts,
     CashFlowTable,
-    ProfitabilityBarChart
+    ProfitabilityBarChart,
+    GeneralRatiosTable
 }

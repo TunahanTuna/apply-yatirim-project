@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { ExcelTable } from '../components/index'
+import { ExcelTable, GeneralRatiosTable } from '../components/index'
 import { DASHBOARD_SIDEBAR_LINKS } from '../lib/constants/navigation'
 import { motion } from 'framer-motion'
 import { ratios_key } from '../lib/helpers/helperText'
@@ -15,7 +15,7 @@ export default function Ratios() {
             className="flex gap-4 flex-col"
         >
             <div className="flex flex-row gap-4 w-full">
-                <ExcelTable table_sheet={summary_ratios} title={title} />
+                <GeneralRatiosTable table_sheet={summary_ratios} title={title} />
             </div>
         </motion.div>
     )
