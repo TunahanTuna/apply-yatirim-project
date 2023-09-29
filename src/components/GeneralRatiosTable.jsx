@@ -57,7 +57,7 @@ export default function GeneralRatiosTable({ table_sheet, title, setChartData })
                                             {dt[0] != 3000 && dt[0] != 2000 && dt[0] != 1000 && dt[0] != 5000
                                                 ? isNaN(parseFloat(row))
                                                     ? row
-                                                    : (parseFloat(row) * 100).toLocaleString() + '%'
+                                                    : floatParser(row) + '%'
                                                 : row}
                                         </td>
                                     ))}
@@ -70,3 +70,5 @@ export default function GeneralRatiosTable({ table_sheet, title, setChartData })
         </div>
     )
 }
+
+const floatParser = (row) => (parseFloat(row) * 100).toLocaleString()
