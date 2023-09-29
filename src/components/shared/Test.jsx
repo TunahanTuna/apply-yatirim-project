@@ -3,6 +3,7 @@ import { DASHBOARD_SIDEBAR_LINKS } from '../../lib/constants/navigation'
 import { Link, useLocation } from 'react-router-dom'
 import { BiDownArrow } from 'react-icons/bi'
 import { texts } from '../../lib/constants/constants'
+import ApplyLogo from '../../assets/ApplyLogo'
 
 export default function Test() {
     const { pathname } = useLocation()
@@ -22,7 +23,7 @@ export default function Test() {
                             !open && 'invisible'
                         }`}
                     >
-                        LOGO
+                        <ApplyLogo />
                     </h1>
                 </div>
                 <ul className="pt-6 ">
