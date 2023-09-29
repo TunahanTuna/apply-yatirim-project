@@ -14,29 +14,36 @@ export default function DuranVarliklar() {
 
     const [selectedData, setSelectedData] = useState(maddi_duran_varliklar[1])
     return (
-        <div className="w-full items-center justify-center 2xl:flex grid grid-cols-1 gap-2">
-            <div className="w-full flex flex-col gap-5 h-full">
-                <div className="w-full  p-2 flex h-full">
-                    <FinancialAnalysisTable data={ticari_alacaklar} setSelectedData={setSelectedData} />
+        ticari_alacaklar &&
+        setSelectedData &&
+        maddi_duran_varliklar &&
+        selectedData &&
+        chartLabels &&
+        maddiDuranVarlikDevirHizi && (
+            <div className="w-full items-center justify-center 2xl:flex grid grid-cols-1 gap-2">
+                <div className="w-full flex flex-col gap-5 h-full">
+                    <div className="w-full  p-2 flex h-full">
+                        <FinancialAnalysisTable data={ticari_alacaklar} setSelectedData={setSelectedData} />
+                    </div>
+                    <div className="w-full  p-2 flex h-full">
+                        <FinancialAnalysisTable data={maddi_duran_varliklar} setSelectedData={setSelectedData} />
+                    </div>
                 </div>
-                <div className="w-full  p-2 flex h-full">
-                    <FinancialAnalysisTable data={maddi_duran_varliklar} setSelectedData={setSelectedData} />
-                </div>
-            </div>
 
-            <div className="w-full flex flex-col items-end justify-end h-full gap-2 opacity-90">
-                <div className="w-full bg-red-50">
-                    <FinancialAnalysisChart
-                        data={selectedData}
-                        labels={chartLabels}
-                        setSelectedData={setSelectedData}
+                <div className="w-full flex flex-col items-end justify-end h-full gap-2 opacity-90">
+                    <div className="w-full bg-red-50">
+                        <FinancialAnalysisChart
+                            data={selectedData}
+                            labels={chartLabels}
+                            setSelectedData={setSelectedData}
+                        />
+                    </div>
+                    <SpeedometerDashboard
+                        data={maddiDuranVarlikDevirHizi && maddiDuranVarlikDevirHizi}
+                        color={'bg-red-50'}
                     />
                 </div>
-                <SpeedometerDashboard
-                    data={maddiDuranVarlikDevirHizi && maddiDuranVarlikDevirHizi}
-                    color={'bg-red-50'}
-                />
             </div>
-        </div>
+        )
     )
 }

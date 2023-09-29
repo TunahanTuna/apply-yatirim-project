@@ -16,31 +16,42 @@ export default function GelirGiderHesaplari() {
     const uzunVadelFinansalBorc = ek && ek.find((data) => data[0] == 200018)
     const vergiOncesiKar = ek && ek.find((data) => data[0] == 200027)
     return (
-        <div className="w-full flex flex-col gap-2">
-            <div className="w-full flex 2xl:flex-row flex-col">
-                <div className="w-full  flex flex-col gap-5">
-                    <FinancialAnalysisTable data={diger_gelir_ve_gider_hesaplari} setSelectedData={setSelectedData} />
-                </div>
+        diger_gelir_ve_gider_hesaplari &&
+        setSelectedData &&
+        selectedData &&
+        chartLabels &&
+        borcServis &&
+        vergiOncesiKar &&
+        uzunVadelFinansalBorc && (
+            <div className="w-full flex flex-col gap-2">
+                <div className="w-full flex 2xl:flex-row flex-col">
+                    <div className="w-full  flex flex-col gap-5">
+                        <FinancialAnalysisTable
+                            data={diger_gelir_ve_gider_hesaplari}
+                            setSelectedData={setSelectedData}
+                        />
+                    </div>
 
-                <div className="w-full flex items-end justify-end h-full bg-red-50">
-                    <FinancialAnalysisChart
-                        data={selectedData}
-                        labels={chartLabels}
-                        setSelectedData={setSelectedData}
-                    />
+                    <div className="w-full flex items-end justify-end h-full bg-red-50">
+                        <FinancialAnalysisChart
+                            data={selectedData}
+                            labels={chartLabels}
+                            setSelectedData={setSelectedData}
+                        />
+                    </div>
+                </div>
+                <div className="w-full grid 2xl:grid-cols-3 grid-cols-1 gap-2 pt-2">
+                    <div className="w-full flex items-end justify-end min-h-[20rem]">
+                        <DonutChart data={borcServis && borcServis} color="bg-red-50" />
+                    </div>
+                    <div className="w-full flex items-end justify-end h-full">
+                        <DashboardBarChart data={vergiOncesiKar && vergiOncesiKar} color="bg-red-50" />
+                    </div>
+                    <div className="w-full flex items-end justify-end min-h-[20rem]">
+                        <DonutChart data={uzunVadelFinansalBorc && uzunVadelFinansalBorc} color="bg-red-50" />
+                    </div>
                 </div>
             </div>
-            <div className="w-full grid 2xl:grid-cols-3 grid-cols-1 gap-2 pt-2">
-                <div className="w-full flex items-end justify-end min-h-[20rem]">
-                    <DonutChart data={borcServis && borcServis} color="bg-red-50" />
-                </div>
-                <div className="w-full flex items-end justify-end h-full">
-                    <DashboardBarChart data={vergiOncesiKar && vergiOncesiKar} color="bg-red-50" />
-                </div>
-                <div className="w-full flex items-end justify-end min-h-[20rem]">
-                    <DonutChart data={uzunVadelFinansalBorc && uzunVadelFinansalBorc} color="bg-red-50" />
-                </div>
-            </div>
-        </div>
+        )
     )
 }

@@ -16,39 +16,53 @@ export default function KisaVadeliYukumlulukler() {
 
     const [selectedData, setSelectedData] = useState(mali_borclar[1])
     return (
-        <div className="w-full items-center justify-center grid 2xl:grid-cols-2 grid-cols-1 gap-2">
-            <div className="w-full  p-2 flex flex-col h-full">
-                <FinancialAnalysisTable data={mali_borclar} setSelectedData={setSelectedData} />
-                <div className="w-full  flex h-full">
-                    <FinancialAnalysisTable data={ticari_borclar} setSelectedData={setSelectedData} />
+        mali_borclar &&
+        setSelectedData &&
+        ticari_borclar &&
+        selectedData &&
+        chartLabels &&
+        BorcDevir &&
+        yaygin_insaat_hakedis &&
+        KisaVadeliBorclar &&
+        nakitKisaVadeYukumlulukler && (
+            <div className="w-full items-center justify-center grid 2xl:grid-cols-2 grid-cols-1 gap-2">
+                <div className="w-full  p-2 flex flex-col h-full">
+                    <FinancialAnalysisTable data={mali_borclar} setSelectedData={setSelectedData} />
+                    <div className="w-full  flex h-full">
+                        <FinancialAnalysisTable data={ticari_borclar} setSelectedData={setSelectedData} />
+                    </div>
+                </div>
+                <div className="w-full  flex flex-col items-center justify-center gap-2">
+                    <div className="2xl:w-9/12 w-full bg-red-50">
+                        <FinancialAnalysisChart
+                            data={selectedData}
+                            labels={chartLabels}
+                            setSelectedData={setSelectedData}
+                        />
+                    </div>
+                    <div className="2xl:w-9/12 w-full bg-red-50">
+                        <FinancialAnalysisChart
+                            data={BorcDevir}
+                            labels={chartLabels}
+                            setSelectedData={setSelectedData}
+                        />
+                    </div>
+                </div>
+                <div className="w-full  p-2">
+                    <FinancialAnalysisTable data={yaygin_insaat_hakedis} setSelectedData={setSelectedData} />
+                </div>
+                <div className="w-full min-h-[17rem] flex opacity-90 gap-2">
+                    <div className="w-full">
+                        <DonutChart data={KisaVadeliBorclar && KisaVadeliBorclar} color="bg-red-50" />
+                    </div>
+                    <div className="w-full">
+                        <DashboardBarChart
+                            data={nakitKisaVadeYukumlulukler && nakitKisaVadeYukumlulukler}
+                            color="bg-red-50"
+                        />
+                    </div>
                 </div>
             </div>
-            <div className="w-full  flex flex-col items-center justify-center gap-2">
-                <div className="2xl:w-9/12 w-full bg-red-50">
-                    <FinancialAnalysisChart
-                        data={selectedData}
-                        labels={chartLabels}
-                        setSelectedData={setSelectedData}
-                    />
-                </div>
-                <div className="2xl:w-9/12 w-full bg-red-50">
-                    <FinancialAnalysisChart data={BorcDevir} labels={chartLabels} setSelectedData={setSelectedData} />
-                </div>
-            </div>
-            <div className="w-full  p-2">
-                <FinancialAnalysisTable data={yaygin_insaat_hakedis} setSelectedData={setSelectedData} />
-            </div>
-            <div className="w-full min-h-[17rem] flex opacity-90 gap-2">
-                <div className="w-full">
-                    <DonutChart data={KisaVadeliBorclar && KisaVadeliBorclar} color="bg-red-50" />
-                </div>
-                <div className="w-full">
-                    <DashboardBarChart
-                        data={nakitKisaVadeYukumlulukler && nakitKisaVadeYukumlulukler}
-                        color="bg-red-50"
-                    />
-                </div>
-            </div>
-        </div>
+        )
     )
 }

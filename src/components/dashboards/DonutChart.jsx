@@ -10,12 +10,12 @@ const DonutChart = ({ data, color }) => {
     return (
         <div
             className={classNames(
-                ' justify-center items-center flex flex-col h-full w-full  rounded-xl border border-gray-300',
+                ' justify-center items-center flex flex-col h-full w-full min-h-[16rem] rounded-xl border border-gray-300',
                 color ? color : 'bg-orange-50 '
             )}
         >
             <strong className="w-full flex items-center justify-center text-center">{data && data?.[1]}</strong>
-            <ResponsiveContainer width="100%" height="80%">
+            <ResponsiveContainer width="100%" height="90%">
                 <PieChart>
                     <Pie
                         data={[

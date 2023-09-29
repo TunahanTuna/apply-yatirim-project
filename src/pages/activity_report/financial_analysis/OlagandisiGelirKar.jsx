@@ -15,31 +15,38 @@ export default function OlagandisiGelirKar() {
     const calismaSermaye = ek && ek.find((data) => data[0] == 30003)
 
     return (
-        <div className="w-full flex-col flex gap-2">
-            <div className="w-full flex 2xl:flex-row flex-col ">
-                <div className="w-full flex flex-col gap-5">
-                    <div className="w-full  p-2 flex h-full">
-                        <FinancialAnalysisTable data={olagandisi_gelir_kar} setSelectedData={setSelectedData} />
+        olagandisi_gelir_kar &&
+        setSelectedData &&
+        selectedData &&
+        chartLabels &&
+        netCalisma &&
+        calismaSermaye && (
+            <div className="w-full flex-col flex gap-2">
+                <div className="w-full flex 2xl:flex-row flex-col ">
+                    <div className="w-full flex flex-col gap-5">
+                        <div className="w-full  p-2 flex h-full">
+                            <FinancialAnalysisTable data={olagandisi_gelir_kar} setSelectedData={setSelectedData} />
+                        </div>
+                    </div>
+
+                    <div className="w-full flex items-end justify-end h-full bg-red-50">
+                        <FinancialAnalysisChart
+                            data={selectedData}
+                            labels={chartLabels}
+                            setSelectedData={setSelectedData}
+                        />
                     </div>
                 </div>
 
-                <div className="w-full flex items-end justify-end h-full bg-red-50">
-                    <FinancialAnalysisChart
-                        data={selectedData}
-                        labels={chartLabels}
-                        setSelectedData={setSelectedData}
-                    />
+                <div className="w-full grid grid-cols-2 gap-2 pt-2">
+                    <div className="w-full flex items-end justify-end h-full">
+                        <SpeedometerDashboard data={netCalisma && netCalisma} color={'bg-red-50'} />
+                    </div>
+                    <div className="w-full flex items-end justify-end h-full">
+                        <SpeedometerDashboard data={calismaSermaye && calismaSermaye} color={'bg-red-50'} />
+                    </div>
                 </div>
             </div>
-
-            <div className="w-full grid grid-cols-2 gap-2 pt-2">
-                <div className="w-full flex items-end justify-end h-full">
-                    <SpeedometerDashboard data={netCalisma && netCalisma} color={'bg-red-50'} />
-                </div>
-                <div className="w-full flex items-end justify-end h-full">
-                    <SpeedometerDashboard data={calismaSermaye && calismaSermaye} color={'bg-red-50'} />
-                </div>
-            </div>
-        </div>
+        )
     )
 }
