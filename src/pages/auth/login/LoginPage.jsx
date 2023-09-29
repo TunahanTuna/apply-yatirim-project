@@ -2,10 +2,16 @@ import React, { useState } from 'react'
 import ApplyLogo from '../../../assets/ApplyLogo'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { useDispatch, useSelector } from 'react-redux'
+import { setKey } from '../../../store/keySlice'
+import { useEffect } from 'react'
 
 const initialUser = { identifier: '', password: '' }
 // Bütün alanlar dinamikleştirilecek.
 export default function LoginPage() {
+    const dispatch = useDispatch()
+    const { key } = useSelector((state) => state.keyReducer)
+
     const [user, setUser] = useState(initialUser)
 
     const handleChange = ({ target }) => {
@@ -17,10 +23,10 @@ export default function LoginPage() {
     }
     const handleLogin = async () => {
         const url = import.meta.env.VITE_AUTH_URL
-
         try {
             if (user.identifier && user.password) {
                 const res = await axios.post(url, user)
+                dispatch(setKey(res?.data?.jwt))
             }
         } catch (error) {
             toast.error(error.message, {
