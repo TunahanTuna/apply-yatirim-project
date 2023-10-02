@@ -15,11 +15,11 @@ export default function Test() {
             <div
                 className={`${
                     open ? 'w-48' : 'w-0'
-                } xl:w-72 w-42 bg-sky-800 h-screen overflow-y-scroll relative duration-500`}
+                } xl:w-72 w-42 bg-sky-600 h-screen overflow-y-scroll relative duration-500`}
             >
                 <div className="justify-center">
                     <h1
-                        className={`text-white font-medium text-2xl text-center duration-200 pt-3 ${
+                        className={`text-white font-medium text-2xl text-center duration-200 pt-3 p-5 ${
                             !open && 'invisible'
                         }`}
                     >
