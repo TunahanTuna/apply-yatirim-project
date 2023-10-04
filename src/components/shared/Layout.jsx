@@ -16,7 +16,7 @@ export default function Layout() {
     const fetchURL = import.meta.env.VITE_FETCH_USER_URL
     const dispatch = useDispatch()
     useEffect(() => {
-        if (key != null) {
+        if (key != null && summary_balance_sheet.length == 0) {
             axios
                 .get(fetchURL, {
                     headers: {
