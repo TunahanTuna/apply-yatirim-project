@@ -34,7 +34,8 @@ export const dataSlice = createSlice({
     initialState,
     reducers: {
         setData: (state, action) => {
-            const workbook = XLSX.read(action.payload, { type: 'binary' })
+            // XLSX.read(action.payload, { type: 'binary' })
+            const workbook = action.payload
             const worksheet = workbook.Sheets['Ozet_Bilanco']
             // Çalışma sayfasını bir JSON verisine dönüştürün (başlıklar dahil)
             const excelData = XLSX.utils.sheet_to_json(worksheet, { header: 1 })

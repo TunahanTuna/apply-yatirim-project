@@ -14,6 +14,7 @@ import {
     CashFlow
 } from './pages/index'
 import { DASHBOARD_SIDEBAR_LINKS } from './lib/constants/navigation'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
     return (
