@@ -7,7 +7,7 @@ export default function SpeedometerDashboard({ data, color }) {
         <div
             className={classNames(
                 'gap-2 flex flex-col h-full w-full p-2 border border-gray-300 rounded-xl',
-                color && color ? color : 'bg-orange-50 '
+                color && color ? color : 'bg-neutral-100 '
             )}
         >
             <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>

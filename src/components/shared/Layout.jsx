@@ -51,7 +51,7 @@ export default function Layout() {
         }
     }, [key])
     return (
-        <div className="flex flex-row bg-neutral-100 h-screen w-screen overflow-hidden">
+        <div className="flex flex-row bg-neutral-50 h-screen w-screen overflow-hidden">
             {key == null ? (
                 <div>
                     <LoginPage />

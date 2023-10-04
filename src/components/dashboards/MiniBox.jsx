@@ -5,10 +5,10 @@ export default function MiniBox({ data, onClick }) {
     const title = data && data?.[1]
     return (
         <div
-            className="rounded-md flex h-full flex-col gap-3 justify-center items-center w-full min-w-[20rem] bg-orange-50"
+            className="rounded-3xl flex h-full flex-col gap-3 justify-center items-center w-full min-w-[20rem] bg-neutral-100 border border-gray-200"
             onClick={onClick}
         >
-            <div className="border-b-2 flex justify-center items-center border-orange-600 w-full text-orange-950 bg-orange-200 text-center text-xl font-bold">
+            <div className="border-b-2 flex justify-center items-center border-orange-600 w-full text-neutral-950 bg-orange-200 text-center text-xl font-bold rounded-t-3xl">
                 <span>{title && title}</span>
             </div>
             <div className="w-full flex flex-col  justify-center items-center  ">

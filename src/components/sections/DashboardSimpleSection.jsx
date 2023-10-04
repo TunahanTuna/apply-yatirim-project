@@ -11,7 +11,7 @@ export default function DashboardSimpleSection({ data }) {
     const [open, setOpen] = useState(false)
     return (
         <div className="w-full 2xl:flex grid grid-cols-2 gap-2">
-            <div className="flex flex-1 flex-col gap-1">
+            <div className="flex flex-1 flex-col gap-1 rounded-3xl">
                 <MiniBox
                     data={miniBoxFirst && miniBoxFirst}
                     onClick={() => {

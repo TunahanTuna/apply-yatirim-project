@@ -74,7 +74,7 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
         <div
             className={classNames(
                 'flex flex-col h-full w-full rounded-xl border border-gray-300',
-                color && color ? color : 'bg-orange-50 '
+                color && color ? color : 'bg-neutral-100 '
             )}
         >
             <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>
