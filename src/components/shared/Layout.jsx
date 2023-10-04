@@ -15,7 +15,6 @@ export default function Layout() {
     const { key } = useSelector((state) => state.keyReducer)
     const fetchURL = import.meta.env.VITE_FETCH_USER_URL
     const dispatch = useDispatch()
-
     useEffect(() => {
         if (key != null) {
             axios
@@ -31,7 +30,7 @@ export default function Layout() {
                             const file = new File([blob], 'excel.xlsx', {
                                 type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                             })
-
+                            console.log(file)
                             // Excel dosyasını okuma işlemi
                             const reader = new FileReader()
                             reader.onload = function (event) {
