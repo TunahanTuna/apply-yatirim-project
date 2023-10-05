@@ -11,6 +11,7 @@ import * as XLSX from 'xlsx'
 import { setData } from '../../store/dataSlice'
 import { useState } from 'react'
 import Cookies from 'universal-cookie'
+import Header from './Header'
 export default function Layout() {
     const { summary_balance_sheet, summary_ratios } = useSelector((state) => state.dataReducer)
     const { key } = useSelector((state) => state.keyReducer)
@@ -29,9 +30,16 @@ export default function Layout() {
                     }
                 })
                 .then((response) => {
-                    const fetchUrls = response?.data?.excelFile?.find((data) => data?.caption == corpId)
-                    console.log(response.data)
-                    fetch(`${import.meta.env.VITE_BASE_URL}${fetchUrls?.url}`)
+                    const fetchUrls = response?.data?.excelFile?.map((data) => {
+                        return {
+                            caption: data.caption,
+                            url: data.url
+                        }
+                    })
+                    const initialUrl = fetchUrls.find((data) => data?.caption == 1)
+                    console.log(fetchUrls)
+                    cookies.set('corpList', fetchUrls)
+                    fetch(`${import.meta.env.VITE_BASE_URL}${fetchUrls[0]?.url}`)
                         .then((res) => res.blob())
                         .then((blob) => {
                             const file = new File([blob], 'excel.xlsx', {
@@ -66,7 +74,7 @@ export default function Layout() {
                 <div className="flex flex-row bg-neutral-100 h-screen w-screen ">
                     <Sidebar />
                     <div className="flex-1 bg-neutral-100 overflow-y-scroll">
-                        {/* <Header /> */}
+                        <Header />
                         <div className="p-4 ">{<Outlet />}</div>
                     </div>
                 </div>
