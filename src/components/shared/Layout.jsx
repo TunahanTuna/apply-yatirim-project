@@ -54,7 +54,7 @@ export default function Layout() {
     }, [jwtKey])
     return (
         <div className="flex flex-row bg-neutral-50 h-screen w-screen overflow-hidden">
-            {jwtKey == null ? (
+            {summary_balance_sheet.length == 0 ? (
                 <div>
                     <LoginPage setJwtKey={setJwtKey} />
                 </div>
