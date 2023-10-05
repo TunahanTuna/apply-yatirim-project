@@ -24,7 +24,7 @@ export default function Layout() {
             axios
                 .get(fetchURL, {
                     headers: {
-                        Authorization: `Bearer ${key}`
+                        Authorization: `Bearer ${jwtKey}`
                     }
                 })
                 .then((response) => {
