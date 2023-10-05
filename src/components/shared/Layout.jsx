@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import * as XLSX from 'xlsx'
 import { setData } from '../../store/dataSlice'
+import { useState } from 'react'
 
 export default function Layout() {
     const { summary_balance_sheet, summary_ratios } = useSelector((state) => state.dataReducer)
@@ -20,6 +21,8 @@ export default function Layout() {
     const dispatch = useDispatch()
     useEffect(() => {
         if (jwtKey != null && summary_balance_sheet.length == 0) {
+            console.log(jwtKey)
+
             axios
                 .get(fetchURL, {
                     headers: {
@@ -50,7 +53,7 @@ export default function Layout() {
                         })
                 })
         }
-    }, [key])
+    }, [jwtKey])
     return (
         <div className="flex flex-row bg-neutral-50 h-screen w-screen overflow-hidden">
             {jwtKey == null ? (
