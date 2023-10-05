@@ -60,7 +60,7 @@ export default function Layout() {
                 </div>
             ) : summary_balance_sheet.length != 0 ? (
                 <div className="flex flex-row bg-neutral-100 h-screen w-screen ">
-                    <Test />
+                    <Sidebar />
                     <div className="flex-1 bg-neutral-100 overflow-y-scroll">
                         {/* <Header /> */}
                         <div className="p-4 ">{<Outlet />}</div>

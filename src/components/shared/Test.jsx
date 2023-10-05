@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { BiDownArrow } from 'react-icons/bi'
 import { texts } from '../../lib/constants/constants'
 import ApplyLogo from '../../assets/ApplyLogo'
+import SideBarTabs from './SideBarTabs'
 
 export default function Test() {
     const { pathname } = useLocation()
