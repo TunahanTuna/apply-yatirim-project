@@ -6,7 +6,7 @@ import { texts } from '../../lib/constants/constants'
 import ApplyLogo from '../../assets/ApplyLogo'
 import SideBarTabs from './SideBarTabs'
 
-export default function DashboardSideBar() {
+export default function BankSideBar() {
     return (
         <div>
             <ul className=" ">
