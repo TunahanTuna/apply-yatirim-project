@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setKey } from '../../../store/keySlice'
 import { useEffect } from 'react'
 import Cookies from 'universal-cookie'
-const initialUser = { identifier: '', password: '', corp: '' }
+const initialUser = { identifier: '', password: '' }
 // Bütün alanlar dinamikleştirilecek.
 export default function LoginPage({ setJwtKey }) {
     const dispatch = useDispatch()
@@ -58,14 +58,6 @@ export default function LoginPage({ setJwtKey }) {
                         placeholder="Şifre"
                         onChange={handleChange}
                         value={user.password}
-                    />
-                    <input
-                        className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4"
-                        type="number"
-                        name="corp"
-                        placeholder="Şirket"
-                        onChange={handleChange}
-                        value={user.corp}
                     />
                 </form>
 

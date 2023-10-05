@@ -42,6 +42,7 @@ import GelirGiderHesaplari from '../../pages/activity_report/financial_analysis/
 import OlagandisiGelirKar from '../../pages/activity_report/financial_analysis/OlagandisiGelirKar'
 import DonemKarHesaplari from '../../pages/activity_report/financial_analysis/DonemKarHesaplari'
 import FinancialAnalysis from '../../pages/activity_report/financial_analysis/FinancialAnalysis'
+import KrediTakip from '../../pages/bank-pages/KrediTakip'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -289,17 +290,26 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     }
 ]
 
-export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
+export const BANK_SIDEBAR_LINKS = [
     {
-        key: 'settings',
-        label: 'Settings',
-        path: '/settings',
-        icon: <HiOutlineCog />
+        key: 'kredi-takip',
+        label: 'Kredi Takip',
+        path: '/kredi-takip',
+        icon: <HiOutlineAcademicCap />,
+        component: <KrediTakip />
     },
     {
-        key: 'support',
-        label: 'Help & Support',
-        path: '/support',
-        icon: <HiOutlineQuestionMarkCircle />
+        key: 'kokpit-2',
+        label: 'Kokpit: 2',
+        path: '/kokpit-2',
+        icon: <HiOutlinePresentationChartLine />,
+        component: <KrediTakip />
+    },
+    {
+        key: 'kokpit-uc',
+        label: 'Kokpit: 3',
+        path: '/kokpit-uc',
+        icon: <BiCandles />,
+        component: <KrediTakip />
     }
 ]

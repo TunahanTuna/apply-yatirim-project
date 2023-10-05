@@ -1,5 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import dataReducer from './dataSlice'
+import bankReducer from './bankSlice'
+
 import keyReducer from './keySlice'
 import storage from 'redux-persist/lib/storage'
 import { persistReducer } from 'redux-persist'
@@ -12,7 +14,8 @@ const persistConfig = {
 
 const reducer = combineReducers({
     dataReducer,
-    keyReducer
+    keyReducer,
+    bankReducer
 })
 const persistedReducer = persistReducer(persistConfig, reducer)
 export default configureStore({
