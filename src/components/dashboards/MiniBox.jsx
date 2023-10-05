@@ -18,10 +18,12 @@ export default function MiniBox({ data, onClick }) {
                     </div>
                     <div className="w-full text-base font-semibold text-left py-2">
                         <span className="font-medium">Değişim:</span>
-                        <span className="text-green-500 pl-2">{temp && temp}</span>
+                        <span className="text-green-500 pl-2">%{temp && percentParser(temp)}</span>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+
+const percentParser = (temp) => temp && parseFloat(temp?.split('%')[1]).toFixed(2)
