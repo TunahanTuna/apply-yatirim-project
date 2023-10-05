@@ -13,35 +13,36 @@ import {
     ResponsiveContainer
 } from 'recharts'
 
-export default function FinancialTables({ data, type, setOpen, setChartData, setDescription }) {
+export default function FinancialTables({ data, type, setOpen, setChartData, setDescription, title }) {
+    console.log(title)
     const temp =
         data && type != 'dashboard'
             ? [
                   {
-                      name: '2019',
+                      name: title?.[0],
                       data: data?.[2]
                   },
                   {
-                      name: '2020',
-                      data: data[3]
+                      name: title?.[1],
+                      data: data?.[2]
                   },
                   {
-                      name: '2021',
-                      data: data[4]
+                      name: title?.[2],
+                      data: data?.[4]
                   }
               ]
             : [
                   {
-                      name: '2019',
+                      name: title?.[0],
                       data: data?.[2]
                   },
                   {
-                      name: '2020',
-                      data: data[4]
+                      name: title?.[1],
+                      data: data?.[4]
                   },
                   {
-                      name: '2021',
-                      data: data[6]
+                      name: title?.[2],
+                      data: data?.[6]
                   }
               ]
     const maxValue = Math.max(...temp.map((item) => item.data)) * 1.2

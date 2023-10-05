@@ -27,7 +27,8 @@ export default function FinancialStructureRatios() {
     const [chartData, setChartData] = useState(1)
     const [open, setOpen] = useState(false)
     const [description, setDescription] = useState(0)
-
+    const dates = financial_structure_ratios?.[0]?.slice(2)
+    console.log(dates)
     return (
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}
@@ -46,6 +47,7 @@ export default function FinancialStructureRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData(selector)}
                             setDescription={() => setDescription(selector - 1)}
+                            title={dates}
                         />
                     </div>
                     <div className="flex w-full items-center justify-center">
@@ -54,6 +56,7 @@ export default function FinancialStructureRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData((selector + 1) % 12)}
                             setDescription={() => setDescription(selector % 12)}
+                            title={dates}
                         />
                     </div>
                     <div className="flex w-full items-center justify-center">
@@ -62,6 +65,7 @@ export default function FinancialStructureRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData((selector + 2) % 12)}
                             setDescription={() => setDescription((selector + 1) % 12)}
+                            title={dates}
                         />
                     </div>
                 </div>

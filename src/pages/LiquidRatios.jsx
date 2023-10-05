@@ -23,7 +23,8 @@ export default function LiquidRatios() {
     const [chartData, setChartData] = useState(1)
     const [open, setOpen] = useState(false)
     const [description, setDescription] = useState(0)
-
+    const dates = liquid_ratios?.[0]?.slice(2)
+    console.log('first')
     return (
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}
@@ -42,6 +43,7 @@ export default function LiquidRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData(1)}
                             setDescription={() => setDescription(0)}
+                            title={dates}
                         />
                     </div>
                     <div className="flex w-full justify-center items-center">
@@ -50,6 +52,7 @@ export default function LiquidRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData(2)}
                             setDescription={() => setDescription(1)}
+                            title={dates}
                         />
                     </div>
                     <div className="flex w-full justify-center items-center">
@@ -58,6 +61,7 @@ export default function LiquidRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData(3)}
                             setDescription={() => setDescription(2)}
+                            title={dates}
                         />
                     </div>
                     <div className="flex w-full justify-center items-center">
@@ -66,6 +70,7 @@ export default function LiquidRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData(4)}
                             setDescription={() => setDescription(3)}
+                            title={dates}
                         />
                     </div>
                     <div className="flex w-full justify-center items-center">
@@ -74,6 +79,7 @@ export default function LiquidRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData(5)}
                             setDescription={() => setDescription(4)}
+                            title={dates}
                         />
                     </div>
                     <div className="flex w-full justify-center items-center">
@@ -82,6 +88,7 @@ export default function LiquidRatios() {
                             setOpen={setOpen}
                             setChartData={() => setChartData(6)}
                             setDescription={() => setDescription(5)}
+                            title={dates}
                         />
                     </div>
                 </div>
@@ -90,6 +97,7 @@ export default function LiquidRatios() {
                     visible={open}
                     modal={liquid_ratios[chartData]}
                     description={ratio_descriptions[description]}
+                    title={dates}
                 />
             </div>
         </motion.div>
