@@ -21,8 +21,6 @@ export default function Layout() {
     const dispatch = useDispatch()
     useEffect(() => {
         if (jwtKey != null && summary_balance_sheet.length == 0) {
-            console.log(jwtKey)
-
             axios
                 .get(fetchURL, {
                     headers: {
