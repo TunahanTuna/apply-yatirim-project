@@ -13,10 +13,13 @@ import { setData } from '../../store/dataSlice'
 export default function Layout() {
     const { summary_balance_sheet, summary_ratios } = useSelector((state) => state.dataReducer)
     const { key } = useSelector((state) => state.keyReducer)
+
+    const [jwtKey, setJwtKey] = useState(null)
+
     const fetchURL = import.meta.env.VITE_FETCH_USER_URL
     const dispatch = useDispatch()
     useEffect(() => {
-        if (key != null && summary_balance_sheet.length == 0) {
+        if (jwtKey != null && summary_balance_sheet.length == 0) {
             axios
                 .get(fetchURL, {
                     headers: {
@@ -30,7 +33,6 @@ export default function Layout() {
                             const file = new File([blob], 'excel.xlsx', {
                                 type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                             })
-                            console.log(file)
                             // Excel dosyasını okuma işlemi
                             const reader = new FileReader()
                             reader.onload = function (event) {
@@ -43,7 +45,6 @@ export default function Layout() {
                                 const excelData = XLSX.utils.sheet_to_json(worksheet, { header: 1 })
                                 // İşlenen verileri kullanarak istediğiniz şekilde devam edebilirsiniz.
                                 // Örneğin, çalışma kitabını açabilir ve sayfaları okuyabilirsiniz.
-                                console.log(excelData)
                             }
                             reader.readAsBinaryString(file)
                         })
@@ -52,9 +53,9 @@ export default function Layout() {
     }, [key])
     return (
         <div className="flex flex-row bg-neutral-50 h-screen w-screen overflow-hidden">
-            {key == null ? (
+            {jwtKey == null ? (
                 <div>
-                    <LoginPage />
+                    <LoginPage setJwtKey={setJwtKey} />
                 </div>
             ) : summary_balance_sheet.length != 0 ? (
                 <div className="flex flex-row bg-neutral-100 h-screen w-screen ">

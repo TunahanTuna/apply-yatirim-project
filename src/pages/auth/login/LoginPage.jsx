@@ -8,12 +8,11 @@ import { useEffect } from 'react'
 
 const initialUser = { identifier: '', password: '' }
 // Bütün alanlar dinamikleştirilecek.
-export default function LoginPage() {
+export default function LoginPage({ setJwtKey }) {
     const dispatch = useDispatch()
     const { key } = useSelector((state) => state.keyReducer)
 
     const [user, setUser] = useState(initialUser)
-
     const handleChange = ({ target }) => {
         const { name, value } = target
         setUser((currentUser) => ({
@@ -26,7 +25,8 @@ export default function LoginPage() {
         try {
             if (user.identifier && user.password) {
                 const res = await axios.post(url, user)
-                dispatch(setKey(res?.data?.jwt))
+                setJwtKey(res?.data?.jwt)
+                //dispatch(setKey(res?.data?.jwt))
             }
         } catch (error) {
             toast.error(error.message, {
