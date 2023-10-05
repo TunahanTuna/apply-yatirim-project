@@ -10,11 +10,12 @@ import axios from 'axios'
 import * as XLSX from 'xlsx'
 import { setData } from '../../store/dataSlice'
 import { useState } from 'react'
-
+import Cookies from 'universal-cookie'
 export default function Layout() {
     const { summary_balance_sheet, summary_ratios } = useSelector((state) => state.dataReducer)
     const { key } = useSelector((state) => state.keyReducer)
-
+    const cookies = new Cookies()
+    const corpId = cookies.get('corp')
     const [jwtKey, setJwtKey] = useState(null)
 
     const fetchURL = import.meta.env.VITE_FETCH_USER_URL
@@ -28,12 +29,15 @@ export default function Layout() {
                     }
                 })
                 .then((response) => {
-                    fetch(`${import.meta.env.VITE_BASE_URL}${response.data.excelFile.url}`)
+                    const fetchUrls = response?.data?.excelFile?.find((data) => data?.caption == corpId)
+                    console.log(response.data)
+                    fetch(`${import.meta.env.VITE_BASE_URL}${fetchUrls?.url}`)
                         .then((res) => res.blob())
                         .then((blob) => {
                             const file = new File([blob], 'excel.xlsx', {
                                 type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                             })
+
                             // Excel dosyasını okuma işlemi
                             const reader = new FileReader()
                             reader.onload = function (event) {
