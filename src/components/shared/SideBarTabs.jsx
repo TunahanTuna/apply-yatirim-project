@@ -1,7 +1,7 @@
 import React from 'react'
 import { ConfigProvider, Tabs } from 'antd'
 import DashboardSideBar from './DashboardSideBar'
-import BankSideBar from './BankSideBar'
+import BankSideBar from './BankSideBarComponent'
 
 export default function SideBarTabs() {
     const items = [
