@@ -42,7 +42,18 @@ import GelirGiderHesaplari from '../../pages/activity_report/financial_analysis/
 import OlagandisiGelirKar from '../../pages/activity_report/financial_analysis/OlagandisiGelirKar'
 import DonemKarHesaplari from '../../pages/activity_report/financial_analysis/DonemKarHesaplari'
 import FinancialAnalysis from '../../pages/activity_report/financial_analysis/FinancialAnalysis'
-import KrediTakip from '../../pages/bank-pages/KrediTakip'
+import {
+    BankaLimitRisk,
+    KrediTakip,
+    LimitRiskTeminat,
+    ProjeLimitleri,
+    TeminatDegeri,
+    TeminatYapisi,
+    YillikOdeme,
+    TeminatMektubu,
+    KurFarki,
+    GayrimenkulListeleri
+} from '../../pages/bank-pages'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -299,17 +310,66 @@ export const BANK_SIDEBAR_LINKS = [
         component: <KrediTakip />
     },
     {
-        key: 'kokpit-2',
-        label: 'Kokpit: 2',
-        path: '/kokpit-2',
+        key: 'bank-2',
+        label: 'Limit Risk Teminat Tabloları',
+        path: '/limit-risk-teminat-tablolari',
         icon: <HiOutlinePresentationChartLine />,
-        component: <KrediTakip />
+        component: <LimitRiskTeminat />
     },
     {
-        key: 'kokpit-uc',
-        label: 'Kokpit: 3',
-        path: '/kokpit-uc',
+        key: 'teminat-yapisi',
+        label: 'Teminat Yapısı',
+        path: '/teminat-yapisi',
         icon: <BiCandles />,
-        component: <KrediTakip />
+        component: <TeminatYapisi />
+    },
+    {
+        key: 'teminat-degeri',
+        label: 'Teminat Değeri',
+        path: '/teminat-degeri',
+        icon: <BiCandles />,
+        component: <TeminatDegeri />
+    },
+    {
+        key: 'proje-ve-diger-limitler',
+        label: 'Proje ve Diğer Limitler',
+        path: '/proje-ve-diger-limitler',
+        icon: <BiCandles />,
+        component: <ProjeLimitleri />
+    },
+    {
+        key: 'banka-limit-risk',
+        label: 'Banka Limit Risk',
+        path: '/banka-limit-risk',
+        icon: <BiCandles />,
+        component: <BankaLimitRisk />
+    },
+    {
+        key: 'yillik-odeme',
+        label: 'Yıllık Odeme',
+        path: '/yillik-odeme',
+        icon: <BiCandles />,
+        component: <YillikOdeme />
+    },
+    {
+        key: 'teminat-mektubu',
+        label: 'Teminat Mektubu',
+        path: '/teminat-mektubu',
+        icon: <BiCandles />,
+        component: <TeminatMektubu />
+    },
+    {
+        key: 'kur-farki',
+        label: 'Kur Farkı',
+        path: '/kur-farki',
+        icon: <BiCandles />,
+        component: <KurFarki />
+    },
+    {
+        key: 'gayrimenkul-listeleri',
+        label: 'Gayrimenkul Listeler',
+        path: '/gayrimenkul-listeleri',
+        icon: <BiCandles />,
+        component: <GayrimenkulListeleri />
     }
 ]

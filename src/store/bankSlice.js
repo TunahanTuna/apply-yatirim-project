@@ -2,7 +2,15 @@ import { createSlice } from '@reduxjs/toolkit'
 import * as XLSX from 'xlsx'
 const initialState = {
     kredi_takip: [],
-    limit_risk_teminat: []
+    limit_risk_teminat: [],
+    teminat_yapisi: [],
+    teminat_degeri: [],
+    proje_limitleri: [],
+    banka_limit_risk: [],
+    yillik_odeme: [],
+    kur_farki: [],
+    teminat_mektubu: [],
+    gayrimenkul_listeleri: []
 }
 export const bankSlice = createSlice({
     name: 'data',
@@ -15,6 +23,14 @@ export const bankSlice = createSlice({
             // Çalışma sayfasını bir JSON verisine dönüştürün (başlıklar dahil)
             state.kredi_takip = dataParser(workbook, 'kredi_takip')
             state.limit_risk_teminat = dataParser(workbook, '2')
+            state.teminat_yapisi = dataParser(workbook, '3')
+            state.teminat_degeri = dataParser(workbook, '4')
+            state.proje_limitleri = dataParser(workbook, '5')
+            state.banka_limit_risk = dataParser(workbook, '6')
+            state.yillik_odeme = dataParser(workbook, '7')
+            state.kur_farki = dataParser(workbook, '8')
+            state.teminat_mektubu = dataParser(workbook, '9')
+            state.gayrimenkul_listeleri = dataParser(workbook, '10')
         }
     }
 })

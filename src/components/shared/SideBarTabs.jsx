@@ -23,7 +23,9 @@ export default function SideBarTabs() {
                     token: {
                         colorPrimary: '#FFFFFF',
                         colorText: '#FFFFFF',
-                        fontSize: 'bold'
+                        fontSize: 'bold',
+                        colorBgTextActive: '#FFFFFF',
+                        colorBgTextHover: '#FFFFFF'
                     }
                 }}
             >
