@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import { PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer, Label } from 'recharts'
 
-const colors = ['#22c55e', '#ea580c'] // Renkleri özelleştirin (istediğiniz kadar renk ekleyebilirsiniz)
+const colors = ['#ea580c', '#22c55e'] // Renkleri özelleştirin (istediğiniz kadar renk ekleyebilirsiniz)
 
 const DonutChart = ({ data, color }) => {
     const sonIndex = data && data[6] && parseFloat(data[6])
