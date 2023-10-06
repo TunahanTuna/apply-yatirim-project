@@ -30,10 +30,14 @@ export default function SalesVolumeProjectionTable({ main_title, sub_title, body
                     </thead>
                     <tbody className=" w-full">
                         {body.map((data, index) => (
-                            <tr key={`key${index} w-full`} onClick={() => handleClick(index)}>
+                            <tr
+                                className="hover:bg-red-100"
+                                key={`key${index} w-full`}
+                                onClick={() => handleClick(index)}
+                            >
                                 {data.slice(1).map((dt, index) => (
                                     <td
-                                        className={`${index != 0 ? 'text-center' : 'font-bold'} text-xs p-2`}
+                                        className={`${index != 0 ? 'text-center' : 'font-bold'} text-xs p-2 `}
                                         key={`index${index}`}
                                     >
                                         <span className="w-full text-right whitespace-nowrap text-xs">

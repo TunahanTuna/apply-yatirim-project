@@ -30,7 +30,11 @@ export default function SalesVolumeTable({ main_title, sub_title, body, setSelec
                     </thead>
                     <tbody className=" w-full">
                         {body.map((data, index) => (
-                            <tr key={`key${index} w-full`} onClick={() => handleClick(index)}>
+                            <tr
+                                className="hover:bg-red-100"
+                                key={`key${index} w-full`}
+                                onClick={() => handleClick(index)}
+                            >
                                 {data.slice(1).map((dt, index) => (
                                     <td
                                         className={`${
