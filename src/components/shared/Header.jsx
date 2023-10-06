@@ -7,6 +7,7 @@ import axios from 'axios'
 import * as XLSX from 'xlsx'
 import { setData } from '../../store/dataSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { texts } from '../../lib/constants/constants'
 
 export default function Header() {
     const dispatch = useDispatch()
@@ -64,7 +65,20 @@ export default function Header() {
     ]
     return (
         <div className="bg-neutral-50 h-16 px-4 flex justify-center gap-10 items-center border-b border-color-gray-100">
-            <Tabs defaultActiveKey="1" centered items={test} onChange={onChange} />
+            <div className="w-full ">
+                <Tabs defaultActiveKey="1" centered items={test} onChange={onChange} />
+            </div>
+            <div className="flex bg-sky-400 rounded-lg p-1 w-full flex-1">
+                <button>
+                    <a
+                        className="whitespace-nowrap  hover:no-underline"
+                        href="/"
+                        onClick={() => localStorage.removeItem('persist:root')}
+                    >
+                        <span className="text-sky-100"> {texts.clear_data_text}</span>
+                    </a>
+                </button>
+            </div>
         </div>
     )
 }

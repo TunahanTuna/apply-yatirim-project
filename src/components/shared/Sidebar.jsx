@@ -30,12 +30,6 @@ export default function Test() {
                 <div>
                     <SideBarTabs />
                 </div>
-
-                <div className="bg-sky-800 w-full">
-                    <a href="/" onClick={() => localStorage.removeItem('persist:root')}>
-                        {texts.clear_data_text}
-                    </a>
-                </div>
             </div>
         </div>
     )

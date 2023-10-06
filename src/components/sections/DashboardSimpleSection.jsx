@@ -34,7 +34,12 @@ export default function DashboardSimpleSection({ data }) {
                 <BarCharts data={barChartFirst && barChartFirst} table_title={title && title} />
             </div>
             <div className="flex flex-1">
-                <BarCharts data={barChartSecond && barChartSecond} type="dashboard" chartStyle="negative" />
+                <BarCharts
+                    data={barChartSecond && barChartSecond}
+                    table_title={title && title}
+                    type="dashboard"
+                    chartStyle="negative"
+                />
             </div>
             <MiniboxPopup visible={open} modal={modal} onClick={() => setOpen(false)} />
         </div>
