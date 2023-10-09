@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { parse } from 'dotenv'
 import * as XLSX from 'xlsx'
 const initialState = {
     kredi_takip: [],
@@ -21,7 +22,7 @@ export const bankSlice = createSlice({
             const workbook = action.payload
 
             // Çalışma sayfasını bir JSON verisine dönüştürün (başlıklar dahil)
-            state.kredi_takip = dataParser(workbook, 'kredi_takip')
+            state.kredi_takip = dataParser(workbook, '11')
             state.limit_risk_teminat = dataParser(workbook, '2')
             state.teminat_yapisi = dataParser(workbook, '3')
             state.teminat_degeri = dataParser(workbook, '4')
@@ -39,7 +40,8 @@ export default bankSlice.reducer
 
 function dataParser(workbook, sheetName) {
     const worksheet = workbook.Sheets[sheetName]
-    return XLSX.utils.sheet_to_json(worksheet, { header: 1 }).map((dt) => {
+
+    return XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false }).map((dt) => {
         return dt.map((d) => {
             return typeof d != 'string' && Number.isInteger(d) != true ? d.toFixed(2) : d
         })

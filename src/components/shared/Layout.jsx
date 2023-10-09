@@ -76,7 +76,11 @@ export default function Layout() {
                                     reader.onload = function (event) {
                                         const data = event.target.result
 
-                                        const workbook = XLSX.read(data, { type: 'binary' })
+                                        const workbook = XLSX.read(data, {
+                                            type: 'binary',
+                                            cellDates: true,
+                                            dateNF: 'dd/mm/yyyy;@'
+                                        })
                                         dispatch(setBank(workbook))
                                         const worksheet = workbook.Sheets['EK4']
                                         // Çalışma sayfasını bir JSON verisine dönüştürün (başlıklar dahil)
