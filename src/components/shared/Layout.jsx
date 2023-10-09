@@ -39,7 +39,6 @@ export default function Layout() {
                         }
                     })
                     const initialUrl = fetchUrls.find((data) => data?.caption == 1)
-                    console.log(response.data)
                     cookies.set('corpList', fetchUrls)
                     fetch(`${import.meta.env.VITE_BASE_URL}${fetchUrls[0]?.url}`)
                         .then((res) => res.blob())
