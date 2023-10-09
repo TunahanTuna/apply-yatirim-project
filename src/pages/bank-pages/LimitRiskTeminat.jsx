@@ -4,12 +4,13 @@ import { ExcelTable } from '../../components'
 
 export default function LimitRiskTeminat() {
     const { limit_risk_teminat } = useSelector((state) => state.bankReducer)
+    const temp = limit_risk_teminat.map((data) => data.map((dt) => (dt == null ? '-' : dt))).slice(3)
 
     return (
-        limit_risk_teminat && (
+        temp && (
             <div className="w-full">
                 <div className="flex flex-row gap-4 w-full">
-                    <ExcelTable table_sheet={limit_risk_teminat} />
+                    <ExcelTable table_sheet={temp} />
                 </div>
             </div>
         )
