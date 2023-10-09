@@ -41,7 +41,7 @@ export default function MaliyetHesaplari() {
                     </div>
                 </div>
 
-                <div className="w-full grid 2xl:grid-cols-4 grid-cols-2 gap-2 pt-2">
+                <div className="w-full grid 2xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-2 pt-2">
                     <div className="w-full flex items-end justify-end h-full">
                         <BarCharts data={toplamHasilat && toplamHasilat} color="bg-red-50" />
                     </div>

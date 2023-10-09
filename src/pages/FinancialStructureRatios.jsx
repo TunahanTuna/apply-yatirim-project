@@ -35,7 +35,7 @@ export default function FinancialStructureRatios() {
             animate={{ opacity: 1, translateY: 0 }}
             className="flex gap-4 flex-col"
         >
-            <div className="flex flex-row gap-4 w-full">
+            <div className="flex flex-row gap-4 w-full overflow-y-auto">
                 <LiquidTable setSelector={setSelector} table_sheet={financial_structure_ratios} title={title} />
             </div>
             <div className=" text-xl w-full flex flex-col items-center justify-center gap-4">

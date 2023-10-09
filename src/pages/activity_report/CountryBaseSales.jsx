@@ -22,7 +22,7 @@ export default function CountryBaseSales() {
             animate={{ opacity: 1, translateY: 0 }}
             className="w-full justify-center flex flex-col p-2"
         >
-            <div>
+            <div className="overflow-y-auto">
                 <CountryBaseSalesTable header={tableHeader} body={tableBody} />
             </div>
             <div className="w-full flex flex-col justify-center items-center pt-4">

@@ -5,7 +5,7 @@ import classNames from 'classnames'
 export default function BasicFigures() {
     const { basic_figures } = useSelector((state) => state.dataReducer)
     return (
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col overflow-y-auto">
             <div className="w-full text-center justify-center items-center font-bold text-4xl pt-10">
                 <h1>Temel Rakamlar</h1>
             </div>

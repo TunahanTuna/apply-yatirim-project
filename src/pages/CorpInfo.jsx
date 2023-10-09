@@ -8,7 +8,7 @@ export default function BalanceSummaryTable() {
     const { corp_info } = useSelector((state) => state.dataReducer)
 
     return (
-        <div className="flex flex-row gap-2 m-2 ">
+        <div className="flex xl:flex-row gap-2 m-2 flex-col">
             <div className="w-full">
                 <CorpInfoCapitalPartnerShipContainer corp={corp_info} />
             </div>

@@ -22,7 +22,7 @@ export default function SalesVolumeRealized() {
             className="w-full flex xl:flex-row flex-col justify-center items-start"
         >
             <div className="flex xl:w-5/6 w-full  flex-col ">
-                <div className="w-full ">
+                <div className="w-full overflow-y-auto">
                     <SalesVolumeTable
                         main_title={main_title}
                         sub_title={sub_title}
@@ -34,7 +34,7 @@ export default function SalesVolumeRealized() {
                     <SalesVolumeBarChart body={body[selected]} main_title={main_title} sub_title={sub_title} />
                 </div>
             </div>
-            <div className="w-full xl:w-4/5 xl:flex xl:flex-col grid grid-cols-2 justify-center">
+            <div className="w-full xl:w-4/5 xl:flex xl:flex-col lg:grid lg:grid-cols-2 grid-cols-1 justify-center">
                 <SalesVolumeDonutChart year={main_title[2]} body={body && body} />
                 <SalesVolumeDonutChart year={main_title[4]} body={body && body} />
                 <SalesVolumeDonutChart year={main_title[6]} body={body && body} />

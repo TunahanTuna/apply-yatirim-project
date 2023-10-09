@@ -21,7 +21,7 @@ export default function UzunVadeYukumlulukler() {
         chartLabels &&
         Favok && (
             <div className="w-full items-center justify-center flex flex-col gap-2">
-                <div className="w-full grid grid-cols-2">
+                <div className="w-full grid xl:grid-cols-2 grid-cols-1">
                     <div className="w-full flex flex-col">
                         <div className="w-full  p-2 flex h-full">
                             <FinancialAnalysisTable data={mali_borclar} setSelectedData={setSelectedData} />
@@ -31,7 +31,7 @@ export default function UzunVadeYukumlulukler() {
                         <FinancialAnalysisTable data={ticari_borclar} setSelectedData={setSelectedData} />
                     </div>
                 </div>
-                <div className="w-full flex h-full gap-2 p-2">
+                <div className="w-full grid h-full gap-2 p-2  xl:grid-cols-2 grid-cols-1">
                     <div className="w-full bg-red-50">
                         <FinancialAnalysisChart
                             data={selectedData}

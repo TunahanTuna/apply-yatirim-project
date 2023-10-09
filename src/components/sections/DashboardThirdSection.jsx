@@ -7,7 +7,7 @@ import DashboardRatioChart from '../dashboards/DashboardRatioChart'
 export default function DashboardThirdSection({ data }) {
     const { brutKar, asitTest, maddiDuran, aktifDevir } = data
     return (
-        <div className="w-full 2xl:flex grid grid-cols-2 gap-2">
+        <div className="w-full 2xl:flex grid lg:grid-cols-2 md:grid-cols-1 gap-2">
             <div className="flex flex-1 flex-col gap-1">
                 <DonutChart data={brutKar && brutKar} />
             </div>

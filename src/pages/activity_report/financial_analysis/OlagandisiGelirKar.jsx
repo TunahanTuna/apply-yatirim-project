@@ -38,7 +38,7 @@ export default function OlagandisiGelirKar() {
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-2 gap-2 pt-2">
+                <div className="w-full grid  xl:grid-cols-2 grid-cols-1 gap-2 pt-2">
                     <div className="w-full flex items-end justify-end h-full">
                         <SpeedometerDashboard data={netCalisma && netCalisma} color={'bg-red-50'} />
                     </div>

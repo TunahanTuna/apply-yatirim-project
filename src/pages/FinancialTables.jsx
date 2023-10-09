@@ -7,7 +7,7 @@ export default function FinancialTables() {
     return (
         <div className="w-full ">
             {pathname && pathname == '/finansal-tablolar' ? (
-                <div className="w-full h-1/2 text-white grid grid-cols-2  ">
+                <div className="w-full h-1/2 text-white grid lg:grid-cols-2 md:grid-cols-1  ">
                     <div className="w-full h-64 hover:bg-sky-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900 ">
                         <Link
                             to={'/finansal-tablolar/bilanco'}

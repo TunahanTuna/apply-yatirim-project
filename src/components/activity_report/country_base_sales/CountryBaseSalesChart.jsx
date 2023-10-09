@@ -23,19 +23,7 @@ export default function CountryBaseSalesChart({ header, body }) {
             {
                 label: 'satış',
                 data: first_data,
-                backgroundColor: [
-                    '#dc2626',
-                    '#9333ea',
-                    '#16a34a',
-                    '#f97316',
-                    '#ca8a04',
-                    '#2563eb',
-                    '#be185d',
-                    '#9f1239',
-                    '#14b8a6',
-                    '#84cc16',
-                    '#4f46e5'
-                ]
+                backgroundColor: colors
             }
         ]
     }
@@ -45,19 +33,7 @@ export default function CountryBaseSalesChart({ header, body }) {
             {
                 label: 'satış',
                 data: second_data,
-                backgroundColor: [
-                    '#dc2626',
-                    '#9333ea',
-                    '#16a34a',
-                    '#f97316',
-                    '#ca8a04',
-                    '#2563eb',
-                    '#be185d',
-                    '#9f1239',
-                    '#14b8a6',
-                    '#84cc16',
-                    '#4f46e5'
-                ]
+                backgroundColor: colors
             }
         ]
     }
@@ -67,25 +43,13 @@ export default function CountryBaseSalesChart({ header, body }) {
             {
                 label: 'satış',
                 data: third_data,
-                backgroundColor: [
-                    '#dc2626',
-                    '#9333ea',
-                    '#16a34a',
-                    '#f97316',
-                    '#ca8a04',
-                    '#2563eb',
-                    '#be185d',
-                    '#9f1239',
-                    '#14b8a6',
-                    '#84cc16',
-                    '#4f46e5'
-                ]
+                backgroundColor: colors
             }
         ]
     }
 
     return (
-        <div className="w-full h-full flex pt-2">
+        <div className="w-full h-full flex 2xl:flex 2xl:flex-row md:grid md:grid-cols-2 flex-col pt-2">
             <div className="w-full flex flex-col items-center justify-center gap-3">
                 <strong>{header && header[2]}</strong>
                 <Doughnut options={options} data={data1} width={200} />
@@ -101,3 +65,16 @@ export default function CountryBaseSalesChart({ header, body }) {
         </div>
     )
 }
+const colors = [
+    '#dc2626',
+    '#9333ea',
+    '#16a34a',
+    '#f97316',
+    '#ca8a04',
+    '#2563eb',
+    '#be185d',
+    '#9f1239',
+    '#14b8a6',
+    '#84cc16',
+    '#4f46e5'
+]

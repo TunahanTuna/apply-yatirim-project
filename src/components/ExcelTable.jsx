@@ -10,7 +10,7 @@ export default function ExcelTable({ table_sheet, title, setChartData }) {
             </strong>
             {table_sheet && (
                 <div className="mt-3">
-                    <table className="w-full text-gray-700 ">
+                    <table className="w-full text-gray-700 table-auto">
                         <thead>
                             <tr>
                                 {table_sheet?.[0]?.slice(1).map((head, idx) => (

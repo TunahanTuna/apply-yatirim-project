@@ -28,7 +28,7 @@ export default function Ozkaynaklar() {
             <div className="w-full items-center justify-center flex flex-col gap-2">
                 <div className="w-full items-center justify-center 2xl:flex grid grid-cols-1 gap-2">
                     <div className="w-full flex flex-col gap-5">
-                        <div className="w-full p-2 flex h-full">
+                        <div className="w-full p-2 flex h-full overflow-y-auto">
                             <FinancialAnalysisTable data={ozkaynaklar} setSelectedData={setSelectedData} />
                         </div>
                     </div>
@@ -41,7 +41,7 @@ export default function Ozkaynaklar() {
                         />
                     </div>
                 </div>
-                <div className="w-full grid 2xl:grid-cols-4 grid-cols-2 p-2 gap-2 opacity-90">
+                <div className="w-full grid 2xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 p-2 gap-2 opacity-90">
                     <div className="w-full flex items-end justify-end h-full">
                         <BarCharts data={ToplamVarlik && ToplamVarlik} color="bg-red-50" />
                     </div>

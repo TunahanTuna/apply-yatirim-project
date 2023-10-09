@@ -8,7 +8,7 @@ import DashboardBarChart from '../dashboards/DashboardRatioChart'
 export default function SecondDashboardSecondSection({ data }) {
     const { title, donutChartFirst, donutChartSecond, ratioChart, donutChartThird } = data
     return (
-        <div className="w-full 2xl:flex grid grid-cols-2 gap-2">
+        <div className="w-full 2xl:flex grid lg:grid-cols-2 md:grid-cols-1  gap-2">
             <div className="flex flex-1">
                 <BarCharts data={donutChartFirst && donutChartFirst} />
             </div>

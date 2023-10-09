@@ -36,7 +36,7 @@ export default function LiquidRatios() {
             </div>
             <div className="text-black text-xl w-full flex flex-col items-center justify-center gap-4">
                 <strong className="text-3xl">{texts.charts_main_title}</strong>
-                <div className="grid grid-cols-2 xl:grid-cols-3 h-[43rem] w-full gap-5">
+                <div className="grid lg:grid-cols-2 md:grid-cols-1   xl:grid-cols-3 h-[43rem] w-full gap-5">
                     <div className="flex w-full justify-center items-center">
                         <RatioChart
                             data={liquid_ratios[1]}

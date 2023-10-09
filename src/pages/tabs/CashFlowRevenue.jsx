@@ -16,7 +16,7 @@ export default function CashFlowRevenue() {
             <motion.div
                 initial={{ opacity: 0, translateY: 100 }}
                 animate={{ opacity: 1, translateY: 0 }}
-                className="flexW gap-4 flex-col"
+                className="flex gap-2 flex-col"
             >
                 <div className="flex flex-row gap-4 w-full">
                     <CashFlowTable table_sheet={temp && temp} setChartData={setChartData} setOpen={setOpen} />

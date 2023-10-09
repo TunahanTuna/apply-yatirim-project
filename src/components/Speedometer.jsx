@@ -3,7 +3,7 @@ import ReactSpeedometer from 'react-d3-speedometer'
 
 export default function Speedometer({ data }) {
     return (
-        <div className="w-full grid xl:grid-cols-3 grid-cols-1 items-center justify-center flex-wrap gap-10 pt-10">
+        <div className="w-full grid xl:grid-cols-3 grid-cols-1 items-center justify-center flex-wrap gap-10  pt-10">
             <div className="flex justify-center items-center">
                 <ReactSpeedometer
                     width={400}

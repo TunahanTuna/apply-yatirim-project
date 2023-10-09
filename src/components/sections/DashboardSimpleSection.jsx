@@ -10,7 +10,7 @@ export default function DashboardSimpleSection({ data }) {
     const [modal, setModal] = useState([])
     const [open, setOpen] = useState(false)
     return (
-        <div className="w-full 2xl:flex grid grid-cols-2 gap-2">
+        <div className="w-full 2xl:flex grid lg:grid-cols-2 md:grid-cols-1 gap-2">
             <div className="flex flex-1 flex-col gap-1 rounded-3xl">
                 <MiniBox
                     data={miniBoxFirst && miniBoxFirst}
