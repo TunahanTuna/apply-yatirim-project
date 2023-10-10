@@ -4,7 +4,7 @@ import { ExcelTable } from '../../components'
 
 export default function LimitRiskTeminat() {
     const { limit_risk_teminat } = useSelector((state) => state.bankReducer)
-    const temp = limit_risk_teminat.map((data) => data.map((dt) => (dt == '0.00' || dt == '0' ? '-' : dt))).slice(3)
+    const temp = limit_risk_teminat.map((data) => data.map((dt) => (dt == '0.00' || dt == '0' ? '-' : dt))).slice(2)
 
     return (
         temp && (
