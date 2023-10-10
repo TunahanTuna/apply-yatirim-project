@@ -15,6 +15,7 @@ export default function Ozkaynaklar() {
     const OzkaynakTutari = ek && ek.find((data) => data[0] == 200002)
     const ToplamVarlikOzkaynak = ek && ek.find((data) => data[0] == 200012)
     const OzkaynakKarlilik = ek && ek.find((data) => data[0] == 200025)
+    const table_title = ek && ek?.find((data) => data[0] == 200000)
 
     return (
         ozkaynaklar &&
@@ -43,16 +44,28 @@ export default function Ozkaynaklar() {
                 </div>
                 <div className="w-full grid 2xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 p-2 gap-2 opacity-90">
                     <div className="w-full flex items-end justify-end h-full">
-                        <BarCharts data={ToplamVarlik && ToplamVarlik} color="bg-red-50" />
+                        <BarCharts
+                            data={ToplamVarlik && ToplamVarlik}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                     <div className="w-full flex items-end justify-end h-full">
-                        <BarCharts data={OzkaynakTutari && OzkaynakTutari} color="bg-red-50" />
+                        <BarCharts
+                            data={OzkaynakTutari && OzkaynakTutari}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                     <div className="w-full">
                         <DonutChart data={ToplamVarlikOzkaynak && ToplamVarlikOzkaynak} color="bg-red-50" />
                     </div>
                     <div className="w-full">
-                        <DashboardBarChart data={OzkaynakKarlilik && OzkaynakKarlilik} color="bg-red-50" />
+                        <DashboardBarChart
+                            data={OzkaynakKarlilik && OzkaynakKarlilik}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                 </div>
             </div>

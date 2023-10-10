@@ -12,6 +12,7 @@ export default function UzunVadeYukumlulukler() {
     const [selectedData, setSelectedData] = useState(mali_borclar[1])
 
     const Favok = ek && ek.find((data) => data[0] == 200018)
+    const table_title = ek && ek?.find((data) => data[0] == 200000)
 
     return (
         mali_borclar &&
@@ -39,7 +40,7 @@ export default function UzunVadeYukumlulukler() {
                             setSelectedData={setSelectedData}
                         />
                     </div>
-                    <BarCharts data={Favok && Favok} color="bg-red-50" />
+                    <BarCharts data={Favok && Favok} color="bg-red-50" table_title={table_title && table_title} />
                 </div>
             </div>
         )

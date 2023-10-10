@@ -13,6 +13,7 @@ export default function GelirHesaplari() {
     const toplamHasilat = ek && ek.find((data) => data[0] == 200004)
     const ypHasilat = ek && ek.find((data) => data[0] == 200006)
     const tlHasilat = ek && ek.find((data) => data[0] == 200005)
+    const table_title = ek && ek?.find((data) => data[0] == 200000)
 
     return (
         gelir_hesaplari &&
@@ -40,13 +41,25 @@ export default function GelirHesaplari() {
                 </div>
                 <div className="w-full grid 2xl:grid-cols-3 grid-cols-1 gap-2 pt-2">
                     <div className="w-full flex items-end justify-end h-full">
-                        <BarCharts data={toplamHasilat && toplamHasilat} color="bg-red-50" />
+                        <BarCharts
+                            data={toplamHasilat && toplamHasilat}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                     <div className="w-full flex items-end justify-end h-full">
-                        <BarCharts data={ypHasilat && ypHasilat} color="bg-red-50" />
+                        <BarCharts
+                            data={ypHasilat && ypHasilat}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                     <div className="w-full flex items-end justify-end h-full">
-                        <BarCharts data={tlHasilat && tlHasilat} color="bg-red-50" />
+                        <BarCharts
+                            data={tlHasilat && tlHasilat}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                 </div>
             </div>

@@ -13,6 +13,7 @@ export default function KisaVadeliYukumlulukler() {
     const KisaVadeliBorclar = ek && ek.find((data) => data[0] == 200017)
     const nakitKisaVadeYukumlulukler = ek && ek.find((data) => data[0] == 200021)
     const BorcDevir = ek && ek.find((data) => data[0] == 200032)
+    const table_title = ek && ek?.find((data) => data[0] == 200000)
 
     const [selectedData, setSelectedData] = useState(mali_borclar[1])
     return (
@@ -59,6 +60,7 @@ export default function KisaVadeliYukumlulukler() {
                         <DashboardBarChart
                             data={nakitKisaVadeYukumlulukler && nakitKisaVadeYukumlulukler}
                             color="bg-red-50"
+                            table_title={table_title && table_title}
                         />
                     </div>
                 </div>

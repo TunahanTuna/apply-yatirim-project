@@ -10,6 +10,7 @@ export default function DonenVarliklar() {
     const chartLabels = hazir_degerler && hazir_degerler[0]
     const cariOran = ek && ek.find((data) => data[0] == 200019)
     const asitTest = ek && ek.find((data) => data[0] == 200020)
+    const table_title = ek && ek?.find((data) => data[0] == 200000)
 
     const [selectedData, setSelectedData] = useState(hazir_degerler[1])
     return (
@@ -40,8 +41,16 @@ export default function DonenVarliklar() {
                         <FinancialAnalysisTable data={stoklar} setSelectedData={setSelectedData} />
                     </div>
                     <div className="w-full 2xl:flex grid grid-cols-1 items-center justify-center gap-2 opacity-90">
-                        <DashboardBarChart data={cariOran} color={'bg-red-50'} />
-                        <DashboardBarChart data={asitTest} color={'bg-red-50'} />
+                        <DashboardBarChart
+                            data={cariOran}
+                            color={'bg-red-50'}
+                            table_title={table_title && table_title}
+                        />
+                        <DashboardBarChart
+                            data={asitTest}
+                            color={'bg-red-50'}
+                            table_title={table_title && table_title}
+                        />
                     </div>
                 </>
             )}

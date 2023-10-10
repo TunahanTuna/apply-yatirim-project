@@ -15,6 +15,8 @@ export default function GelirGiderHesaplari() {
     const borcServis = ek && ek.find((data) => data[0] == 200013)
     const uzunVadelFinansalBorc = ek && ek.find((data) => data[0] == 200018)
     const vergiOncesiKar = ek && ek.find((data) => data[0] == 200027)
+    const table_title = ek && ek?.find((data) => data[0] == 200000)
+
     return (
         diger_gelir_ve_gider_hesaplari &&
         setSelectedData &&
@@ -45,7 +47,11 @@ export default function GelirGiderHesaplari() {
                         <DonutChart data={borcServis && borcServis} color="bg-red-50" />
                     </div>
                     <div className="w-full flex items-end justify-end h-full">
-                        <DashboardBarChart data={vergiOncesiKar && vergiOncesiKar} color="bg-red-50" />
+                        <DashboardBarChart
+                            data={vergiOncesiKar && vergiOncesiKar}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                     <div className="w-full flex items-end justify-end min-h-[20rem]">
                         <DonutChart data={uzunVadelFinansalBorc && uzunVadelFinansalBorc} color="bg-red-50" />

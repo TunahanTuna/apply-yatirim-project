@@ -15,6 +15,9 @@ export default function MaliyetHesaplari() {
     const ypHasilat = ek && ek.find((data) => data[0] == 200014)
     const tlHasilat = ek && ek.find((data) => data[0] == 200015)
     const favokMarj = ek && ek.find((data) => data[0] == 200022)
+
+    const table_title = ek && ek?.find((data) => data[0] == 200000)
+
     return (
         maaliyet_hesaplari &&
         setSelectedData &&
@@ -43,13 +46,21 @@ export default function MaliyetHesaplari() {
 
                 <div className="w-full grid 2xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-2 pt-2">
                     <div className="w-full flex items-end justify-end h-full">
-                        <BarCharts data={toplamHasilat && toplamHasilat} color="bg-red-50" />
+                        <BarCharts
+                            data={toplamHasilat && toplamHasilat}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                     <div className="w-full flex items-end justify-end h-full">
                         <DonutChart data={ypHasilat && ypHasilat} color="bg-red-50" />
                     </div>
                     <div className="w-full flex items-end justify-end h-full">
-                        <BarCharts data={tlHasilat && tlHasilat} color="bg-red-50" />
+                        <BarCharts
+                            data={tlHasilat && tlHasilat}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
+                        />
                     </div>
                     <div className="w-full flex items-end justify-end h-full">
                         <DonutChart data={favokMarj && favokMarj} color="bg-red-50" />
