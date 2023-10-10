@@ -5,6 +5,7 @@ import { BiDownArrow } from 'react-icons/bi'
 import { texts } from '../../lib/constants/constants'
 import ApplyLogo from '../../assets/ApplyLogo'
 import SideBarTabs from './SideBarTabs'
+import ApplyLogoWhite from '../../assets/ApplyLogoWhite'
 
 export default function Test() {
     const { pathname } = useLocation()
@@ -20,7 +21,7 @@ export default function Test() {
                             !open && 'invisible'
                         }`}
                     >
-                        <ApplyLogo />
+                        <ApplyLogoWhite />
                     </h1>
                 </div>
                 <div>
