@@ -13,7 +13,7 @@ export default function SpeedometerDashboard({ data, color }) {
             <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
             <div className="h-full w-full flex items-center justify-center">
                 <ReactSpeedometer
-                    width={350}
+                    width={330}
                     height={200}
                     maxValue={10}
                     value={parseFloat(data[6])}

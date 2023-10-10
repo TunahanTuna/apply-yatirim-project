@@ -54,6 +54,7 @@ import {
     KurFarki,
     GayrimenkulListeleri
 } from '../../pages/bank-pages'
+import ActivityReport from '../../pages/activity_report/ActivityReport'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
     {
@@ -165,7 +166,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         label: 'Faaliyet Raporları',
         path: '/faaliyet-raporlari',
         icon: <HiOutlineAnnotation />,
-        component: null,
+        component: <ActivityReport />,
         subMenus: [
             {
                 key: 'sektor-verileri',

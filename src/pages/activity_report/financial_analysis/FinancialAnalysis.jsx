@@ -15,7 +15,6 @@ export default function FinancialAnalysis() {
                 description: data?.description
             }
         })
-    console.log(pages)
 
     return (
         <div className="w-full ">

@@ -10,13 +10,13 @@ export default function SecondDashboardSecondSection({ data }) {
     return (
         <div className="w-full 2xl:flex grid lg:grid-cols-2 md:grid-cols-1  gap-2">
             <div className="flex flex-1">
-                <BarCharts data={donutChartFirst && donutChartFirst} />
+                <BarCharts data={donutChartFirst && donutChartFirst} table_title={title && title} />
             </div>
             <div className="flex flex-1 min-h-[15rem">
-                <BarCharts data={donutChartSecond && donutChartSecond} />
+                <BarCharts data={donutChartSecond && donutChartSecond} table_title={title && title} />
             </div>
             <div className="flex flex-1">
-                <DashboardBarChart data={ratioChart && ratioChart} table_title={title} />
+                <DashboardBarChart data={ratioChart && ratioChart} table_title={title && title} />
             </div>
             <div className="flex flex-1 min-h-[17rem">
                 <DonutChart data={donutChartThird && donutChartThird} />
