@@ -42,12 +42,7 @@ export default function Dashboard() {
         table_title,
         toplamVarliklar
     }
-    const thirdSection = {
-        brutKar,
-        asitTest,
-        maddiDuran,
-        aktifDevir
-    }
+    const thirdSection = { title: table_title, brutKar, asitTest, maddiDuran, aktifDevir }
     useEffect(() => {}, [ek])
 
     return (
