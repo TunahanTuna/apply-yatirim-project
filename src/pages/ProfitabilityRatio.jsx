@@ -9,6 +9,8 @@ import ProfitabilityRatioPopup from '../components/popups/ProfitabilityRatioPopu
 export default function ProfitabilityRatio() {
     const { profitability_ratios, ratio_desc } = useSelector((state) => state.dataReducer)
     const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == profitability_ratios_key)?.label
+    const years = profitability_ratios?.[0]?.slice(2)
+
     const temp = [
         profitability_ratios[0],
         ...profitability_ratios
@@ -122,13 +124,25 @@ export default function ProfitabilityRatio() {
             <div className="text-black text-xl w-full flex flex-col items-center justify-center ">
                 <div className="grid grid-cols-1 xl:grid-cols-3  h-[43rem] w-full gap-5">
                     <div className="h-1/2">
-                        <ProfitabilityBarChart body={firstChartData} title={profitability_ratios[1][1]} />
+                        <ProfitabilityBarChart
+                            body={firstChartData}
+                            title={profitability_ratios[1][1]}
+                            table_title={years && years}
+                        />
                     </div>
                     <div className="h-1/2">
-                        <ProfitabilityBarChart body={secondChartData} title={profitability_ratios[5][1]} />
+                        <ProfitabilityBarChart
+                            body={secondChartData}
+                            title={profitability_ratios[5][1]}
+                            table_title={years && years}
+                        />
                     </div>
                     <div className="h-1/2">
-                        <ProfitabilityBarChart body={thirdChartData} title={profitability_ratios[11][1]} />
+                        <ProfitabilityBarChart
+                            body={thirdChartData}
+                            title={profitability_ratios[11][1]}
+                            table_title={years && years}
+                        />
                     </div>
                 </div>
                 <ProfitabilityRatioPopup

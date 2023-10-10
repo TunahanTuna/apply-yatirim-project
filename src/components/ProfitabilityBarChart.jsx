@@ -12,12 +12,12 @@ const options = {
         }
     }
 }
-export default function ProfitabilityBarChart({ body, title }) {
+export default function ProfitabilityBarChart({ body, title, table_title }) {
     const data = {
-        labels: [2019, 2020, 2021], // Dİnamikleştir
+        labels: table_title && table_title, // Dİnamikleştir
         datasets: body
     }
-
+    console.log(title)
     return (
         <div className="bg-white rounded-lg w-full flex flex-col gap-2 items-center pt-5">
             <strong className="text-center text-sm">{title && title}</strong>
