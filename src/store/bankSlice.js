@@ -22,7 +22,7 @@ export const bankSlice = createSlice({
             const workbook = action.payload
 
             // Çalışma sayfasını bir JSON verisine dönüştürün (başlıklar dahil)
-            state.kredi_takip = dataParser(workbook, '1')
+            state.kredi_takip = dataParser(workbook, '11')
             state.limit_risk_teminat = dataParser(workbook, '2')
             state.teminat_yapisi = dataParser(workbook, '3')
             state.teminat_degeri = dataParser(workbook, '4')
