@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import { useDispatch, useSelector } from 'react-redux'
 import { setKey } from '../../../store/keySlice'
 import { useEffect } from 'react'
+import { texts } from '../../../lib/constants/constants'
 import Cookies from 'universal-cookie'
 const initialUser = { identifier: '', password: '' }
 // Bütün alanlar dinamikleştirilecek.
@@ -24,15 +25,14 @@ export default function LoginPage({ setJwtKey }) {
         const url = import.meta.env.VITE_AUTH_URL
         try {
             if (user.identifier && user.password) {
-                const res = await axios.post(url, user)
+                let res = await axios.post(url, user)
                 setJwtKey(res?.data?.jwt)
                 //dispatch(setKey(res?.data?.jwt))
                 cookies.set('corp', user.corp)
             }
+            toast.success(texts.succes_login_message)
         } catch (error) {
-            toast.error(error.message, {
-                hideProgressBar: true
-            })
+            toast.error(error.message)
         }
     }
 
