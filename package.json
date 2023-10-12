@@ -28,6 +28,8 @@
         "react-chartjs-2": "^5.2.0",
         "react-d3-speedometer": "^1.1.0",
         "react-dom": "^18.2.0",
+        "react-gauge-chart": "^0.4.1",
+        "react-gauge-component": "^1.1.22",
         "react-icons": "^4.10.1",
         "react-persist": "^1.0.2",
         "react-redux": "^8.1.2",

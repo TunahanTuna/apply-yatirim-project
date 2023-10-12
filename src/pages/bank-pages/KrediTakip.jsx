@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { ExcelTable } from '../../components'
 import moment from 'moment'
+import KrediTakipTable from '../../components/bank-page-components/kredi-takip/KrediTakipTable'
 
 export default function KrediTakip() {
     const { kredi_takip, limit_risk_teminat } = useSelector((state) => state.bankReducer)
@@ -19,7 +20,8 @@ export default function KrediTakip() {
         temp && (
             <div className="w-full">
                 <div className="flex flex-row gap-4 w-full">
-                    <ExcelTable table_sheet={temp} />
+                    {/* <ExcelTable table_sheet={temp} /> */}
+                    <KrediTakipTable data={temp} />
                 </div>
             </div>
         )
