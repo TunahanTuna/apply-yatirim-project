@@ -5,9 +5,7 @@ import GaugeComponent from 'react-gauge-component'
 import { defaultSubArcs } from 'react-gauge-component/dist/lib/GaugeComponent/types/Arc'
 
 export default function Speedometer({ data }) {
-    console.log(data)
     const maxValue = data[0] == 30006 ? 20 : 10
-    console.log(maxValue)
     return (
         <div className="w-full grid xl:grid-cols-3 grid-cols-1 items-center justify-center gap-2  pt-10">
             <div className="flex w-full justify-center items-center">
@@ -23,7 +21,7 @@ export default function Speedometer({ data }) {
     )
 }
 
-const GaugeSpeedometer = ({ data, maxValue }) => {
+export const GaugeSpeedometer = ({ data, maxValue }) => {
     return (
         <GaugeComponent
             labels={{
@@ -34,9 +32,9 @@ const GaugeSpeedometer = ({ data, maxValue }) => {
             }}
             type="semicircle"
             colors={['#b91c1c', '#ea580c', '#facc15', '#a3be8c', '#4d7c0f']}
-            value={data}
+            value={data && data}
             minValue={0}
-            maxValue={maxValue}
+            maxValue={maxValue && maxValue}
             arc={{
                 padding: 0.02,
                 subArcs: [

@@ -4,6 +4,7 @@ import FinancialAnalysisTable from '../../../components/activity_report/financia
 import FinancialAnalysisChart from '../../../components/activity_report/financial_analysis_report/FinancialAnalysisChart'
 import DonutChart from '../../../components/dashboards/DonutChart'
 import DashboardBarChart from '../../../components/dashboards/DashboardRatioChart'
+import BarCharts from '../../../components/BarCharts'
 
 export default function KisaVadeliYukumlulukler() {
     const { financial_analysis_report, ek } = useSelector((state) => state.dataReducer)
@@ -14,7 +15,7 @@ export default function KisaVadeliYukumlulukler() {
     const nakitKisaVadeYukumlulukler = ek && ek.find((data) => data[0] == 200021)
     const BorcDevir = ek && ek.find((data) => data[0] == 200032)
     const table_title = ek && ek?.find((data) => data[0] == 200000)
-
+    console.log(BorcDevir)
     const [selectedData, setSelectedData] = useState(mali_borclar[1])
     return (
         mali_borclar &&
@@ -42,10 +43,10 @@ export default function KisaVadeliYukumlulukler() {
                         />
                     </div>
                     <div className="2xl:w-9/12 w-full bg-red-50">
-                        <FinancialAnalysisChart
-                            data={BorcDevir}
-                            labels={chartLabels}
-                            setSelectedData={setSelectedData}
+                        <BarCharts
+                            data={BorcDevir && BorcDevir}
+                            color="bg-red-50"
+                            table_title={table_title && table_title}
                         />
                     </div>
                 </div>

@@ -6,7 +6,7 @@ export default function ProfitabilityRatioPopup({ visible, modal, title, onClick
     if (modal[0] == 40001 || modal[0] == 40005 || modal[0] == 40011 || modal[0] == 40012) return null
     return (
         <div
-            className="fixed z-10 inset-0 bg-black bg-opacity-20 backdrop-blur-sm flex justify-center items-center"
+            className="fixed hidden z-30 inset-0 bg-black bg-opacity-20 backdrop-blur-sm xl:flex justify-center items-center"
             onClick={onClick && onClick}
         >
             <div className="bg-orange-50 grid grid-cols-2 backdrop-blur-sm w-5/6 gap-4 p-10 rounded-xl">
