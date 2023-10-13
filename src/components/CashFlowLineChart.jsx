@@ -30,7 +30,7 @@ export default function CashFlowLineChart({ data, table_title }) {
         labels,
         datasets: [
             {
-                label: 'Dataset 2',
+                label: data && data?.[1],
                 data: temp,
                 borderColor: '#3b82f6',
                 backgroundColor: '#3b82f6'
@@ -38,7 +38,7 @@ export default function CashFlowLineChart({ data, table_title }) {
         ]
     }
     return (
-        <div className="gap-2 flex flex-col h-full w-full bg-sky-50 p-4 rounded-sm border border-gray-200">
+        <div className="gap-2 flex flex-col h-full w-full bg-neutral-50 p-4 rounded-sm border border-gray-200">
             <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
             <div className="w-full h-full flex items-center justify-center">
                 <Line options={options} data={chartData} />
