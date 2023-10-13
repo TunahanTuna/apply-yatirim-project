@@ -30,7 +30,7 @@ export default function LoginPage({ setJwtKey }) {
                 //dispatch(setKey(res?.data?.jwt))
                 cookies.set('corp', user.corp)
             }
-            toast.success(texts.succes_login_message)
+            toast.info(texts.succes_login_message)
         } catch (error) {
             toast.error(error.message)
         }
