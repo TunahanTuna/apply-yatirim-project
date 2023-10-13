@@ -1,8 +1,11 @@
 import classNames from 'classnames'
 import React from 'react'
 import ReactSpeedometer from 'react-d3-speedometer'
+import { GaugeSpeedometer } from '../Speedometer'
 
 export default function SpeedometerDashboard({ data, color }) {
+    const maxValue = data && data?.[0] == 30006 ? 20 : 10
+
     return (
         <div
             className={classNames(
@@ -12,18 +15,7 @@ export default function SpeedometerDashboard({ data, color }) {
         >
             <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
             <div className="h-full w-full flex items-center justify-center">
-                <ReactSpeedometer
-                    width={330}
-                    height={200}
-                    maxValue={10}
-                    value={parseFloat(data[6])}
-                    needleColor="#172554"
-                    segments={5}
-                    segmentColors={['#b91c1c', '#ea580c', '#facc15', '#a3be8c', '#4d7c0f']}
-                    needleHeightRatio={0.8}
-                    needleTransition="easeElastic"
-                    needleTransitionDuration={6000}
-                />
+                <GaugeSpeedometer data={data && data?.[6]} maxValue={maxValue} />
             </div>
         </div>
     )
