@@ -40,7 +40,13 @@ export default function KrediTakipTable({ data, setChartData }) {
                             {data?.slice(1).map((dt, key) => (
                                 <tr
                                     key={key}
-                                    className="hover:bg-indigo-100 bg-neutral-50 text-indigo-950 font-semibold"
+                                    className={classNames(
+                                        'hover:bg-indigo-100 bg-neutral-50 text-indigo-950 font-semibold',
+                                        moment(dt?.[1], 'DD/MM/YYYY')?._isValid &&
+                                            moment(dt?.[1], 'DD/MM/YYYY')?._pf?.unusedInput?.length == 0
+                                            ? 'bg-green-200'
+                                            : ''
+                                    )}
                                     onClick={setChartData && setChartData(dt[key])}
                                 >
                                     {dt.slice(1).map((row, idx) => (
@@ -49,11 +55,7 @@ export default function KrediTakipTable({ data, setChartData }) {
                                                 idx != 0 ? 'text-right' : 'text-left',
                                                 // dt[0] == 299 ? 'bg-indigo-900 text-indigo-50' : null,
                                                 dt[0] == 3000 ? 'bg-indigo-800 text-indigo-50 font-bold' : null,
-                                                'border-none p-2 text-xs',
-                                                moment(row, 'DD/MM/YYYY')?._isValid &&
-                                                    moment(row, 'DD/MM/YYYY')?._pf?.unusedInput?.length == 0
-                                                    ? 'bg-red-300'
-                                                    : ''
+                                                'border-none p-2 text-xs'
                                             )}
                                             key={idx}
                                         >
