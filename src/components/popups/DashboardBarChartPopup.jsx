@@ -19,7 +19,7 @@ export default function DashboardBarChartPopup({ visible, modal, onClick }) {
                     description ? 'grid-cols-2 2xl:grid-cols-2' : 'grid-cols-1 2xl:grid-cols-1'
                 )}
             >
-                <div className=" hidden 2xl:block">
+                <div className=" hidden 2xl:block ">
                     <BarCharts data={modal} />
                 </div>
                 <div className={classNames('w-full text-center', description ? 'visible' : 'hidden')}>
