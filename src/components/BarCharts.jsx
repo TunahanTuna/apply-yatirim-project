@@ -35,7 +35,7 @@ const options = {
         }
     }
 }
-export default function BarCharts({ data, color, chartStyle, table_title }) {
+export default function BarCharts({ data, color, chartStyle, table_title, onClick }) {
     const temp = data && [data[2], data[4], data[6], ...data.slice(8)]
     const chartData = {
         labels: table_title
@@ -76,6 +76,7 @@ export default function BarCharts({ data, color, chartStyle, table_title }) {
                 'flex flex-col h-full w-full rounded-xl border border-gray-300',
                 color && color ? color : 'bg-neutral-50 '
             )}
+            onClick={onClick}
         >
             <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>
             <div className="flex justify-center items-center w-full h-full">

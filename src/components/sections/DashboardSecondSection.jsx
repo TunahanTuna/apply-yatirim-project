@@ -4,11 +4,13 @@ import { BarCharts, RatioChart } from '../index'
 import DonutChart from '../dashboards/DonutChart'
 import MiniboxPopup from '../popups/MiniboxPopup'
 import { useState } from 'react'
+import DashboardBarChartPopup from '../popups/DashboardBarChartPopup'
 
 export default function DashboardSecondSection({ data }) {
     const { totalRevenue, TLRevenue, totalReveneu, cariOran, NetIsletmeSermayesi, table_title, toplamVarliklar } = data
     const [modal, setModal] = useState([])
     const [open, setOpen] = useState(false)
+    const [openBar, setOpenBar] = useState(false)
     return (
         <div className="w-full 2xl:flex grid lg:grid-cols-2 md:grid-cols-1  gap-2">
             <div className="flex flex-1 flex-col gap-1">
@@ -28,15 +30,30 @@ export default function DashboardSecondSection({ data }) {
                 />
             </div>
             <div className="flex flex-1 ">
-                <BarCharts data={totalReveneu && totalReveneu} table_title={table_title && table_title} />
+                <BarCharts
+                    data={totalReveneu && totalReveneu}
+                    table_title={table_title && table_title}
+                    onClick={() => {
+                        setModal(totalReveneu)
+                        setOpenBar(true)
+                    }}
+                />
             </div>
             <div className="flex flex-1 ">
-                <BarCharts data={NetIsletmeSermayesi && NetIsletmeSermayesi} table_title={table_title && table_title} />
+                <BarCharts
+                    data={NetIsletmeSermayesi && NetIsletmeSermayesi}
+                    table_title={table_title && table_title}
+                    onClick={() => {
+                        setModal(NetIsletmeSermayesi)
+                        setOpenBar(true)
+                    }}
+                />
             </div>
             <div className="flex flex-1">
                 <DonutChart data={toplamVarliklar && toplamVarliklar} table_title={table_title && table_title} />
             </div>
             <MiniboxPopup visible={open} modal={modal} onClick={() => setOpen(false)} />
+            <DashboardBarChartPopup visible={openBar} modal={modal} onClick={() => setOpenBar(false)} />
         </div>
     )
 }
