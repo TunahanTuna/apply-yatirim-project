@@ -20,23 +20,7 @@ export default function ProfitabilityRatio() {
             )
     ]
 
-    const ratio_descriptions = ratio_desc.filter(
-        (data) =>
-            data[0] == 'A33' ||
-            data[0] == 'A34' ||
-            data[0] == 'A35' ||
-            data[0] == 'A36' ||
-            data[0] == 'A37' ||
-            data[0] == 'A38' ||
-            data[0] == 'A39' ||
-            data[0] == 'A40' ||
-            data[0] == 'A41' ||
-            data[0] == 'A42' ||
-            data[0] == 'A43' ||
-            data[0] == 'A44' ||
-            data[0] == 'A45' ||
-            data[0] == 'A46'
-    )
+    const ratio_descriptions = ratio_desc.filter((data) => data_filter(data))
     const [chartData, setChartData] = useState(null)
     const [open, setOpen] = useState(false)
     const [description, setDescription] = useState(null)
@@ -153,5 +137,23 @@ export default function ProfitabilityRatio() {
                 />
             </div>
         </motion.div>
+    )
+}
+const data_filter = (data) => {
+    return (
+        data[0] == 'A33' ||
+        data[0] == 'A34' ||
+        data[0] == 'A35' ||
+        data[0] == 'A36' ||
+        data[0] == 'A37' ||
+        data[0] == 'A38' ||
+        data[0] == 'A39' ||
+        data[0] == 'A40' ||
+        data[0] == 'A41' ||
+        data[0] == 'A42' ||
+        data[0] == 'A43' ||
+        data[0] == 'A44' ||
+        data[0] == 'A45' ||
+        data[0] == 'A46'
     )
 }
