@@ -6,6 +6,7 @@ import DonutChart from '../dashboards/DonutChart'
 import DashboardBarChartPopup from '../popups/DashboardBarChartPopup'
 import DashboardDonutChartPopup from '../popups/DashboardDonutChartPopup'
 import DashboardRatioChartPopup from '../popups/DashboardRatioChartPopup'
+import DashboardSpeedometerPopup from '../popups/DashboardSpeedometerPopup'
 
 export default function ThirdDashboardSectionSecond({ data }) {
     const { title, donutChartFirst, donutChartSecond, ratioChartFirst, speedometerFirst } = data
@@ -13,6 +14,8 @@ export default function ThirdDashboardSectionSecond({ data }) {
     const [openBar, setOpenBar] = useState(false)
     const [openRatio, setOpenRatio] = useState(false)
     const [openDonut, setOpenDonut] = useState(false)
+    const [openSpeedo, setOpenSpeedo] = useState(false)
+
     return (
         <div className="w-full 2xl:flex grid lg:grid-cols-2 md:grid-cols-1  gap-2">
             <div className="flex flex-1">
@@ -46,7 +49,13 @@ export default function ThirdDashboardSectionSecond({ data }) {
                 />
             </div>
             <div className="flex flex-1">
-                <SpeedometerDashboard data={speedometerFirst && speedometerFirst} />
+                <SpeedometerDashboard
+                    data={speedometerFirst && speedometerFirst}
+                    onClick={() => {
+                        setModal(speedometerFirst)
+                        setOpenSpeedo(true)
+                    }}
+                />
             </div>
             <DashboardBarChartPopup visible={openBar} modal={modal} onClick={() => setOpenBar(false)} />
             <DashboardRatioChartPopup visible={openRatio} modal={modal} onClick={() => setOpenRatio(false)} />
@@ -56,6 +65,7 @@ export default function ThirdDashboardSectionSecond({ data }) {
                 onClick={() => setOpenDonut(false)}
                 table_title={title}
             />
+            <DashboardSpeedometerPopup visible={openSpeedo} modal={modal} onClick={() => setOpenSpeedo(false)} />
         </div>
     )
 }
