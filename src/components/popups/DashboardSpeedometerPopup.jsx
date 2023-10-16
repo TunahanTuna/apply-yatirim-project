@@ -13,7 +13,7 @@ export default function DashboardSpeedometerPopup({ visible, modal, title, onCli
             className="fixed z-30 inset-0 bg-black bg-opacity-20 backdrop-blur-sm xl:flex flex-col justify-center items-center gap-5 hidden"
             onClick={onClick}
         >
-            <div className="w-4/6 flex flex-col bg-orange-50 rounded-xl xl:overflow-hidden overflow-y-scroll p-10">
+            <div className="w-4/6 flex flex-col bg-neutral-100 rounded-xl xl:overflow-hidden overflow-y-scroll p-10">
                 <strong className="text-3xl text-center">{modal && modal?.[1]}</strong>
                 <div className="w-full flex items-center justify-center p-5">
                     <span className="text-justify">{description && description}</span>
