@@ -14,15 +14,15 @@ const FinancialIndicators = () => {
 
     return (
         <div className="w-full h-screen flex flex-col 2xl:flex-row p-2 ">
-            <div className="w-full flex flex-col flex-1  ">
+            <div className="w-full flex flex-col flex-1">
                 <div className="w-full text-3xl text-red-800 flex items-center justify-center">
                     <strong>Temel Finansal Göstergeler</strong>
                 </div>
-                <div className="w-full p-10 justify-center items-center flex flex-col">
-                    <div className="w-full">
+                <div className="w-full p-10 justify-center items-center flex flex-col min-w-fit ">
+                    <div className="w-full ">
                         <IncomeStatementSummaryHeader />
                     </div>
-                    <div className="w-full">
+                    <div className="w-full ">
                         <IncomeStatementSummaryTable />
                     </div>
                     <div className="pt-4 w-full">
