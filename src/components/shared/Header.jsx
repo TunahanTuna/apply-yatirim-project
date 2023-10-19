@@ -68,7 +68,7 @@ export default function Header() {
             <div className="w-full ">
                 <Tabs defaultActiveKey="1" centered items={test} onChange={onChange} />
             </div>
-            <div className="flex bg-sky-400 rounded-lg p-1 w-full flex-1">
+            <div className="flex bg-sky-900 rounded-lg p-1 w-full flex-1">
                 <button>
                     <a
                         className="whitespace-nowrap  hover:no-underline"

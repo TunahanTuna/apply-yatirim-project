@@ -43,8 +43,8 @@ const MenuItem = ({ menu, index }) => {
                 to={menu?.path}
                 key={`sidebar-${index}`}
                 className={`${
-                    pathname === menu.path ? 'text-white bg-sky-500' : 'text-neutral-400 '
-                } hover:no-underline flex rounded-md p-2 cursor-pointer hover:bg-sky-400 text-white font-bold placeholder:text-sm items-center gap-x-4 active:bg-sky-600 ${
+                    pathname === menu.path ? 'text-white bg-sky-700' : 'text-neutral-400 '
+                } hover:no-underline flex rounded-md p-2 cursor-pointer hover:bg-sky-700 text-white font-bold placeholder:text-sm items-center gap-x-4 active:bg-sky-600 ${
                     menu?.gap ? 'mt-9' : 'mt-2'
                 }`}
             >
