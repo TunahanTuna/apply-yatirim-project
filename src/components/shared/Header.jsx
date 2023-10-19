@@ -63,6 +63,7 @@ export default function Header() {
             children: 'Content of Tab Pane 3'
         }
     ]
+
     return (
         <div className="bg-neutral-50 h-16 px-4 flex justify-center gap-10 items-center border-b border-color-gray-100">
             <div className="w-full ">

@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux'
+import { Margin, usePDF } from 'react-to-pdf'
 
 import { DashboardSimpleSection, DashboardSecondSection, DashboardThirdSection } from '../components/sections'
 
-export default function Dashboard() {
+export default function Dashboard({ test }) {
     // Değişken isimlendirmeleri düzeltilecek
     const { ek } = useSelector((state) => state.dataReducer)
     const table_title = ek && ek?.find((data) => data[0] == 200000)
@@ -21,10 +22,9 @@ export default function Dashboard() {
     const netFinansalBorç = ek && ek?.find((data) => data[0] == 200015)
     const FAVOKMarji = ek && ek?.find((data) => data[0] == 200022)
     const FAVOK = ek && ek?.find((data) => data[0] == 200008)
-
     const aktifDevir = ek && ek?.find((data) => data[0] == 30007)
     const maddiDuran = ek && ek?.find((data) => data[0] == 30005)
-
+    console.log(test)
     const firstSection = {
         title: table_title,
         miniBoxFirst: totalAssets,
@@ -44,14 +44,21 @@ export default function Dashboard() {
     }
     const thirdSection = { title: table_title, brutKar, asitTest, maddiDuran, aktifDevir }
     useEffect(() => {}, [ek])
-
+    const { toPDF, targetRef } = usePDF({
+        filename: 'usepdf-example.pdf',
+        page: { margin: Margin.MEDIUM }
+    })
     return (
         ek && (
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="flex gap-4 flex-col w-full h-full items-center justify-center"
+                ref={targetRef}
             >
+                <div>
+                    <button onClick={toPDF}>test</button>
+                </div>
                 <div className="w-full flex">
                     <DashboardSimpleSection data={firstSection} />
                 </div>

@@ -16,6 +16,7 @@ import Cookies from 'universal-cookie'
 import Header from './Header'
 import { toast } from 'react-toastify'
 import { texts } from '../../lib/constants/constants'
+
 export default function Layout() {
     const { summary_balance_sheet, summary_ratios } = useSelector((state) => state.dataReducer)
     const { key } = useSelector((state) => state.keyReducer)
@@ -26,6 +27,7 @@ export default function Layout() {
     const fetchURL = import.meta.env.VITE_FETCH_USER_URL
     const dispatch = useDispatch()
     useEffect(() => {
+        // Bu sayfadan AYIR!
         if (jwtKey != null && summary_balance_sheet.length == 0) {
             try {
                 axios
@@ -98,6 +100,7 @@ export default function Layout() {
             } catch (error) {}
         }
     }, [jwtKey])
+
     return (
         <div className="flex flex-row bg-neutral-50 h-screen w-screen overflow-hidden">
             {summary_balance_sheet.length == 0 ? (
