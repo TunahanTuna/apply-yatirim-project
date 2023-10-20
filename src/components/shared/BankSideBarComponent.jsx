@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { BANK_SIDEBAR_LINKS } from '../../lib/constants/navigation'
+import { texts } from '../../lib/constants/constants'
+
 import { Link, useLocation } from 'react-router-dom'
 import { BiDownArrow } from 'react-icons/bi'
-import { texts } from '../../lib/constants/constants'
-import ApplyLogo from '../../assets/ApplyLogo'
-import SideBarTabs from './SideBarTabs'
 
 export default function BankSideBar() {
     return (
@@ -21,12 +20,7 @@ export default function BankSideBar() {
 }
 const MenuItem = ({ menu, index }) => {
     const { pathname } = useLocation()
-    const [subMenuOpen, setSubMenuOpen] = useState({
-        'finansal-tablolar': true,
-        'oran-analizi': true,
-        'faaliyet-raporlari': true,
-        'mali-analiz-raporu': true
-    }) // Ayrı alt menü durumlarını saklar
+    const [subMenuOpen, setSubMenuOpen] = useState(texts.submenuOpenObject) // Ayrı alt menü durumlarını saklar
     const toggleSubMenu = (menuKey) => {
         setSubMenuOpen({
             ...subMenuOpen,

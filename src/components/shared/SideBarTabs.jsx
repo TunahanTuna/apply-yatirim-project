@@ -2,35 +2,27 @@ import React from 'react'
 import { ConfigProvider, Tabs } from 'antd'
 import DashboardSideBar from './DashboardSideBar'
 import BankSideBar from './BankSideBarComponent'
+import { sidebarTabsHelpers } from '../../lib/constants/constants'
 
 export default function SideBarTabs() {
-    const items = [
-        {
-            key: '1',
-            label: 'Kokpit',
-            children: <DashboardSideBar />
-        },
-        {
-            key: '2',
-            label: 'Banka',
-            children: <BankSideBar />
-        }
-    ]
+    const items = sidebarTabsHelpers.sidebarItemsObject
     return (
         <div>
             <ConfigProvider
                 theme={{
-                    token: {
-                        colorPrimary: '#FFFFFF',
-                        colorText: '#FFFFFF',
-                        fontSize: 'bold',
-                        colorBgTextActive: '#FFFFFF',
-                        colorBgTextHover: '#FFFFFF'
-                    }
+                    token: tokenHelper
                 }}
             >
                 <Tabs centered items={items} animated={true} />
             </ConfigProvider>
         </div>
     )
+}
+
+const tokenHelper = {
+    colorPrimary: '#FFFFFF',
+    colorText: '#FFFFFF',
+    fontSize: 'bold',
+    colorBgTextActive: '#FFFFFF',
+    colorBgTextHover: '#FFFFFF'
 }
