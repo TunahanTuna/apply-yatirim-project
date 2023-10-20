@@ -25,6 +25,11 @@ export const GaugeSpeedometer = ({ data, maxValue }) => {
     return (
         <GaugeComponent
             labels={{
+                valueLabel: {
+                    style: {
+                        fill: '#6b7280'
+                    }
+                },
                 tickLabels: {
                     type: 'inner',
                     ticks: [{ value: 0 }, { value: 2 }, { value: 4 }, { value: 6 }, { value: 8 }, { value: 10 }]
@@ -65,7 +70,6 @@ export const GaugeSpeedometer = ({ data, maxValue }) => {
                     }
                 ]
             }}
-            textColor="#FFFFF"
         />
     )
 }
