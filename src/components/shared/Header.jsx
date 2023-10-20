@@ -7,26 +7,27 @@ import axios from 'axios'
 import * as XLSX from 'xlsx'
 import { setData } from '../../store/dataSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { texts } from '../../lib/constants/constants'
+import { cookieHelpers, texts, urlFilters } from '../../lib/constants/constants'
 
 export default function Header() {
     const dispatch = useDispatch()
 
     const cookies = new Cookies()
-    const test = cookies.get('corpList')?.map((data) => {
+    const test = cookies.get(urlFilters.corpList)?.map((data) => {
         return {
             key: data.caption,
             label: data.caption,
             url: data.url
         }
     })
+    console.log(test)
     const onChange = (key) => {
         const temp = test.find((data) => data.key == key)
         fetch(`${import.meta.env.VITE_BASE_URL}${temp?.url}`)
             .then((res) => res.blob())
             .then((blob) => {
-                const file = new File([blob], 'excel.xlsx', {
-                    type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                const file = new File([blob], urlFilters.excelFileName, {
+                    type: urlFilters.excelFileType
                 })
 
                 // Excel dosyasını okuma işlemi
@@ -36,33 +37,11 @@ export default function Header() {
 
                     const workbook = XLSX.read(data, { type: 'binary' })
                     dispatch(setData(workbook))
-                    const worksheet = workbook.Sheets['EK4']
-                    // Çalışma sayfasını bir JSON verisine dönüştürün (başlıklar dahil)
-                    const excelData = XLSX.utils.sheet_to_json(worksheet, { header: 1 })
-                    // İşlenen verileri kullanarak istediğiniz şekilde devam edebilirsiniz.
-                    // Örneğin, çalışma kitabını açabilir ve sayfaları okuyabilirsiniz.
                 }
                 reader.readAsBinaryString(file)
             })
     }
 
-    const items = [
-        {
-            key: '1',
-            label: 'Tab 1',
-            children: 'Content of Tab Pane 1'
-        },
-        {
-            key: '2',
-            label: 'Tab 2',
-            children: 'Content of Tab Pane 2'
-        },
-        {
-            key: '3',
-            label: 'Tab 3',
-            children: 'Content of Tab Pane 3'
-        }
-    ]
     return (
         <div className="bg-neutral-50 h-16 px-4 flex justify-center gap-10 items-center border-b border-color-gray-100">
             <div className="w-full ">
@@ -73,7 +52,7 @@ export default function Header() {
                     <a
                         className="whitespace-nowrap  hover:no-underline"
                         href="/"
-                        onClick={() => localStorage.removeItem('persist:root')}
+                        onClick={() => localStorage.removeItem(cookieHelpers.persistRoot)}
                     >
                         <span className="text-sky-100"> {texts.clear_data_text}</span>
                     </a>
