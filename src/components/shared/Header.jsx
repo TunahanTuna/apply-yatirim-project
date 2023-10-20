@@ -27,7 +27,7 @@ export default function Header() {
             .then((res) => res.blob())
             .then((blob) => {
                 const file = new File([blob], urlFilters.excelFileName, {
-                    type: url.excelFileType
+                    type: urlFilters.excelFileType
                 })
 
                 // Excel dosyasını okuma işlemi
