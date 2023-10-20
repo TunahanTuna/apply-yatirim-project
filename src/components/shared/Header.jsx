@@ -20,7 +20,6 @@ export default function Header() {
             url: data.url
         }
     })
-    console.log(test)
     const onChange = (key) => {
         const temp = test.find((data) => data.key == key)
         fetch(`${import.meta.env.VITE_BASE_URL}${temp?.url}`)
