@@ -9,8 +9,6 @@ import ApplyLogoWhite from '../../assets/ApplyLogoWhite'
 import { FiAlignJustify } from 'react-icons/fi'
 
 export default function Test() {
-    const { pathname } = useLocation()
-
     const [open, setOpen] = useState(true)
 
     return (
