@@ -17,7 +17,7 @@ export default function DashboardRatioChartPopup({ visible, modal, onClick }) {
             <div
                 className={classNames(
                     'bg-neutral-100 grid 2xl:grid-cols-2 backdrop-blur-sm w-1/2  p-10 gap-4 rounded-xl',
-                    description ? 'grid-cols-2 2xl:grid-cols-2 min-h-1/2' : 'grid-cols-1 2xl:grid-cols-1 h-3/4'
+                    description ? 'grid-cols-2 2xl:grid-cols-2 min-h-1/2' : 'grid-cols-1 2xl:grid-cols-1 min-h-3/4'
                 )}
             >
                 <div className=" hidden 2xl:block">

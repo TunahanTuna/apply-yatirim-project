@@ -15,7 +15,7 @@ export default function DashboardBarChartPopup({ visible, modal, onClick }) {
         >
             <div
                 className={classNames(
-                    'bg-neutral-100 grid 2xl:grid-cols-2 backdrop-blur-sm h-3/4 w-1/2  p-10 gap-4 rounded-xl',
+                    'bg-neutral-100 grid 2xl:grid-cols-2 backdrop-blur-sm min-h-3/4 w-1/2  p-10 gap-4 rounded-xl',
                     description ? 'grid-cols-2 2xl:grid-cols-2' : 'grid-cols-1 2xl:grid-cols-1'
                 )}
             >
