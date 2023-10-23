@@ -11,11 +11,13 @@ export default function CountryBaseSales() {
         ...body
             .slice(1)
             .map((data) =>
-                data.map((dt) => (isNaN(parseFloat(dt)) || typeof dt == 'number' ? dt : parseFloat(dt) * 100))
+                data.map((dt, index) =>
+                    isNaN(parseFloat(dt)) || typeof dt == 'number' || index == 4 ? dt : parseFloat(dt) * 100
+                )
             )
     ]
     const tableHeader = country_base_sales && country_base_sales?.find((data) => data[0] == '60000')
-
+    console.log(country_base_sales)
     return (
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}
