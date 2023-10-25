@@ -7,13 +7,15 @@ import { setKey } from '../../../store/keySlice'
 import { useEffect } from 'react'
 import { texts } from '../../../lib/constants/constants'
 import Cookies from 'universal-cookie'
+
 const initialUser = { identifier: '', password: '' }
-// Bütün alanlar dinamikleştirilecek.
+
 export default function LoginPage({ setJwtKey }) {
     const dispatch = useDispatch()
     const { key } = useSelector((state) => state.keyReducer)
     const cookies = new Cookies()
     const [user, setUser] = useState(initialUser)
+
     const handleChange = ({ target }) => {
         const { name, value } = target
         setUser((currentUser) => ({
@@ -21,13 +23,15 @@ export default function LoginPage({ setJwtKey }) {
             [name]: value
         }))
     }
-    const handleLogin = async () => {
+
+    const handleLogin = async (e) => {
+        e.preventDefault() // Form varsayılan davranışını engellemek için
+
         const url = import.meta.env.VITE_AUTH_URL
         try {
             if (user.identifier && user.password) {
                 let res = await axios.post(url, user)
                 setJwtKey(res?.data?.jwt)
-                //dispatch(setKey(res?.data?.jwt))
                 cookies.set('corp', user.corp)
             }
             toast.info(texts.succes_login_message)
@@ -42,10 +46,10 @@ export default function LoginPage({ setJwtKey }) {
                 <ApplyLogo width="18rem" />
             </div>
             <div className="md:w-1/3 max-w-sm">
-                <form>
+                <form onSubmit={handleLogin}>
                     <input
                         className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
-                        type="email"
+                        type="text"
                         name="identifier"
                         placeholder="Kullanıcı Adı"
                         onChange={handleChange}
@@ -59,17 +63,15 @@ export default function LoginPage({ setJwtKey }) {
                         onChange={handleChange}
                         value={user.password}
                     />
+                    <div className="text-center md:text-left">
+                        <button
+                            className="mt-4 bg-blue-600 hover-bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
+                            type="submit"
+                        >
+                            Giriş
+                        </button>
+                    </div>
                 </form>
-
-                <div className="text-center md:text-left">
-                    <button
-                        className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
-                        type="submit"
-                        onClick={handleLogin}
-                    >
-                        Giriş
-                    </button>
-                </div>
             </div>
         </section>
     )
