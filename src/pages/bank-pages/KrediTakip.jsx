@@ -15,7 +15,6 @@ export default function KrediTakip() {
     //     temp.map((data) => data.map((dt) => (new Date(dt) == 'Invalid Date' || dt == null ? dt : new Date(dt))))
     // )
     // console.log(temp)
-
     return (
         temp && (
             <div className="w-full">

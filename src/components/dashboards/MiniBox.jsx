@@ -3,7 +3,6 @@ import React from 'react'
 export default function MiniBox({ data, onClick }) {
     const temp = data && data?.[5] && `%${parseFloat(data?.[5]) * 100}`
     const title = data && data?.[1]
-    console.log('data', data)
     return (
         <div
             className="rounded-xl flex h-full flex-col gap-3 justify-center items-center w-full min-w-[20rem] bg-neutral-100 border border-gray-200"
