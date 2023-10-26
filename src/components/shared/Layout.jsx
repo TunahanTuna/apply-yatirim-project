@@ -60,26 +60,23 @@ export default function Layout() {
                                 }
                                 reader.readAsBinaryString(file)
                             })
-                            .finally(
-                                async (res) =>
-                                    await fetch(`${import.meta.env.VITE_BASE_URL}${response?.data?.bankFile?.url}`)
-                                        .then((res) => res.blob())
-                                        .then((blob) => {
-                                            const file = new File([blob], urlFilters.excelFileName, {
-                                                type: urlFilters.excelFileType
-                                            })
+                        fetch(`${import.meta.env.VITE_BASE_URL}${response?.data?.bankFile?.url}`)
+                            .then((res) => res.blob())
+                            .then((blob) => {
+                                const file = new File([blob], urlFilters.excelFileName, {
+                                    type: urlFilters.excelFileType
+                                })
 
-                                            // Excel dosyasını okuma işlemi
-                                            const reader = new FileReader()
-                                            reader.onload = function (event) {
-                                                const data = event.target.result
+                                // Excel dosyasını okuma işlemi
+                                const reader = new FileReader()
+                                reader.onload = function (event) {
+                                    const data = event.target.result
 
-                                                const workbook = XLSX.read(data, urlFilters.excelFileFormatObject)
-                                                dispatch(setBank(workbook))
-                                            }
-                                            reader.readAsBinaryString(file)
-                                        })
-                            )
+                                    const workbook = XLSX.read(data, urlFilters.excelFileFormatObject)
+                                    dispatch(setBank(workbook))
+                                }
+                                reader.readAsBinaryString(file)
+                            })
                     })
                     .catch((res) => toast.error(texts.error_data_fetch))
             } catch (error) {}
