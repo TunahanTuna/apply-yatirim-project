@@ -2,6 +2,7 @@ import React from 'react'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import classNames from 'classnames'
+import moment from 'moment/moment'
 export const options = {
     plugins: {
         legend: {
@@ -28,8 +29,9 @@ export const options = {
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
 export default function DashboardBarChart({ data, table_title, type, color, onClick }) {
     const temp = data && [data[2], data[4], data[6]]
-
-    const labels = table_title ? [table_title[2], table_title[4], table_title[6]] : [2019, 2020, 2021]
+    const year = moment().year()
+    const tempArray = [year - 3, year - 2, year - 1]
+    const labels = table_title && table_title.length > 3 ? [table_title[2], table_title[4], table_title[6]] : tempArray
     const chartData = {
         labels,
         datasets: [

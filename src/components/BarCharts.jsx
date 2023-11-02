@@ -14,6 +14,7 @@ import React, { PureComponent } from 'react'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 import classNames from 'classnames'
+import moment from 'moment'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip)
 const options = {
@@ -37,10 +38,12 @@ const options = {
 }
 export default function BarCharts({ data, color, chartStyle, table_title, onClick }) {
     const temp = data && [data[2], data[4], data[6], ...data.slice(8)]
+    const year = moment().year()
+    const tempArray = [year - 3, year - 2, year - 1]
     const chartData = {
         labels: table_title
             ? [table_title[2], table_title[4], table_title[6], ...table_title.slice(8)]
-            : [2019, 2020, 2021],
+            : [2020, 2021, 2022],
         datasets: [
             {
                 label: data && data[1],
