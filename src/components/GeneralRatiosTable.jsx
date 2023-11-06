@@ -57,7 +57,9 @@ export default function GeneralRatiosTable({ table_sheet, title, setChartData })
                                             {dt[0] != 3000 && dt[0] != 2000 && dt[0] != 1000 && dt[0] != 5000
                                                 ? isNaN(parseFloat(row))
                                                     ? row
-                                                    : floatParser(row) + '%'
+                                                    : dt[0] != 1003
+                                                    ? floatParser(row) + '%'
+                                                    : `${parseInt(row)}`
                                                 : row}
                                         </td>
                                     ))}
