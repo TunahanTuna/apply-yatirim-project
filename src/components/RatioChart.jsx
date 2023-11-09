@@ -14,7 +14,6 @@ import {
 } from 'recharts'
 
 export default function FinancialTables({ data, type, setOpen, setChartData, setDescription, title }) {
-    console.log(title)
     const temp =
         data && type != 'dashboard'
             ? [
@@ -24,7 +23,7 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
                   },
                   {
                       name: title?.[1],
-                      data: data?.[2]
+                      data: data?.[3]
                   },
                   {
                       name: title?.[2],
@@ -45,6 +44,7 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
                       data: data?.[6]
                   }
               ]
+    console.log(temp)
     const maxValue = Math.max(...temp.map((item) => item.data)) * 1.2
     const minValue = Math.min(...temp.map((item) => item.data)) * 1.2
 
