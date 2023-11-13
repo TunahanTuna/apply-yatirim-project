@@ -17,7 +17,7 @@ export const apiRequests = (jwtKey) => {
     const cookies = new Cookies()
 
     useEffect(() => {
-        if (jwtKey != null && summary_balance_sheet.length == 0) {
+        if (jwtKey != null) {
             try {
                 axios
                     .get(fetchURL, {
