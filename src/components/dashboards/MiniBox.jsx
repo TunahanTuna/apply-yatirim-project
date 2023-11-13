@@ -3,9 +3,10 @@ import React from 'react'
 export default function MiniBox({ data, onClick }) {
     const temp = data && data?.[5] && `%${parseFloat(data?.[5]) * 100}`
     const title = data && data?.[1]
+
     return (
         <div
-            className="rounded-xl flex h-full flex-col gap-3 justify-center items-center w-full min-w-[20rem] bg-neutral-100 border border-gray-200"
+            className="rounded-xl flex h-full flex-col gap-3 justify-center items-center w-full min-w-[20rem] bg-neutral-50  border border-gray-200"
             onClick={onClick}
         >
             <div className="border-b-2 rounded-t-xl p-1 flex justify-center items-center border-orange-600 w-full text-neutral-950 bg-orange-200 text-center text-xl font-bold">
