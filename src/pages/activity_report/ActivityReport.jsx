@@ -15,7 +15,6 @@ export default function ActivityReport() {
             description: data?.description
         }
     })
-    console.log(pages)
     return (
         <div className="w-full ">
             {pathname && pathname == '/faaliyet-raporlari' ? (
