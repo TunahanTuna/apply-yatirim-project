@@ -11,7 +11,7 @@ const DonutChart = ({ data, color, onClick }) => {
         <div
             className={classNames(
                 ' justify-center items-center flex flex-col h-full w-full min-h-[16rem] rounded-xl border border-gray-300',
-                color ? color : 'bg-neutral-100 '
+                color ? color : 'bg-neutral-50 '
             )}
             onClick={onClick}
         >

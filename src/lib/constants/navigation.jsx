@@ -166,7 +166,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         label: 'Faaliyet Raporları',
         path: '/faaliyet-raporlari',
         icon: <HiOutlineAnnotation />,
-        component: null,
+        component: <ActivityReport />,
         subMenus: [
             {
                 key: 'sektor-verileri',
