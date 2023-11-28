@@ -55,8 +55,16 @@ import {
     GayrimenkulListeleri
 } from '../../pages/bank-pages'
 import ActivityReport from '../../pages/activity_report/ActivityReport'
+import TestPage from '../../pages/TestPage'
 
 export const DASHBOARD_SIDEBAR_LINKS = [
+    // {
+    //     key: 'test',
+    //     label: 'Test',
+    //     path: '/test',
+    //     icon: <HiOutlineAcademicCap />,
+    //     component: <TestPage />
+    // },
     {
         key: 'kokpit',
         label: 'Kokpit',

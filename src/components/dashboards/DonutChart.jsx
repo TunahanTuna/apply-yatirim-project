@@ -16,29 +16,32 @@ const DonutChart = ({ data, color, onClick }) => {
             onClick={onClick}
         >
             <strong className="w-full flex items-center justify-center text-center">{data && data?.[1]}</strong>
-            <ResponsiveContainer width="100%" height="90%">
-                <PieChart>
-                    <Pie
-                        data={[
-                            { name: data[1], value: sonIndexVeri },
-                            { name: 'oran', value: 100 - sonIndexVeri }
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
-                    >
-                        {colors.map((color, index) => (
-                            <Cell key={`cell-${index}`} fill={color} />
-                        ))}
-                    </Pie>
-                    <Tooltip />
-                    <Label />
-                    <Legend verticalAlign="bottom" align="center" animationDuration={2000} />
-                </PieChart>
-            </ResponsiveContainer>
+            <div className="justify-center items-center flex flex-col h-full w-full min-h-[16rem] ">
+                <ResponsiveContainer width="100%" height="90%">
+                    <PieChart>
+                        <Pie
+                            data={[
+                                { name: data[1], value: sonIndexVeri },
+                                { name: 'oran', value: 100 - sonIndexVeri }
+                            ]}
+                            cx="50%"
+                            cy="50%"
+                            innerRadius={50}
+                            outerRadius={70}
+                            fill="#8884d8"
+                            dataKey="value"
+                            label
+                        >
+                            {colors.map((color, index) => (
+                                <Cell key={`cell-${index}`} fill={color} />
+                            ))}
+                        </Pie>
+                        <Tooltip />
+                        <Label />
+                        <Legend verticalAlign="bottom" align="center" animationDuration={2000} />
+                    </PieChart>
+                </ResponsiveContainer>
+            </div>
         </div>
     )
 }
