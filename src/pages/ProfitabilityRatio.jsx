@@ -10,14 +10,11 @@ export default function ProfitabilityRatio() {
     const { profitability_ratios, ratio_desc } = useSelector((state) => state.dataReducer)
     const title = DASHBOARD_SIDEBAR_LINKS.find((data) => data.key == profitability_ratios_key)?.label
     const years = profitability_ratios?.[0]?.slice(2)
-
     const temp = [
         profitability_ratios[0],
         ...profitability_ratios
             .slice(1)
-            .map((data) =>
-                data.map((dt) => (isNaN(parseFloat(dt)) || typeof dt == 'number' ? dt : parseFloat(dt) * 100))
-            )
+            .map((data) => data.map((dt) => (isNaN(parseFloat(dt)) || typeof dt == 'number' ? dt : parseFloat(dt))))
     ]
 
     const ratio_descriptions = ratio_desc.filter((data) => data_filter(data))
@@ -134,6 +131,7 @@ export default function ProfitabilityRatio() {
                     visible={open}
                     modal={chartData}
                     description={ratio_descriptions[description]}
+                    title={years && years}
                 />
             </div>
         </motion.div>
