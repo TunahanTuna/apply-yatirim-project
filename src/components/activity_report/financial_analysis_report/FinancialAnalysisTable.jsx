@@ -20,7 +20,10 @@ export default function FinancialAnalysisTable({ data, setSelectedData }) {
                                 data == null ? (
                                     <th key={`header-${index}`} colSpan={1}></th>
                                 ) : (
-                                    <th className="p-1 text-right" key={`header-${index}`}>
+                                    <th
+                                        className={classNames(index == 0 ? 'text-left' : 'text-right', 'p-1')}
+                                        key={`header-${index}`}
+                                    >
                                         {data}
                                     </th>
                                 )

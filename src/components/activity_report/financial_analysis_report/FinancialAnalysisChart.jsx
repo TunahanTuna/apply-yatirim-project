@@ -16,7 +16,13 @@ const options = {
 }
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 export default function FinancialAnalysisChart({ data, labels, color }) {
-    const chartLabels = labels && labels?.slice(1)?.filter((data) => data != null)
+    const chartLabels =
+        labels &&
+        labels
+            ?.slice(1)
+            ?.filter((data) => data != null)
+            .slice(1)
+
     const dataset = data && data.slice(2)
     const chartData = {
         labels: chartLabels,
