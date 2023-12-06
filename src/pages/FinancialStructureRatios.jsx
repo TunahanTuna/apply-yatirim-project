@@ -28,7 +28,6 @@ export default function FinancialStructureRatios() {
     const [open, setOpen] = useState(false)
     const [description, setDescription] = useState(0)
     const dates = financial_structure_ratios?.[0]?.slice(2)
-    console.log(dates)
     return (
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}

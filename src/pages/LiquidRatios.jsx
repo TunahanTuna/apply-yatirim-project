@@ -24,7 +24,6 @@ export default function LiquidRatios() {
     const [open, setOpen] = useState(false)
     const [description, setDescription] = useState(0)
     const dates = liquid_ratios?.[0]?.slice(2)
-    console.log('first', liquid_ratios)
     return (
         <motion.div
             initial={{ opacity: 0, translateY: 100 }}

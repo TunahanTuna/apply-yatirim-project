@@ -15,7 +15,6 @@ export default function KisaVadeliYukumlulukler() {
     const nakitKisaVadeYukumlulukler = ek && ek.find((data) => data[0] == 200021)
     const BorcDevir = ek && ek.find((data) => data[0] == 200032)
     const table_title = ek && ek?.find((data) => data[0] == 200000)
-    console.log(BorcDevir)
     const [selectedData, setSelectedData] = useState(mali_borclar[1])
     return (
         mali_borclar &&

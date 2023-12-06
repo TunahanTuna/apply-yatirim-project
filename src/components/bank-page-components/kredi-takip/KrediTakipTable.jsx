@@ -4,18 +4,6 @@ import moment from 'moment'
 import React from 'react'
 
 export default function KrediTakipTable({ data, setChartData }) {
-    console.log(
-        'data',
-        data.map((dt) =>
-            dt
-                .slice(1)
-                .map((date) =>
-                    moment(date, 'DD/MM/YYYY')?._isValid && moment(date, 'DD/MM/YYYY')?._pf?.unusedInput?.length == 0
-                        ? moment(date, 'DD/MM/YYYY').format('DD/MM/YYYY')
-                        : date
-                )
-        )
-    )
     return (
         <div className="bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1">
             {data && (
