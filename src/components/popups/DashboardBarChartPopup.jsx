@@ -7,7 +7,7 @@ export default function DashboardBarChartPopup({ visible, modal, onClick }) {
     if (!visible) return null
     const description = modal && modal?.[8]
     const title = modal && modal?.[1]
-
+    console.log(description)
     return (
         <div
             className="fixed z-30 inset-0 bg-black bg-opacity-20 backdrop-blur-sm xl:flex hidden justify-center items-center"
@@ -15,16 +15,19 @@ export default function DashboardBarChartPopup({ visible, modal, onClick }) {
         >
             <div
                 className={classNames(
-                    'bg-neutral-100 grid 2xl:grid-cols-2 backdrop-blur-sm min-h-3/4 w-1/2  p-10 gap-4 rounded-xl',
-                    description ? 'grid-cols-2 2xl:grid-cols-2' : 'grid-cols-1 2xl:grid-cols-1'
+                    'bg-neutral-100 grid 2xl:grid-cols-1 backdrop-blur-sm min-h-3/4 w-1/2  p-10  rounded-xl'
                 )}
             >
-                <div className=" hidden 2xl:block ">
-                    <BarCharts data={modal} />
-                </div>
-                <div className={classNames('w-full text-center', description ? 'visible' : 'hidden')}>
-                    <h1 className="font-bold text-xl">{title && title}</h1>
-                    <p className="text-justify">{description && description}</p>
+                <div className="flex w-full justify-center gap-4">
+                    <div className="2xl:block w-full ">
+                        <BarCharts data={modal} />
+                    </div>
+                    {description != undefined ? (
+                        <div className={classNames('w-full text-center ')}>
+                            <h1 className="font-bold text-xl">{title && title}</h1>
+                            <p className="text-justify">{description && description}</p>
+                        </div>
+                    ) : null}
                 </div>
             </div>
         </div>

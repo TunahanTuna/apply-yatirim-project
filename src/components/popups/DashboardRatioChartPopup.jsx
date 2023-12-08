@@ -16,16 +16,20 @@ export default function DashboardRatioChartPopup({ visible, modal, onClick }) {
         >
             <div
                 className={classNames(
-                    'bg-neutral-100 grid 2xl:grid-cols-2 backdrop-blur-sm w-1/2  p-10 gap-4 rounded-xl',
-                    description ? 'grid-cols-2 2xl:grid-cols-2 min-h-1/2' : 'grid-cols-1 2xl:grid-cols-1 min-h-3/4'
+                    'bg-neutral-100 grid 2xl:grid-cols-1 backdrop-blur-sm w-1/2  rounded-xl',
+                    description ? 'min-h-1/2' : ' min-h-3/4'
                 )}
             >
-                <div className=" hidden 2xl:block">
-                    <DashboardBarChart data={modal} />
-                </div>
-                <div className={classNames('w-full text-center', description ? 'visible' : 'hidden')}>
-                    <h1 className="font-bold text-xl">{title && title}</h1>
-                    <p className="text-justify">{description && description}</p>
+                <div className="flex w-full justify-center  p-10 gap-4">
+                    <div className="w-full 2xl:block">
+                        <DashboardBarChart data={modal} />
+                    </div>
+                    {description != undefined ? (
+                        <div className={classNames('w-full text-center', description ? 'visible' : 'hidden')}>
+                            <h1 className="font-bold text-xl">{title && title}</h1>
+                            <p className="text-justify">{description && description}</p>
+                        </div>
+                    ) : null}
                 </div>
             </div>
         </div>
