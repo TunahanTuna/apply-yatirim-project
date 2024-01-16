@@ -33,7 +33,7 @@ export default function LiquidRatios() {
             <div className="flex flex-row gap-4 w-full">
                 <LiquidTable table_sheet={liquid_ratios} title={title} />
             </div>
-            <div className="text-black text-xl w-full flex flex-col items-center justify-center gap-4">
+            <div className="dark:text-gray-200 text-black text-xl w-full flex flex-col items-center justify-center gap-4">
                 <strong className="text-3xl">{texts.charts_main_title}</strong>
                 <div className="grid lg:grid-cols-2 md:grid-cols-1   xl:grid-cols-3 h-[43rem] w-full gap-5">
                     <div className="flex w-full justify-center items-center">

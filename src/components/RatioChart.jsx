@@ -54,10 +54,12 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
     }
     return (
         <div
-            className="gap-2 flex flex-col h-[22rem] w-11/12 xl:w-full bg-neutral-50 p-4 rounded-lg border border-gray-200"
+            className="gap-2 flex flex-col h-[22rem] w-11/12 xl:w-full dark:bg-gray-700 bg-neutral-50 p-4 rounded-lg border border-gray-200"
             onClick={HandleClick}
         >
-            <strong className="w-full flex items-center text-orange-950 justify-center">{data && data?.[1]}</strong>
+            <strong className="w-full flex items-center dark:text-gray-300 text-orange-950 justify-center">
+                {data && data?.[1]}
+            </strong>
             <div className="w-full h-full">
                 <ResponsiveContainer width="100%" height="99%">
                     <LineChart
@@ -75,15 +77,15 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
                         <XAxis
                             dataKey="name"
                             tick={{
-                                fontSize: 12 // Font büyüklüğünü ayarlayın
-                                // Sayıların rengini ayarlayın
+                                fontSize: 12, // Font büyüklüğünü ayarlayın
+                                stroke: '#e5e7eb' // Sayıların rengini ayarlayın
                             }}
                         />
                         <YAxis
                             tickFormatter={(value) => value.toFixed(2)}
                             tick={{
-                                fontSize: 12 // Font büyüklüğünü ayarlayın
-                                // Sayıların rengini ayarlayın
+                                fontSize: 12, // Font büyüklüğünü ayarlayın
+                                stroke: '#e5e7eb' // Sayıların rengini ayarlayın
                             }}
                             textAnchor="end"
                             domain={[minValue < 0 ? minValue : 0, maxValue]}
@@ -92,9 +94,9 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
                         <Line
                             type="monotone"
                             dataKey="data"
-                            stroke="#ea580c"
+                            stroke="#b91c1c"
                             strokeWidth={5}
-                            dot={{ stroke: '#ea580c', strokeWidth: 2, fill: '#ea580c' }}
+                            dot={{ stroke: '#991b1b', strokeWidth: 2, fill: '#991b1b' }}
                             animationDuration={2000}
                         />
                     </LineChart>

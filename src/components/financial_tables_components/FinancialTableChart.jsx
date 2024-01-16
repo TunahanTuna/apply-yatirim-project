@@ -7,11 +7,17 @@ const options = {
     indexAxis: 'y',
     scales: {
         x: {
+            ticks: {
+                color: '#e5e7eb'
+            },
             grid: {
                 display: false // Yatay eksendeki arka plan çizgilerini gizle
             }
         },
         y: {
+            ticks: {
+                color: '#e5e7eb'
+            },
             grid: {
                 display: false // Dikey eksendeki arka plan çizgilerini gizle
             }

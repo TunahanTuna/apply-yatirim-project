@@ -28,7 +28,7 @@ export default function CountryBaseSales() {
                 <CountryBaseSalesTable header={tableHeader} body={tableBody} />
             </div>
             <div className="w-full flex flex-col justify-center items-center pt-4">
-                <div className="w-full text-center font-bold text-xl">
+                <div className="dark:text-gray-200 w-full text-center font-bold text-xl">
                     <h1>Ülke Bazlı Satış Grafiği</h1>
                 </div>
                 <div className="w-5/6">

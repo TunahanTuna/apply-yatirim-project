@@ -28,14 +28,14 @@ export default function CountryBaseSalesTable({ header, main_title, sub_title, b
                             <tr
                                 key={`key${index} w-full`}
                                 onClick={() => handleClick(index)}
-                                className="hover:bg-red-50"
+                                className="hover:bg-red-50 dark:hover:bg-gray-700"
                             >
                                 {data.slice(1).map((dt, index) => (
                                     <td
                                         className={`${index != 0 ? 'text-right' : 'font-bold'} text-xs p-2`}
                                         key={`index${index}`}
                                     >
-                                        <span className="w-full text-right text-xs">
+                                        <span className="dark:text-gray-200  w-full text-right text-xs">
                                             {parseFloat(dt) ? parseFloat(dt).toLocaleString() : dt}
                                         </span>
                                     </td>

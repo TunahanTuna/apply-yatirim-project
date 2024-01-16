@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { HiOutlineBell, HiOutlineChatAlt, HiOutlineSearch } from 'react-icons/hi'
 import PopButton from '../../widgets/PopButton'
 import Cookies from 'universal-cookie'
-import { Tabs } from 'antd'
+import { Tabs, ConfigProvider } from 'antd'
 import axios from 'axios'
 import * as XLSX from 'xlsx'
 import { setData } from '../../store/dataSlice'
@@ -42,11 +42,23 @@ export default function Header() {
     }
 
     return (
-        <div className="bg-neutral-50 h-16 px-4 flex justify-center gap-10 items-center border-b border-color-gray-100">
+        <div className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-50 h-16 px-4 flex justify-center gap-10 items-center border-b border-color-gray-100">
             <div className="w-full ">
-                <Tabs defaultActiveKey="1" centered items={test} onChange={onChange} />
+                <ConfigProvider
+                    theme={{
+                        components: {
+                            Tabs: {
+                                itemColor: '#9ca3af',
+                                itemSelectedColor: '#b91c1c',
+                                inkBarColor: '#b91c1c'
+                            }
+                        }
+                    }}
+                >
+                    <Tabs itemColor="" defaultActiveKey="1" centered items={test} onChange={onChange} />
+                </ConfigProvider>
             </div>
-            <div className="flex bg-sky-900 rounded-lg p-1 w-full flex-1">
+            <div className="flex dark:bg-gray-600  bg-sky-900 rounded-lg p-1 w-full flex-1">
                 <button>
                     <a
                         className="whitespace-nowrap  hover:no-underline"

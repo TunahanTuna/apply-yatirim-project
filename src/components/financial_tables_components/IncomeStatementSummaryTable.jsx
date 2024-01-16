@@ -13,7 +13,7 @@ export default function IncomeStatementSummaryTable() {
 
     return (
         <div className="w-full flex flex-col">
-            <div className="pt-2 px-1 pb-1 text-red-600 border-b-4 border-red-600 text-lg">
+            <div className="pt-2 px-1 pb-1  text-red-600 border-b-4 border-red-600 text-lg">
                 <strong>{incomeStatementTitle && incomeStatementTitle[1]}</strong>
             </div>
             <div className="w-full flex flex-col border-b-4 border-red-600">

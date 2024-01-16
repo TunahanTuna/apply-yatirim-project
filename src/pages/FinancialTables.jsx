@@ -7,8 +7,8 @@ export default function FinancialTables() {
     return (
         <div className="w-full ">
             {pathname && pathname == '/finansal-tablolar' ? (
-                <div className="w-full h-1/2 text-white grid lg:grid-cols-2 md:grid-cols-1  ">
-                    <div className="w-full h-64 hover:bg-sky-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900 ">
+                <div className="w-full gap-4 h-1/2 text-white grid lg:grid-cols-2 md:grid-cols-1  ">
+                    <div className="dark:bg-gray-800 dark:hover:bg-gray-700 w-full h-64 hover:bg-sky-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900 ">
                         <Link
                             to={'/finansal-tablolar/bilanco'}
                             className="w-full text-left flex flex-col items-center justify-center h-full m-4 hover:no-underline text-sky-100"
@@ -21,7 +21,7 @@ export default function FinancialTables() {
                             </p>
                         </Link>
                     </div>
-                    <div className="w-full h-64 hover:bg-sky-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900">
+                    <div className=" dark:bg-gray-800 dark:hover:bg-gray-700 w-full h-64 hover:bg-sky-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900">
                         <Link
                             to={'/finansal-tablolar/gelir-tablosu'}
                             className="w-full text-left flex flex-col items-center justify-center h-full m-4 hover:no-underline text-sky-100"
@@ -35,7 +35,7 @@ export default function FinancialTables() {
                         </Link>
                     </div>
 
-                    <div className="w-full h-64 hover:bg-sky-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900">
+                    <div className="dark:bg-gray-800 dark:hover:bg-gray-700  w-full h-64 hover:bg-sky-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900">
                         <Link
                             to={'/finansal-tablolar/rasyolar'}
                             className="w-full text-left flex flex-col items-center justify-center h-full  hover:no-underline text-sky-100"
@@ -48,7 +48,7 @@ export default function FinancialTables() {
                             </p>
                         </Link>
                     </div>
-                    <div className="w-full h-64 hover:bg-sky-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900">
+                    <div className="dark:bg-gray-800 dark:hover:bg-gray-700  w-full h-64 hover:bg-sky-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-sky-900">
                         <Link
                             to={'/finansal-tablolar/nakit-akim'}
                             className="w-full text-left flex flex-col items-center justify-center h-full  hover:no-underline text-sky-100"

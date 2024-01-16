@@ -33,7 +33,7 @@ export default function RevolutionSpeed() {
             <div className="flex flex-row gap-4 w-full">
                 <LiquidTable setSelector={setSelector} table_sheet={revolution_speeds} title={title} />
             </div>
-            <div className="text-indigo-950 text-xl w-full flex flex-col items-center justify-center gap-4">
+            <div className="text-indigo-950 dark:text-gray-200 text-xl w-full flex flex-col items-center justify-center gap-4">
                 <strong className="text-3xl">{revolution_speeds[selector][1]}</strong>
                 <div className=" w-full gap-5">
                     <div onClick={() => setOpen(true)}>

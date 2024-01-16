@@ -20,7 +20,7 @@ export default function Test() {
             </button>
 
             <div
-                className={`z-20 md:z-1 fixed md:relative md:left-0 w-72 top-0 -left-96 peer-focus:left-0 peer:transition duration-200 ease-out delay-150 lg:w-64 md:w-48   shadow-2xl bg-sky-900 h-screen overflow-y-scroll `}
+                className={`dark:bg-gray-900 dark:text-gray-200 dark:border-gray-500 z-20 md:z-1 fixed md:relative md:left-0 w-72 top-0 -left-96 peer-focus:left-0 peer:transition duration-200 ease-out delay-150 lg:w-64 md:w-48   shadow-2xl bg-sky-900 h-screen overflow-y-scroll `}
             >
                 <div className="justify-center">
                     <h1

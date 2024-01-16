@@ -15,7 +15,7 @@ export default function DashboardBarChartPopup({ visible, modal, onClick }) {
         >
             <div
                 className={classNames(
-                    'bg-neutral-100 grid 2xl:grid-cols-1 backdrop-blur-sm min-h-3/4 w-1/2  p-10  rounded-xl'
+                    'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900 bg-neutral-100 grid 2xl:grid-cols-1 backdrop-blur-sm min-h-3/4 w-1/2  p-10  rounded-xl'
                 )}
             >
                 <div className="flex w-full justify-center gap-4">

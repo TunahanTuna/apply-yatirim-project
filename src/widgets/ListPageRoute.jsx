@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 
 export const ListPageRoute = ({ title, description, path }) => {
     return (
-        <div className="w-full h-64 hover:bg-pink-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-pink-900 ">
+        <div className="w-full h-64 dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-pink-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-pink-900 ">
             <Link
                 to={path && path}
                 className="w-full text-left flex flex-col items-center justify-center h-full m-4 hover:no-underline text-red-100"

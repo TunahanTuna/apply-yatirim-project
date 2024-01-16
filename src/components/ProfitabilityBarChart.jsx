@@ -10,6 +10,18 @@ const options = {
             display: false,
             position: 'bottom'
         }
+    },
+    scales: {
+        x: {
+            ticks: {
+                color: '#e5e7eb'
+            }
+        },
+        y: {
+            ticks: {
+                color: '#e5e7eb'
+            }
+        }
     }
 }
 export default function ProfitabilityBarChart({ body, title, table_title }) {
@@ -18,8 +30,8 @@ export default function ProfitabilityBarChart({ body, title, table_title }) {
         datasets: body
     }
     return (
-        <div className="bg-white rounded-lg w-full flex flex-col gap-2 items-center pt-5">
-            <strong className="text-center text-sm">{title && title}</strong>
+        <div className="dark:bg-gray-700 bg-white rounded-lg w-full flex flex-col gap-2 items-center pt-5">
+            <strong className="text-center dark:text-gray-200 text-sm">{title && title}</strong>
             <Bar options={options} data={data} />
         </div>
     )

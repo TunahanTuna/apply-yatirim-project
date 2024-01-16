@@ -18,7 +18,7 @@ export default function ActivityReport() {
     return (
         <div className="w-full ">
             {pathname && pathname == '/faaliyet-raporlari' ? (
-                <div className="w-full h-1/2 text-white grid grid-cols-2 p-4 ">
+                <div className="gap-4 w-full h-1/2 text-white grid grid-cols-2 p-4 ">
                     {pages.map((menu) => (
                         <ListPageRoute
                             key={menu.key}

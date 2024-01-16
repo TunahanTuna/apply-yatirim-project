@@ -6,10 +6,10 @@ export default function MiniBox({ data, onClick }) {
 
     return (
         <div
-            className="rounded-xl flex h-full flex-col gap-3 justify-center items-center w-full min-w-[20rem] bg-neutral-50  border border-gray-200"
+            className="dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900  rounded-xl flex h-full flex-col gap-3 justify-center items-center w-full min-w-[20rem] bg-neutral-50  border border-gray-200"
             onClick={onClick}
         >
-            <div className="border-b-2 rounded-t-xl p-1 flex justify-center items-center border-orange-600 w-full text-neutral-950 bg-orange-200 text-center text-xl font-bold">
+            <div className="border-b-2 rounded-t-xl dark:bg-gray-500 dark:text-gray-200 dark:border-gray-900  p-1 flex justify-center items-center border-orange-600 w-full text-neutral-950 bg-orange-200 text-center text-xl font-bold">
                 <span>{title && title}</span>
             </div>
             <div className="w-full flex flex-col  justify-center items-center  ">

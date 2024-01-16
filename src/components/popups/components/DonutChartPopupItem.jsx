@@ -13,7 +13,7 @@ const DonutChartPopupItem = ({ data, title, year, color, onClick }) => {
             <div
                 className={classNames(
                     ' justify-center items-center flex flex-col h-full w-full min-h-[16rem] rounded-xl border border-gray-300',
-                    color ? color : 'bg-neutral-100 '
+                    color ? color : 'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900 bg-neutral-100 '
                 )}
                 onClick={onClick}
             >

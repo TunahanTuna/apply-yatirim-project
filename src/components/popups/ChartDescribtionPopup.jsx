@@ -9,7 +9,7 @@ export default function ChartDescribtionPopup({ visible, modal, title, onClick, 
             className="fixed z-30 inset-0 bg-black bg-opacity-20 backdrop-blur-sm xl:flex hidden justify-center items-center"
             onClick={onClick}
         >
-            <div className="bg-neutral-50 grid grid-cols-2 backdrop-blur-sm w-5/6 min-h-[50%] p-10 rounded-xl">
+            <div className="dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900 bg-neutral-50 grid grid-cols-2 backdrop-blur-sm w-5/6 min-h-[50%] p-10 rounded-xl">
                 <div className="w-full h-full flex items-center justify-center backdrop-blur-lg opacity-70">
                     <RatioChart data={modal && modal} />
                 </div>

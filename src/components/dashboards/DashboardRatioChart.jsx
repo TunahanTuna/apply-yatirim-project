@@ -6,18 +6,25 @@ import moment from 'moment/moment'
 export const options = {
     plugins: {
         legend: {
+            display: false,
             position: 'bottom'
         }
     },
     responsive: true,
     scales: {
         x: {
+            ticks: {
+                color: '#e5e7eb'
+            },
             grid: {
                 display: false // Yatay eksendeki arka plan çizgilerini gizle
             }
         },
         y: {
             beginAtZero: true,
+            ticks: {
+                color: '#e5e7eb'
+            },
             grid: {
                 display: false
                 // Dikey eksendeki arka plan çizgilerini gizle
@@ -47,7 +54,7 @@ export default function DashboardBarChart({ data, table_title, type, color, onCl
         <div
             className={classNames(
                 'gap-2 flex flex-col h-full w-full p-4 border border-gray-300 rounded-xl',
-                color && color ? color : 'bg-neutral-50'
+                color && color ? color : 'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900  bg-neutral-50'
             )}
             onClick={onClick}
         >

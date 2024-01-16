@@ -7,7 +7,10 @@ const options = {
     responsive: true,
     plugins: {
         legend: {
-            position: 'bottom'
+            position: 'bottom',
+            labels: {
+                color: '#e5e7eb'
+            }
         }
     }
 }
@@ -50,15 +53,15 @@ export default function CountryBaseSalesChart({ header, body }) {
 
     return (
         <div className="w-full h-full flex 2xl:flex 2xl:flex-row md:grid md:grid-cols-2 flex-col pt-2">
-            <div className="w-full flex flex-col items-center justify-center gap-3">
+            <div className="dark:text-gray-200 w-full flex flex-col items-center justify-center gap-3">
                 <strong>{header && header[2]}</strong>
                 <Doughnut options={options} data={data1} width={200} />
             </div>
-            <div className="w-full flex flex-col items-center justify-center gap-3">
+            <div className="dark:text-gray-200 w-full flex flex-col items-center justify-center gap-3">
                 <strong>{header && header[3]}</strong>
                 <Doughnut options={options} data={data2} width={200} />
             </div>
-            <div className="w-full flex flex-col items-center justify-center gap-3">
+            <div className="dark:text-gray-200 w-full flex flex-col items-center justify-center gap-3">
                 <strong>{header && header[4]}</strong>
                 <Doughnut options={options} data={data3} width={200} />
             </div>

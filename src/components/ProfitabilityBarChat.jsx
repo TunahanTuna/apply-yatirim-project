@@ -19,16 +19,23 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip)
 const options = {
     plugins: {
         legend: {
+            display: false,
             position: 'bottom'
         }
     },
     scales: {
         x: {
+            ticks: {
+                color: '#e5e7eb'
+            },
             grid: {
                 display: false // Yatay eksendeki arka plan çizgilerini gizle
             }
         },
         y: {
+            ticks: {
+                color: '#e5e7eb'
+            },
             grid: {
                 display: false // Dikey eksendeki arka plan çizgilerini gizle
             }
@@ -72,7 +79,7 @@ export default function ProfitabilityBarChat({ data, color, chartStyle, table_ti
         <div
             className={classNames(
                 'flex flex-col h-full w-full rounded-xl border border-gray-300',
-                color && color ? color : 'bg-neutral-50 '
+                color && color ? color : 'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900 bg-neutral-50 '
             )}
         >
             <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>

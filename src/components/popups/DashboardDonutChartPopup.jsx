@@ -18,7 +18,11 @@ export default function DashboardDonutChartPopup({ visible, modal, table_title, 
             className="fixed z-30 inset-0 bg-black bg-opacity-20 backdrop-blur-sm xl:flex hidden justify-center items-center"
             onClick={onClick}
         >
-            <div className={classNames('bg-neutral-100 flex flex-col backdrop-blur-sm w-1/2  p-10 gap-4 rounded-xl')}>
+            <div
+                className={classNames(
+                    'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900 bg-neutral-100 flex flex-col backdrop-blur-sm w-1/2  p-10 gap-4 rounded-xl'
+                )}
+            >
                 <div className={classNames('w-full text-center', description ? 'visible' : 'hidden')}>
                     <h1 className="font-bold text-xl">{title && title}</h1>
                     <p className="text-justify">{description && description}</p>

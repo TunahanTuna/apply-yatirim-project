@@ -38,7 +38,7 @@ export default function FinancialStructureRatios() {
                 <LiquidTable setSelector={setSelector} table_sheet={financial_structure_ratios} title={title} />
             </div>
             <div className=" text-xl w-full flex flex-col items-center justify-center gap-4">
-                <strong className="text-3xl text-black">Grafikler</strong>
+                <strong className="text-3xl dark:text-gray-200 text-black">Grafikler</strong>
                 <div className="grid xl:grid-cols-3 grid-cols-1 h-[24rem] w-full gap-5">
                     <div className="flex w-full items-center justify-center">
                         <RatioChart

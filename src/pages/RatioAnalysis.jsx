@@ -7,8 +7,8 @@ export default function RatioAnalysis() {
     return (
         <div className="w-full ">
             {pathname && pathname == '/oran-analizi' ? (
-                <div className="w-full h-1/2 text-white grid grid-cols-2  ">
-                    <div className="w-full h-64 hover:bg-blue-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-blue-900 ">
+                <div className="gap-4 w-full h-1/2 text-white grid grid-cols-2  ">
+                    <div className="dark:bg-gray-800 dark:hover:bg-gray-700  w-full h-64 hover:bg-blue-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-blue-900 ">
                         <Link
                             to={'/oran-analizi/likidite-oranlari'}
                             className="w-full text-left flex flex-col items-center justify-center h-full m-4 hover:no-underline text-blue-100"
@@ -21,7 +21,7 @@ export default function RatioAnalysis() {
                             </p>
                         </Link>
                     </div>
-                    <div className="w-full h-64 hover:bg-blue-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-blue-900">
+                    <div className="dark:bg-gray-800 dark:hover:bg-gray-700  w-full h-64 hover:bg-blue-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-blue-900">
                         <Link
                             to={'/oran-analizi/finansal-yapi-oranlari'}
                             className="w-full text-left flex flex-col items-center justify-center h-full m-4 hover:no-underline text-blue-100"
@@ -35,7 +35,7 @@ export default function RatioAnalysis() {
                         </Link>
                     </div>
 
-                    <div className="w-full h-64 hover:bg-blue-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-blue-900">
+                    <div className="dark:bg-gray-800 dark:hover:bg-gray-700  w-full h-64 hover:bg-blue-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-blue-900">
                         <Link
                             to={'/oran-analizi/devir-hizlari'}
                             className="w-full text-left flex flex-col items-center justify-center h-full  hover:no-underline text-blue-100"
@@ -48,7 +48,7 @@ export default function RatioAnalysis() {
                             </p>
                         </Link>
                     </div>
-                    <div className="w-full h-64 hover:bg-blue-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-blue-900">
+                    <div className="dark:bg-gray-800 dark:hover:bg-gray-700  w-full h-64 hover:bg-blue-800 hover:opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-blue-900">
                         <Link
                             to={'/oran-analizi/karlilik-oranlari'}
                             className="w-full text-left flex flex-col items-center justify-center h-full  hover:no-underline text-blue-100"

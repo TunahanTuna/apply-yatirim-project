@@ -25,19 +25,19 @@ export default function ProfitabilityRatio() {
         {
             label: profitability_ratios[2][1],
             data: temp[2].slice(2),
-            backgroundColor: '#93c5fd',
+            backgroundColor: '#0369a1',
             barThickness: 30
         },
         {
             label: profitability_ratios[3][1],
             data: temp[3].slice(2),
-            backgroundColor: '#f87171',
+            backgroundColor: '#b91c1c',
             barThickness: 30
         },
         {
             label: profitability_ratios[4][1],
             data: temp[4].slice(2),
-            backgroundColor: '#d8b4fe',
+            backgroundColor: '#8b5cf6',
             barThickness: 30
         }
     ]
@@ -45,19 +45,19 @@ export default function ProfitabilityRatio() {
         {
             label: profitability_ratios[6][1],
             data: temp[6].slice(2),
-            backgroundColor: '#93c5fd',
+            backgroundColor: '#0369a1',
             barThickness: 25
         },
         {
             label: profitability_ratios[7][1],
             data: temp[7].slice(2),
-            backgroundColor: '#f87171',
+            backgroundColor: '#b91c1c',
             barThickness: 25
         },
         {
             label: profitability_ratios[8][1],
             data: temp[8].slice(2),
-            backgroundColor: '#d8b4fe',
+            backgroundColor: '#8b5cf6',
             barThickness: 25
         },
         {
@@ -69,7 +69,7 @@ export default function ProfitabilityRatio() {
         {
             label: profitability_ratios[10][1],
             data: temp[10].slice(2),
-            backgroundColor: '#5eead4',
+            backgroundColor: '#0f766e',
             barThickness: 25
         }
     ]
@@ -77,13 +77,13 @@ export default function ProfitabilityRatio() {
         {
             label: profitability_ratios[13][1],
             data: temp[13].slice(2),
-            backgroundColor: '#f87171',
+            backgroundColor: '#b91c1c',
             barThickness: 30
         },
         {
             label: profitability_ratios[14][1],
             data: temp[14].slice(2),
-            backgroundColor: '#d8b4fe',
+            backgroundColor: '#8b5cf6',
             barThickness: 30
         }
     ]

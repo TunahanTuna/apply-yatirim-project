@@ -6,7 +6,7 @@ export default function IncomeStatementSummaryHeader() {
     const mainTitle =
         base_financial_dashboard && base_financial_dashboard && base_financial_dashboard?.find((dt) => dt[0] == 10100)
     return (
-        <div className="w-full flex p-2 justify-between bg-red-600 text-white text-md rounded-xs">
+        <div className="w-full flex p-2 justify-between dark:bg-red-800 bg-red-600 text-gray-300 text-md rounded-xs">
             <div className="w-1/3">
                 <strong>{mainTitle && mainTitle[1]}</strong>
             </div>
