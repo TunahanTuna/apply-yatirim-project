@@ -7,6 +7,8 @@ import BarCharts from './BarCharts'
 import CashFlowTable from './CashFlowTable'
 import ProfitabilityBarChart from './ProfitabilityBarChart'
 import GeneralRatiosTable from './GeneralRatiosTable'
+import BalanceTable from './BalanceTable'
+
 export {
     ExcelTable,
     LiquidTable,
