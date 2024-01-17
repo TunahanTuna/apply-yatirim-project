@@ -49,8 +49,8 @@ export default function Header() {
                         components: {
                             Tabs: {
                                 itemColor: '#9ca3af',
-                                itemSelectedColor: '#b91c1c',
-                                inkBarColor: '#b91c1c'
+                                itemSelectedColor: '#e5e7eb',
+                                inkBarColor: '#e5e7eb'
                             }
                         }
                     }}

@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function KrediTakipTable({ data, setChartData }) {
     return (
-        <div className="bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1">
+        <div className="dark:bg-gray-700  dark:border-gray-900 bg-neutral-50 px-4 pt-3 pb-4 rounded-sm border border-neutral-300 flex-1">
             {data && (
                 <div className="mt-3">
                     <table className="w-full text-gray-700 table-auto">
@@ -15,7 +15,7 @@ export default function KrediTakipTable({ data, setChartData }) {
                                     <th
                                         className={classNames(
                                             idx != 0 ? 'text-right' : 'text-left',
-                                            'bg-indigo-950 border-b border-neutral-500 text-xs  text-indigo-50 font-bold'
+                                            'dark:bg-gray-900 bg-indigo-950 border-b border-neutral-500 text-xs  text-indigo-50 font-bold'
                                         )}
                                         key={idx}
                                     >
@@ -29,7 +29,7 @@ export default function KrediTakipTable({ data, setChartData }) {
                                 <tr
                                     key={key}
                                     className={classNames(
-                                        'hover:bg-indigo-100 bg-neutral-50 text-indigo-950 font-semibold',
+                                        'dark:hover:bg-gray-900 dark:bg-gray-800 dark:text-gray-200 hover:bg-indigo-100 bg-neutral-50 text-indigo-950 font-semibold',
                                         moment(dt?.[1], 'DD/MM/YYYY')?._isValid &&
                                             moment(dt?.[1], 'DD/MM/YYYY')?._pf?.unusedInput?.length == 0
                                             ? 'bg-green-200'

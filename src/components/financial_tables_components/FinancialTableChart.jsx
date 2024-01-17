@@ -4,6 +4,11 @@ import { Bar } from 'react-chartjs-2'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip)
 const options = {
+    plugins: {
+        legend: {
+            display: false
+        }
+    },
     indexAxis: 'y',
     scales: {
         x: {
