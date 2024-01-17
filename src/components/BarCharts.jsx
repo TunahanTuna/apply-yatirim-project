@@ -84,7 +84,9 @@ export default function BarCharts({ data, color, chartStyle, table_title, onClic
         <div
             className={classNames(
                 'flex flex-col h-full w-full rounded-xl border border-gray-300',
-                color && color ? color : 'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900  bg-neutral-50 '
+                color && color
+                    ? `${color} dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900 `
+                    : 'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900  bg-neutral-50 '
             )}
             onClick={onClick}
         >

@@ -5,12 +5,24 @@ const options = {
     responsive: true,
     plugins: {
         legend: {
-            position: 'bottom'
+            display: false,
+            position: 'bottom',
+            labels: {
+                color: '#e5e7eb'
+            }
         }
     },
     scales: {
         left: {
-            position: 'left' // Sol eksen
+            position: 'left', // Sol eksen
+            ticks: {
+                color: '#e5e7eb'
+            }
+        },
+        x: {
+            ticks: {
+                color: '#e5e7eb'
+            }
         }
     }
 }
@@ -37,7 +49,7 @@ export default function FinancialAnalysisChart({ data, labels, color }) {
         ]
     }
     return (
-        <div className="w-full h-full flex items-end p-2 border border-gray-300 rounded-xl">
+        <div className="dark:bg-gray-700 dark:border-gray-900 w-full h-full flex items-end p-2 border border-gray-300 rounded-xl">
             <Bar options={options && options} data={chartData && chartData} />
         </div>
     )

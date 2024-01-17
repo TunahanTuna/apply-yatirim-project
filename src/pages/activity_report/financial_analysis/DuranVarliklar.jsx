@@ -31,7 +31,7 @@ export default function DuranVarliklar() {
                 </div>
 
                 <div className="w-full flex flex-col items-end justify-end h-full gap-2 opacity-90">
-                    <div className="w-full bg-red-50">
+                    <div className="w-full">
                         <FinancialAnalysisChart
                             data={selectedData}
                             labels={chartLabels}

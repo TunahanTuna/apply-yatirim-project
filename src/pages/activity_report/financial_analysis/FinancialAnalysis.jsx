@@ -19,7 +19,7 @@ export default function FinancialAnalysis() {
     return (
         <div className="w-full ">
             {pathname && pathname == '/faaliyet-raporlari/mali-analiz-raporu' ? (
-                <div className="w-full h-1/2 text-white grid grid-cols-2 p-4 ">
+                <div className="w-full h-1/2 gap-4 text-white grid grid-cols-2 p-4 ">
                     {pages.map((menu) => (
                         <MenuRouter key={menu.key} title={menu.title} description={menu.description} path={menu.path} />
                     ))}
@@ -33,7 +33,7 @@ export default function FinancialAnalysis() {
 
 const MenuRouter = ({ title, description, path }) => {
     return (
-        <div className="w-full h-64 hover:bg-red-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-red-900 ">
+        <div className="w-full h-64 dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-red-800 hover:bg-opacity-80 backdrop-blur-lg border rounded-xl border-gray-50 bg-red-900 ">
             <Link
                 to={path && path}
                 className="w-full text-left flex flex-col items-center justify-center h-full m-4 hover:no-underline text-red-100"

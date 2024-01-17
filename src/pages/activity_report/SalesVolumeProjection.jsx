@@ -30,7 +30,7 @@ export default function SalesVolumeProjection() {
                 </div>
                 <div className="w-full xl:max-h-[50%] flex flex-col justify-center items-center pt-2">
                     <div className="xl:w-4/6 w-full overflow-y-auto">
-                        <div className="w-full text-center text-xl">
+                        <div className="dark:text-gray-200 w-full text-center text-xl">
                             <strong className="w-full font-bold ">Satış Adetleri Projeksiyon</strong>
                         </div>
                         <SalesVolumeProjectionBarChart

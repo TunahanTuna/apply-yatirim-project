@@ -14,7 +14,7 @@ export default function FinancialAnalysisTable({ data, setSelectedData }) {
         <div className="w-full flex flex-col">
             <table className="w-full">
                 <thead>
-                    <tr className="bg-red-600 text-white">
+                    <tr className="bg-red-600 dark:bg-gray-900 dark:text-gray-200 text-white">
                         {tableHeader &&
                             tableHeader.map((data, index) =>
                                 data == null ? (
@@ -51,7 +51,7 @@ export default function FinancialAnalysisTable({ data, setSelectedData }) {
                                         tbody[0] == 250226 ||
                                         tbody[0] == 250273 ||
                                         tbody[0] == 250307
-                                        ? 'bg-red-300 text-red-950 font-semibold'
+                                        ? 'bg-red-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200 text-red-950 font-semibold'
                                         : '',
                                     tbody[0] == 250001 ||
                                         tbody[0] == 250078 ||
@@ -94,9 +94,9 @@ export default function FinancialAnalysisTable({ data, setSelectedData }) {
                                         tbody[0] == 250367 ||
                                         tbody[0] == 250370 ||
                                         tbody[0] == 250378
-                                        ? 'bg-red-200 text-red-950'
+                                        ? 'bg-red-200 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-200 text-red-950'
                                         : '',
-                                    'text-red-950 hover:bg-red-100'
+                                    'text-red-950  dark:hover:bg-gray-600 dark:text-gray-200 hover:bg-red-100'
                                 )}
                                 onClick={() => toggleRow(tbody)}
                             >
@@ -113,7 +113,9 @@ export default function FinancialAnalysisTable({ data, setSelectedData }) {
                         ))}
                 </tbody>
             </table>
-            <div className="w-full text-justify px-2 pt-4 text-sm font-semibold">{description[0]}</div>
+            <div className="dark:text-gray-200 w-full text-justify px-2 pt-4 text-sm font-semibold">
+                {description[0]}
+            </div>
         </div>
     )
 }

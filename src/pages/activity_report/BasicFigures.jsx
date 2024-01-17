@@ -6,11 +6,11 @@ export default function BasicFigures() {
     const { basic_figures } = useSelector((state) => state.dataReducer)
     return (
         <div className="w-full flex flex-col overflow-y-auto">
-            <div className="w-full text-center justify-center items-center font-bold text-4xl pt-10">
+            <div className="dark:text-gray-200 w-full text-center justify-center items-center font-bold text-4xl pt-10">
                 <h1>Temel Rakamlar</h1>
             </div>
             <div className="w-full px-40  gap-10 h-full flex pt-10">
-                <div className=" text-black text-4xl w-full flex justify-between flex-col gap-10">
+                <div className="dark:text-gray-200 text-black text-4xl w-full flex justify-between flex-col gap-10">
                     <div>
                         <BasicFiguresContainer
                             figureTitle={basic_figures[0][1]}
@@ -45,7 +45,7 @@ export default function BasicFigures() {
                         Şirket Bilgileri Gelecek
                     </div>
                 </div>
-                <div className=" text-black text-4xl w-full flex justify-between flex-col gap-10">
+                <div className="dark:text-gray-200 text-black text-4xl w-full flex justify-between flex-col gap-10">
                     <div>
                         <BasicFiguresContainer
                             figureTitle={basic_figures[3][1]}

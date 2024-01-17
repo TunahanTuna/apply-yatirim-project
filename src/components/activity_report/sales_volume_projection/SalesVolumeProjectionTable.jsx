@@ -9,7 +9,7 @@ export default function SalesVolumeProjectionTable({ main_title, sub_title, body
             {main_title && sub_title && body && (
                 <table className="min-w-full ">
                     <thead className="w-full">
-                        <tr className="text-center w-full bg-red-600 text-white">
+                        <tr className="text-center w-full  dark:bg-gray-900 dark:text-gray-200 bg-red-600 text-white">
                             <th colSpan={1}></th>
                             {main_title.slice(1).map((title, key) => {
                                 if (title != null)
@@ -20,7 +20,7 @@ export default function SalesVolumeProjectionTable({ main_title, sub_title, body
                                     )
                             })}
                         </tr>
-                        <tr className="bg-red-300 text-red-900">
+                        <tr className="bg-red-300  dark:bg-gray-600 dark:text-gray-200 text-red-900">
                             {sub_title.slice(1).map((title, key) => (
                                 <th className="text-center w-16 text-xs p-2" key={key}>
                                     {title}
@@ -31,7 +31,7 @@ export default function SalesVolumeProjectionTable({ main_title, sub_title, body
                     <tbody className=" w-full">
                         {body.map((data, index) => (
                             <tr
-                                className="hover:bg-red-100"
+                                className="dark:text-gray-200 dark:hover:bg-gray-900 hover:bg-red-100"
                                 key={`key${index} w-full`}
                                 onClick={() => handleClick(index)}
                             >

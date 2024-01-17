@@ -35,7 +35,7 @@ export default function MaliyetHesaplari() {
                         </div>
                     </div>
 
-                    <div className="w-full flex items-end justify-end h-full bg-red-50">
+                    <div className="w-full flex items-end justify-end h-full">
                         <FinancialAnalysisChart
                             data={selectedData}
                             labels={chartLabels}

@@ -34,7 +34,7 @@ export default function Ozkaynaklar() {
                         </div>
                     </div>
 
-                    <div className="w-full  h-full bg-red-50">
+                    <div className="w-full  h-full">
                         <FinancialAnalysisChart
                             data={selectedData}
                             labels={chartLabels}

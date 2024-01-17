@@ -6,12 +6,12 @@ export default function DepreciationGroupSalesTable({ data }) {
             {data && (
                 <table className="w-full">
                     <thead>
-                        <tr className="bg-red-600 text-white">
+                        <tr className="bg-red-600 dark:bg-gray-900 dark:text-gray-200 text-white">
                             <th className="text-center text-lg" colSpan={3}>
                                 {data[0][1]}
                             </th>
                         </tr>
-                        <tr className="bg-red-400 text-red-50 ">
+                        <tr className="bg-red-400 dark:bg-gray-600 dark:text-gray-200 text-red-50 ">
                             {data[1].slice(1).map((data, index) => (
                                 <th className="text-center" key={`data-${index}`}>
                                     {data}
@@ -20,7 +20,7 @@ export default function DepreciationGroupSalesTable({ data }) {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr className="dark:text-gray-200">
                             {data[2].slice(1).map((data, index) => (
                                 <th className="text-center" key={`body-${index}`}>
                                     {data.toLocaleString()}

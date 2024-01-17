@@ -5,7 +5,11 @@ const options = {
     responsive: true,
     plugins: {
         legend: {
-            position: 'bottom'
+            display: false,
+            position: 'bottom',
+            labels: {
+                color: '#e5e7eb'
+            }
         }
     },
     scales: {
@@ -14,6 +18,14 @@ const options = {
             title: {
                 display: true,
                 text: 'Satış Tutarı'
+            },
+            ticks: {
+                color: '#e5e7eb'
+            }
+        },
+        x: {
+            ticks: {
+                color: '#e5e7eb'
             }
         }
     }

@@ -33,7 +33,7 @@ export default function UzunVadeYukumlulukler() {
                     </div>
                 </div>
                 <div className="w-full grid h-full gap-2 p-2  xl:grid-cols-2 grid-cols-1">
-                    <div className="w-full bg-red-50">
+                    <div className="w-full">
                         <FinancialAnalysisChart
                             data={selectedData}
                             labels={chartLabels}

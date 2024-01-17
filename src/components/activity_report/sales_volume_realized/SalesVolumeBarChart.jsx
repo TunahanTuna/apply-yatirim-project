@@ -7,22 +7,38 @@ const options = {
     responsive: true,
     plugins: {
         legend: {
-            position: 'bottom'
+            position: 'bottom',
+            labels: {
+                color: '#e5e7eb'
+            }
         }
     },
     scales: {
         left: {
+            ticks: {
+                color: '#e5e7eb'
+            },
             position: 'left', // Sol eksen
             title: {
                 display: true,
-                text: 'Satış Adetleri'
+                text: 'Satış Adetleri',
+                color: '#e5e7eb'
             }
         },
         right: {
+            ticks: {
+                color: '#e5e7eb'
+            },
             position: 'right', // Sağ eksen
             title: {
                 display: true,
-                text: 'Satış Tutarı'
+                text: 'Satış Tutarı',
+                color: '#e5e7eb'
+            }
+        },
+        x: {
+            ticks: {
+                color: '#e5e7eb'
             }
         }
     }

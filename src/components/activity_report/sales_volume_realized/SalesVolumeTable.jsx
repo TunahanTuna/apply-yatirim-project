@@ -9,7 +9,7 @@ export default function SalesVolumeTable({ main_title, sub_title, body, setSelec
             {main_title && sub_title && body && (
                 <table className="w-full ">
                     <thead className="w-full">
-                        <tr className="text-center w-full bg-red-600 text-white">
+                        <tr className="text-center w-full dark:bg-gray-900 dark:text-gray-200 bg-red-600 text-white">
                             <th></th>
                             {main_title.slice(1).map((title, key) => {
                                 if (title != null)
@@ -20,7 +20,7 @@ export default function SalesVolumeTable({ main_title, sub_title, body, setSelec
                                     )
                             })}
                         </tr>
-                        <tr className="bg-red-300 text-red-900">
+                        <tr className="bg-red-300 dark:bg-gray-600 dark:text-gray-200 text-red-900">
                             {sub_title.slice(1).map((title, key) => (
                                 <th className="text-center text-xs p-2" key={key}>
                                     {title}
@@ -31,7 +31,7 @@ export default function SalesVolumeTable({ main_title, sub_title, body, setSelec
                     <tbody className=" w-full">
                         {body.map((data, index) => (
                             <tr
-                                className="hover:bg-red-100"
+                                className="dark:text-gray-200 dark:hover:bg-gray-900 hover:bg-red-100"
                                 key={`key${index} w-full`}
                                 onClick={() => handleClick(index)}
                             >

@@ -34,14 +34,14 @@ export default function KisaVadeliYukumlulukler() {
                     </div>
                 </div>
                 <div className="w-full  flex flex-col items-center justify-center gap-2">
-                    <div className="2xl:w-9/12 w-full bg-red-50">
+                    <div className="2xl:w-9/12 w-full">
                         <FinancialAnalysisChart
                             data={selectedData}
                             labels={chartLabels}
                             setSelectedData={setSelectedData}
                         />
                     </div>
-                    <div className="2xl:w-9/12 w-full bg-red-50">
+                    <div className="2xl:w-9/12 w-full ">
                         <BarCharts
                             data={BorcDevir && BorcDevir}
                             color="bg-red-50"

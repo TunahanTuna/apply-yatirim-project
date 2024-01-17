@@ -30,7 +30,7 @@ export default function DonenVarliklar() {
             {selectedData && chartLabels && setSelectedData && stoklar && cariOran && asitTest && (
                 <>
                     {' '}
-                    <div className="w-full bg-red-50 opacity-90">
+                    <div className="w-full opacity-90">
                         <FinancialAnalysisChart
                             data={selectedData}
                             labels={chartLabels}

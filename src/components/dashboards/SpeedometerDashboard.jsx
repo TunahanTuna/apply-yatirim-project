@@ -10,7 +10,9 @@ export default function SpeedometerDashboard({ data, color, onClick }) {
         <div
             className={classNames(
                 'gap-2 flex flex-col h-full w-full p-2 border border-gray-300 rounded-xl',
-                color && color ? color : 'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900  bg-neutral-50 '
+                color && color
+                    ? `${color} dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900 `
+                    : 'dark:bg-gray-700 dark:text-gray-200 dark:border-gray-900  bg-neutral-50 '
             )}
             onClick={onClick}
         >

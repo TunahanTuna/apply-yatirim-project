@@ -35,7 +35,7 @@ export default function DonemKarHesaplari() {
                         </div>
                     </div>
 
-                    <div className="w-full flex items-end justify-end h-full bg-red-50">
+                    <div className="w-full flex items-end justify-end h-full dark:bg-gray-800 bg-red-50">
                         <FinancialAnalysisChart
                             data={selectedData && selectedData}
                             labels={chartLabels && chartLabels}
