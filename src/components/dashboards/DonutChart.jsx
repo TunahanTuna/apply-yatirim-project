@@ -18,7 +18,7 @@ const DonutChart = ({ data, color, onClick }) => {
             onClick={onClick}
         >
             <strong className=" w-full flex items-center justify-center text-center">{data && data?.[1]}</strong>
-            <div className="justify-center items-center flex flex-col h-full w-full min-h-[16rem] ">
+            <div className="justify-center items-center flex flex-col h-full w-full min-h-[14rem] ">
                 <ResponsiveContainer width="100%" height="90%">
                     <PieChart>
                         <Pie

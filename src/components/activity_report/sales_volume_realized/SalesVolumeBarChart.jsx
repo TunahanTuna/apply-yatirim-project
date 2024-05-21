@@ -9,36 +9,36 @@ const options = {
         legend: {
             position: 'bottom',
             labels: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     },
     scales: {
         left: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             },
             position: 'left', // Sol eksen
             title: {
                 display: true,
                 text: 'Satış Adetleri',
-                color: '#e5e7eb'
+                color: '#000000'
             }
         },
         right: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             },
             position: 'right', // Sağ eksen
             title: {
                 display: true,
                 text: 'Satış Tutarı',
-                color: '#e5e7eb'
+                color: '#000000'
             }
         },
         x: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     }

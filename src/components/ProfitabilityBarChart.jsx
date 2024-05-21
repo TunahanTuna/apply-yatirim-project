@@ -14,12 +14,12 @@ const options = {
     scales: {
         x: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         },
         y: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     }

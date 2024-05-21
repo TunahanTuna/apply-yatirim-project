@@ -8,7 +8,7 @@ const options = {
             display: false,
             position: 'bottom',
             labels: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     },
@@ -16,12 +16,12 @@ const options = {
         left: {
             position: 'left', // Sol eksen
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         },
         x: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     }

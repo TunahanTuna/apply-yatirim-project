@@ -40,7 +40,7 @@ export default function TabsComponent() {
     } = useSelector((state) => state.dataReducer)
     const darkTheme = createTheme({
         palette: {
-            mode: 'dark'
+            mode: 'light'
         }
     })
     return (

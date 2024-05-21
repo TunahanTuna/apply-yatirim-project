@@ -8,7 +8,7 @@ const options = {
             display: false,
             position: 'bottom',
             labels: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     },
@@ -20,12 +20,12 @@ const options = {
                 text: 'Satış Tutarı'
             },
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         },
         x: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     }

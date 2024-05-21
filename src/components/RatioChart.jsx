@@ -78,14 +78,14 @@ export default function FinancialTables({ data, type, setOpen, setChartData, set
                             dataKey="name"
                             tick={{
                                 fontSize: 12, // Font büyüklüğünü ayarlayın
-                                stroke: '#e5e7eb' // Sayıların rengini ayarlayın
+                                stroke: '#000000' // Sayıların rengini ayarlayın
                             }}
                         />
                         <YAxis
                             tickFormatter={(value) => value.toFixed(2)}
                             tick={{
                                 fontSize: 12, // Font büyüklüğünü ayarlayın
-                                stroke: '#e5e7eb' // Sayıların rengini ayarlayın
+                                stroke: '#000000' // Sayıların rengini ayarlayın
                             }}
                             textAnchor="end"
                             domain={[minValue < 0 ? minValue : 0, maxValue]}

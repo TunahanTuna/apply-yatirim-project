@@ -9,7 +9,7 @@ const options = {
         legend: {
             position: 'bottom',
             labels: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     },
@@ -19,10 +19,10 @@ const options = {
             title: {
                 display: true,
                 text: 'Satış Adetleri',
-                color: '#e5e7eb'
+                color: '#000000'
             },
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         },
         right: {
@@ -30,15 +30,15 @@ const options = {
             title: {
                 display: true,
                 text: 'Satış Tutarı',
-                color: '#e5e7eb'
+                color: '#000000'
             },
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         },
         x: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     }

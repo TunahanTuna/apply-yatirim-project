@@ -48,8 +48,8 @@ export default function Header() {
                     theme={{
                         components: {
                             Tabs: {
-                                itemColor: '#9ca3af',
-                                itemSelectedColor: '#e5e7eb',
+                                itemColor: '#000000',
+                                itemSelectedColor: '#000000',
                                 inkBarColor: '#e5e7eb'
                             }
                         }

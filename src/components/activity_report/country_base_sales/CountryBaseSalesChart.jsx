@@ -9,7 +9,7 @@ const options = {
         legend: {
             position: 'bottom',
             labels: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     }

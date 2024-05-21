@@ -27,7 +27,7 @@ const options = {
     scales: {
         x: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             },
             grid: {
                 display: false // Yatay eksendeki arka plan çizgilerini gizle
@@ -35,7 +35,7 @@ const options = {
         },
         y: {
             ticks: {
-                color: '#e5e7eb'
+                color: '#000000'
             },
             grid: {
                 display: false // Dikey eksendeki arka plan çizgilerini gizle

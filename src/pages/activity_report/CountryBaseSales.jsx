@@ -12,7 +12,9 @@ export default function CountryBaseSales() {
             .slice(1)
             .map((data) =>
                 data.map((dt, index) =>
-                    isNaN(parseFloat(dt)) || typeof dt == 'number' || index == 4 ? dt : parseFloat(dt) * 100
+                    isNaN(parseFloat(dt)) || typeof dt == 'number' || index == 4 || index == 3 || index == 2
+                        ? dt
+                        : parseFloat(dt) * 100
                 )
             )
     ]

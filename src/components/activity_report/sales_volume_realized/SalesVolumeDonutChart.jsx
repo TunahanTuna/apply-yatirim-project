@@ -10,12 +10,12 @@ const options = {
             display: true,
             text: 'Satış Adetleri',
 
-            color: '#e5e7eb'
+            color: '#000000'
         },
         legend: {
             display: false,
             labels: {
-                color: '#e5e7eb'
+                color: '#000000'
             }
         }
     }
@@ -27,7 +27,7 @@ const options_second = {
             display: true,
             text: 'Satış Tutarı',
 
-            color: '#e5e7eb'
+            color: '#000000'
         },
         legend: {
             display: false
@@ -110,7 +110,7 @@ export default function SalesVolumeDonutChart({ year, body }) {
 
     return (
         <div className="w-full items-center justify-center flex-col">
-            <div className="dark:text-gray-200 w-full items-center justify-center text-center text-lg">
+            <div className="dark:text-gray-200 text-gray-900 w-full items-center justify-center text-center text-lg">
                 <strong>{year && year}</strong>
             </div>
             <div className="w-full flex items-center justify-center">

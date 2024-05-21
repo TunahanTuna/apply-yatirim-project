@@ -28,7 +28,7 @@ export const GaugeSpeedometer = ({ data }) => {
             labels={{
                 valueLabel: {
                     style: {
-                        fill: '#e2e8f0'
+                        fill: '#083383'
                     }
                 },
                 tickLabels: {
