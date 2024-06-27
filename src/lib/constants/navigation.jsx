@@ -23,7 +23,8 @@ import {
     ThirdDashboard,
     CorpInfo,
     FinancialTables,
-    RatioAnalysis
+    RatioAnalysis,
+    SectorRatios
 } from '../../pages'
 import SalesVolumeRealized from '../../pages/activity_report/SalesVolumeRealized'
 import SalesVolumeProjection from '../../pages/activity_report/SalesVolumeProjection'
@@ -181,7 +182,7 @@ export const DASHBOARD_SIDEBAR_LINKS = [
                 label: 'Sektör Verileri',
                 path: '/faaliyet-raporlari/sektor-verileri',
                 icon: <HiOutlineAnnotation />,
-                component: <Dashboard />
+                component: <SectorRatios />
             },
             {
                 key: 'sirket-bilgileri',
@@ -277,9 +278,9 @@ export const DASHBOARD_SIDEBAR_LINKS = [
                         component: <GelirHesaplari />
                     },
                     {
-                        key: 'maaliyet-hesaplari',
-                        label: 'Maaliyet Hesapları',
-                        path: '/faaliyet-raporlari/mali-analiz-raporu/maaliyet-hesaplari',
+                        key: 'maliyet-hesaplari',
+                        label: 'Maliyet Hesapları',
+                        path: '/faaliyet-raporlari/mali-analiz-raporu/maliyet-hesaplari',
                         icon: <HiOutlineAnnotation />,
                         component: <MaliyetHesaplari />
                     },

@@ -90,7 +90,7 @@ export default function BarCharts({ data, color, chartStyle, table_title, onClic
             )}
             onClick={onClick}
         >
-            <strong className="w-full flex items-center justify-center pt-4">{data && data?.[1]}</strong>
+            <strong className="w-full flex items-center text-center justify-center pt-4">{data && data?.[1]}</strong>
             <div className="flex justify-center items-center w-full h-full">
                 <Bar data={chartData} options={options} />
             </div>

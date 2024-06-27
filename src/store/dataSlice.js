@@ -27,7 +27,8 @@ const initialState = {
     country_base_sales: [],
     depreciation_group_sales: [],
     basic_figures: [],
-    financial_analysis_report: []
+    financial_analysis_report: [],
+    sector: []
 }
 export const dataSlice = createSlice({
     name: 'data',
@@ -70,6 +71,8 @@ export const dataSlice = createSlice({
             state.depreciation_group_sales = dataParser(workbook, 'amortismanlar_grupici_satis')
             state.basic_figures = dataParser(workbook, 'Temel_Rakamlar')
             state.financial_analysis_report = financialAnalysisParser(workbook, 'Mali_analiz')
+
+            state.sector = dataParser(workbook, 'Sektör')
 
             state.ek = dataParser(workbook, 'EK4')
 

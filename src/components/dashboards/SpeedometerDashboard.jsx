@@ -16,7 +16,7 @@ export default function SpeedometerDashboard({ data, color, onClick }) {
             )}
             onClick={onClick}
         >
-            <strong className="w-full flex items-center justify-center">{data && data?.[1]}</strong>
+            <strong className="w-full flex items-center text-center  justify-center">{data && data?.[1]}</strong>
             <div className="h-full w-full flex items-center justify-center">
                 <GaugeSpeedometer data={data && data?.[6]} maxValue={maxValue} />
             </div>

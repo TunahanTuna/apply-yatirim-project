@@ -60,7 +60,7 @@ export default function DashboardBarChart({ data, table_title, type, color, onCl
             )}
             onClick={onClick}
         >
-            <strong className="w-full flex items-center justify-center ">{data && data?.[1]}</strong>
+            <strong className="w-full flex items-center text-center  justify-center ">{data && data?.[1]}</strong>
             <div className="w-full h-full flex items-center justify-center">
                 <Line options={options} data={chartData} />
             </div>

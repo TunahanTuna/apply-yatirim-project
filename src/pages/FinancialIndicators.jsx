@@ -11,6 +11,10 @@ const FinancialIndicators = () => {
     const title = base_financial_dashboard.find((dt) => dt[0] == 10100)
     const NetSatislar = base_financial_dashboard.find((dt) => dt[0] == 619)
     const BrutKar = base_financial_dashboard.find((dt) => dt[0] == 629)
+    const value2 = base_financial_dashboard.find((dt) => dt[0] == 697)
+    const value3 = base_financial_dashboard.find((dt) => dt[0] == 639)
+    const value4 = base_financial_dashboard.find((dt) => dt[0] == 689)
+    const value5 = base_financial_dashboard.find((dt) => dt[0] == 699)
 
     return (
         <div className=" dark:text-gray-300 w-full h-screen flex flex-col 2xl:flex-row p-2 ">
@@ -40,10 +44,10 @@ const FinancialIndicators = () => {
                 <div className=" grid grid-cols-2 w-full h-1/2 pt-7">
                     <FinancialTablesChart data={NetSatislar} table_title={title} />
                     <FinancialTablesChart data={BrutKar} table_title={title} />
-                    <FinancialTablesChart data={NetSatislar} table_title={title} />
-                    <FinancialTablesChart data={NetSatislar} table_title={title} />
-                    <FinancialTablesChart data={BrutKar} table_title={title} />
-                    <FinancialTablesChart data={NetSatislar} table_title={title} />
+                    <FinancialTablesChart data={value2} table_title={title} />
+                    <FinancialTablesChart data={value3} table_title={title} />
+                    <FinancialTablesChart data={value4} table_title={title} />
+                    <FinancialTablesChart data={value5} table_title={title} />
                 </div>
             </div>
         </div>

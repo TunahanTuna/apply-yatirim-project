@@ -13,6 +13,7 @@ import ThirdDashboard from './ThirdDashboard'
 import CorpInfo from './CorpInfo'
 import FinancialTables from './FinancialTables'
 import RatioAnalysis from './RatioAnalysis'
+import SectorRatios from './SectorRatios'
 
 export {
     Balance,
@@ -29,5 +30,6 @@ export {
     ThirdDashboard,
     CorpInfo,
     FinancialTables,
-    RatioAnalysis
+    RatioAnalysis,
+    SectorRatios
 }
